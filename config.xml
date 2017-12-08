@@ -81,7 +81,7 @@
     <plugin name="cordova-plugin-whitelist" spec="^1.3.3" />
     <plugin name="cordova-plugin-splashscreen" spec="^4.1.0" />
     <plugin name="cordova-plugin-ionic-webview" spec="^1.1.16" />
-=======
+
     <plugin name="ionic-plugin-keyboard" spec="~2.2.1" />
     <plugin name="cordova-plugin-whitelist" spec="1.3.1" />
     <plugin name="cordova-plugin-device" spec="1.1.4" />
@@ -89,9 +89,4 @@
     <plugin name="cordova-plugin-ionic-webview" spec="^1.1.11" />
     <engine name="ios" spec="~4.5.4" />
     <engine name="android" spec="~6.3.0" />
-<<<<<<< HEAD
-=======
->>>>>>> 882c77ff7f16179b13831e7026f355d2626c6ed9
->>>>>>> 128969c744fe2fcc0520a891ffc8295c61c106ad
->>>>>>> f88d93ccb12e8feeac4988c8dc59a4711b37a4fc
 </widget>
