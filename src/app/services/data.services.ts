@@ -5,11 +5,7 @@ import { Film } from '../models/film';
 import { Vaisseau } from '../models/vaisseau';
 import { Vehicule } from '../models/vehicule';
 import { Planet } from '../models/planet';
-import  { jsonToPersonnage, jsonArrayToPersonnageArray } from '../factory/json-to-personnage';
-import  { jsonToFilm, jsonArrayToFilmArray } from '../factory/json-to-film';
-import  { jsonToVaisseau, jsonArrayToVaisseauArray } from '../factory/json-to-vaisseau';
-import  { jsonToVehicule, jsonArrayToVehiculeArray } from '../factory/json-to-Vehicule';
-import  { jsonToPlanet, jsonArrayToPlanetArray } from '../factory/json-to-Planet';
+import  { jsonToObject, jsonArrayToObjectArray } from '../factory/starWarsFactory';
 import { Observable } from 'rxjs/Observable';
 import "rxjs";
 
@@ -27,7 +23,6 @@ export class DataService{
 	//Méthode appelé en cas d'erreur
 	//
 	private handleError (error: Response | any) {
-  // In a real world app, you might use a remote logging infrastructure
   let errMsg: string;
   if (error instanceof Response) {
     const body = error.json() || '';
@@ -52,7 +47,7 @@ export class DataService{
 			.map((response) => {
 				this.currentPage = 1;
 				this.lastPage = Math.ceil(response.json()["count"]/10);
-				return jsonArrayToPersonnageArray(response.json()["results"]);
+				return jsonArrayToObjectArray(response.json()["results"], new Personnage());
 			}).catch(this.handleError);
 			}
 	}
@@ -64,7 +59,7 @@ export class DataService{
 			return this.http.get("https://swapi.co/api/starships")
 			.map((response) => {
 				this.currentPage = 1;
-				return jsonArrayToVaisseauArray(response.json()["results"]);
+				return jsonArrayToObjectArray(response.json()["results"], new Vaisseau());
 			}).catch(this.handleError);
 	}
 
@@ -75,7 +70,7 @@ export class DataService{
       return this.http.get("https://swapi.co/api/vehicles")
       .map((response) => {
         this.currentPage = 1;
-        return jsonArrayToVehiculeArray(response.json()["results"]);
+        return jsonArrayToObjectArray(response.json()["results"], new Vehicule());
       }).catch(this.handleError);
   }
 
@@ -86,7 +81,18 @@ export class DataService{
       return this.http.get("https://swapi.co/api/planets")
       .map((response) => {
         this.currentPage = 1;
-        return jsonArrayToPlanetArray(response.json()["results"]);
+        return jsonArrayToObjectArray(response.json()["results"], new Planet());
+      }).catch(this.handleError);
+  }
+
+  //
+  //Récupération de toutes les planets
+  //
+  getListFilm(): Observable<Film[]>{
+      return this.http.get("https://swapi.co/api/films")
+      .map((response) => {
+        this.currentPage = 1;
+        return jsonArrayToObjectArray(response.json()["results"], new Film());
       }).catch(this.handleError);
   }
 
@@ -97,7 +103,7 @@ export class DataService{
 			this.currentPage = pageNumber;
 			return this.http.get("https://swapi.co/api/people/?page="+pageNumber)
 			.map((response) => {
-				return jsonArrayToPersonnageArray(response.json()["results"]);
+				return jsonArrayToObjectArray(response.json()["results"], new Personnage());
 			}).catch(this.handleError);
 	}
 
@@ -113,14 +119,14 @@ export class DataService{
 			this.currentPage++;
 			return this.http.get("https://swapi.co/api/people/?page="+this.currentPage)
 			.map((response) => {
-				return jsonArrayToPersonnageArray(response.json()["results"]);
+				return jsonArrayToObjectArray(response.json()["results"], new Personnage());
 			}).catch(this.handleError);
 	}
 
 	getPersonnageByUrl(url): Observable<Personnage>{
 			return this.http.get(url)
 			.map((response) => {
-				return jsonToPersonnage(response.json());
+				return jsonToObject(response.json(), new Personnage());
 			}).catch(this.handleError);
 	}
 	//
@@ -137,7 +143,7 @@ export class DataService{
 	getFilmByUrl(url): Observable<Film>{
 			return this.http.get(url)
 			.map((response) => {
-				return jsonToFilm(response.json());
+				return jsonToObject(response.json(), new Film());
 			}).catch(this.handleError);
 	}
 
@@ -150,7 +156,7 @@ export class DataService{
 			return this.http.get("https://swapi.co/api/people/?search="+motClef)
 			.map((response) => {
 				this.lastPage = Math.ceil(response.json()["count"]/10);
-			return jsonArrayToPersonnageArray(response.json()["results"]);
+			return jsonArrayToObjectArray(response.json()["results"], new Personnage());
 			}).catch(this.handleError);
 	}
 
