@@ -7,6 +7,7 @@ import { StarWarsService } from './services/starWars.services';
 import { MyApp } from './app.component';
 import { StarWarsObject } from '../pages/starwars-tab/starWarsObject-page/starWarsObject';
 import { StarWarsIndex } from '../pages/starwars-tab/starWarsIndex-page/starWarsIndex';
+import { CommunityIndex } from '../pages/community-tab/communityIndex-page/communityIndex';
 
 import { HttpModule } from '@angular/http';
 import { TabsPage } from '../pages/tabs/tabs';
@@ -16,7 +17,8 @@ import { TabsPage } from '../pages/tabs/tabs';
     MyApp,
     StarWarsIndex,
     TabsPage,
-    StarWarsObject
+    StarWarsObject,
+    CommunityIndex
 
   ],
   imports: [
@@ -29,7 +31,8 @@ import { TabsPage } from '../pages/tabs/tabs';
     MyApp,
     StarWarsIndex,
     TabsPage,
-    StarWarsObject
+    StarWarsObject,
+    CommunityIndex
   ],
   providers: [
     StarWarsService,
