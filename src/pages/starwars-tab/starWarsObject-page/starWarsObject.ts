@@ -6,11 +6,13 @@ import { Spaceship } from '../../../app/models/spaceship';
 import { Planet } from '../../../app/models/planet';
 import { Film } from '../../../app/models/film';
 import { Vehicle } from '../../../app/models/vehicle';
+import { DefaultPage } from '../../../pages/defaultPage';
+
 @Component({
     selector: 'page-starWarsObject',
     templateUrl: 'starWarsObject.html'
 })
-export class StarWarsObject {
+export class StarWarsObject extends DefaultPage {
     public listPersonnages: People[] = [];
     public listVaisseau: Spaceship[] = [];
     public listFilm: Film[] = [];
@@ -19,6 +21,7 @@ export class StarWarsObject {
 
     public listplanet: Planet[] = [];
     constructor(public navCtrl: NavController, private dataService: StarWarsService) {
+        super("Vehicles")
         this.dataService.getListObject(new Vehicle())
             .subscribe((result) => {
                 this.listVehicules = result;
