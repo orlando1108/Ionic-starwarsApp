@@ -1,14 +1,15 @@
 import  {Injectable} from "@angular/core";
 import  {Http, Response} from "@angular/http";
-import { Personnage } from '../models/personnage';
+import { People } from '../models/people';
 import { Film } from '../models/film';
-import { Vaisseau } from '../models/vaisseau';
-import { Vehicule } from '../models/vehicule';
+import { Starship } from '../models/starship';
+import { Vehicle } from '../models/vehicle';
+import { Specie } from '../models/specie';
 import { Planet } from '../models/planet';
 import  { jsonToObject, jsonArrayToObjectArray } from '../factory/starWarsFactory';
 import { Observable } from 'rxjs/Observable';
+import { Starwars } from '../models/starwars';
 import "rxjs";
-
 
 @Injectable()
 export class DataService{
@@ -34,10 +35,43 @@ export class DataService{
   //console.error(errMsg);
   return Observable.throw(errMsg);
 }
+
+//
+//Permet de récupèrer une liste d'objet
+//
+getListObject(obj: Starwars): Observable<any[]>{
+		if(obj.constructor.name.toLowerCase() == "people"){
+			return this.http.get("https://swapi.co/api/"+obj.constructor.name.toLowerCase())
+			.map((response) => {
+				this.currentPage = 1;
+				this.lastPage = Math.ceil(response.json()["count"]/10);
+				return jsonArrayToObjectArray(response.json()["results"], obj);
+			}).catch(this.handleError);
+		}
+		else{
+			return this.http.get("https://swapi.co/api/"+obj.constructor.name.toLowerCase()+"s")
+			.map((response) => {
+				this.currentPage = 1;
+				this.lastPage = Math.ceil(response.json()["count"]/10);
+				return jsonArrayToObjectArray(response.json()["results"], obj);
+			}).catch(this.handleError);
+		}
+}
+
+//
+//Permet de récupèrer un object en fonction de son URL
+//
+getObjectByUrl(obj: Starwars, url): Observable<any>{
+		return this.http.get(url)
+		.map((response) => {
+			return jsonToObject(response.json(), obj);
+		}).catch(this.handleError);
+}
+
 	//
 	//Récupération de tout les personnages
 	//
-	getListPeople(): Observable<Personnage[]>{
+	/*getListPeople(): Observable<People[]>{
 		if(this.oldSearch != "")
 		{
 			return this.serchPersonnage(this.oldSearch);
@@ -47,63 +81,63 @@ export class DataService{
 			.map((response) => {
 				this.currentPage = 1;
 				this.lastPage = Math.ceil(response.json()["count"]/10);
-				return jsonArrayToObjectArray(response.json()["results"], new Personnage());
+				return jsonArrayToObjectArray(response.json()["results"], new People());
 			}).catch(this.handleError);
 			}
-	}
+	}*/
 
   //
 	//Récupération de tout les vaisseau
 	//
-	getListVaisseau(): Observable<Vaisseau[]>{
+	/*getListVaisseau(): Observable<Starship[]>{
 			return this.http.get("https://swapi.co/api/starships")
 			.map((response) => {
 				this.currentPage = 1;
-				return jsonArrayToObjectArray(response.json()["results"], new Vaisseau());
+				return jsonArrayToObjectArray(response.json()["results"], new Starship());
 			}).catch(this.handleError);
-	}
+	}*/
 
   //
   //Récupération de tout les vehicules
   //
-  getListVehicule(): Observable<Vehicule[]>{
+  /*getListVehicule(): Observable<Vehicle[]>{
       return this.http.get("https://swapi.co/api/vehicles")
       .map((response) => {
         this.currentPage = 1;
-        return jsonArrayToObjectArray(response.json()["results"], new Vehicule());
+        return jsonArrayToObjectArray(response.json()["results"], new Vehicle());
       }).catch(this.handleError);
-  }
+  }*/
 
   //
   //Récupération de toutes les planets
   //
-  getListPlanet(): Observable<Planet[]>{
+  /*getListPlanet(): Observable<Planet[]>{
       return this.http.get("https://swapi.co/api/planets")
       .map((response) => {
         this.currentPage = 1;
         return jsonArrayToObjectArray(response.json()["results"], new Planet());
       }).catch(this.handleError);
-  }
+  }*/
 
   //
   //Récupération de toutes les planets
   //
-  getListFilm(): Observable<Film[]>{
+  /*getListFilm(): Observable<Film[]>{
       return this.http.get("https://swapi.co/api/films")
       .map((response) => {
         this.currentPage = 1;
         return jsonArrayToObjectArray(response.json()["results"], new Film());
       }).catch(this.handleError);
-  }
+  }*/
 
 	//
 	//Fonction de récupération d'une page en particulier
 	//
-	getPage(pageNumber): Observable<Personnage[]>{
+	getPage(pageNumber): Observable<People[]>{
 			this.currentPage = pageNumber;
 			return this.http.get("https://swapi.co/api/people/?page="+pageNumber)
 			.map((response) => {
-				return jsonArrayToObjectArray(response.json()["results"], new Personnage());
+				return jsonArrayToObjectArray(response.json()["results"], new People());
 			}).catch(this.handleError);
 	}
 
@@ -115,18 +149,18 @@ export class DataService{
 		return this.lastPage;
 	}
 
-	getNextPage(): Observable<Personnage[]>{
+	getNextPage(): Observable<People[]>{
 			this.currentPage++;
 			return this.http.get("https://swapi.co/api/people/?page="+this.currentPage)
 			.map((response) => {
-				return jsonArrayToObjectArray(response.json()["results"], new Personnage());
+				return jsonArrayToObjectArray(response.json()["results"], new People());
 			}).catch(this.handleError);
 	}
 
-	getPersonnageByUrl(url): Observable<Personnage>{
+	getPersonnageByUrl(url): Observable<People>{
 			return this.http.get(url)
 			.map((response) => {
-				return jsonToObject(response.json(), new Personnage());
+				return jsonToObject(response.json(), new People());
 			}).catch(this.handleError);
 	}
 	//
@@ -150,13 +184,13 @@ export class DataService{
 	//
 	//Fonction de recherche d'un personnage
 	//
-	serchPersonnage(motClef): Observable<Personnage[]>{
+	serchPersonnage(motClef): Observable<People[]>{
 		this.oldSearch = motClef;
 		this.currentPage = 1;
 			return this.http.get("https://swapi.co/api/people/?search="+motClef)
 			.map((response) => {
 				this.lastPage = Math.ceil(response.json()["count"]/10);
-			return jsonArrayToObjectArray(response.json()["results"], new Personnage());
+			return jsonArrayToObjectArray(response.json()["results"], new People());
 			}).catch(this.handleError);
 	}
 
