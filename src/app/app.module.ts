@@ -3,15 +3,21 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
-import { DataService } from './services/data.services';
+import { StarWarsService } from './services/starWars.services';
 import { MyApp } from './app.component';
-import { HomePage } from '../pages/home/home';
+import { StarWarsObject } from '../pages/starwars-tab/starWarsObject-page/starWarsObject';
+import { StarWarsIndex } from '../pages/starwars-tab/starWarsIndex-page/starWarsIndex';
+
 import { HttpModule } from '@angular/http';
+import { TabsPage } from '../pages/tabs/tabs';
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    StarWarsIndex,
+    TabsPage,
+    StarWarsObject
+
   ],
   imports: [
     BrowserModule,
@@ -21,13 +27,15 @@ import { HttpModule } from '@angular/http';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    StarWarsIndex,
+    TabsPage,
+    StarWarsObject
   ],
   providers: [
-    DataService,
+    StarWarsService,
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    { provide: ErrorHandler, useClass: IonicErrorHandler }
   ]
 })
-export class AppModule {}
+export class AppModule { }
