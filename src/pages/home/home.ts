@@ -23,7 +23,7 @@ public specie = new Specie();
 
 public listplanet: Planet[] = [];
   constructor(public navCtrl: NavController, private dataService : DataService) {
-    this.dataService.getListObject(new Specie())
+    this.dataService.getListObject(new Vehicle())
           .subscribe((result) => {
              this.listSpecie = result;
              alert("coucou");

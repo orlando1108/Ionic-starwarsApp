@@ -1,16 +1,17 @@
 import { Starwars } from '../models/starwars';
 
-export class Film extends Starwars{
-	public title : string = "";
-	public director : string = "";
-	public producer: string = "";
-	public release_date: string = "";
-	public opening_crawl: string = "";
-	public characters: string[] = [];
-	constructor()
-	{
+export class Film extends Starwars {
+
+  public title: string = "";
+  public director: string = "";
+  public producer: string = "";
+  public release_date: string = "";
+  public opening_crawl: string = "";
+  public characters: string[] = [];
+
+  constructor() {
     super();
-	}
+  }
 
   public jsonToObject(input): Starwars {
     let film = new Film();
