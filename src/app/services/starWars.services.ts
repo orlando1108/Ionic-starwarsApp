@@ -42,24 +42,18 @@ export class StarWarsService {
 	//Permet de récupèrer une liste d'objet
 	//
 	getListObject(obj: Starwars): Observable<any[]> {
-		if (obj.constructor.name.toLowerCase() == "people") {
-			return this.http.get("https://swapi.co/api/" + obj.constructor.name.toLowerCase())
-				.map((response) => {
-					this.currentPage = 1;
-					this.lastPage = Math.ceil(response.json()["count"] / 10);
-					return jsonArrayToObjectArray(response.json()["results"], obj);
-				}).catch(this.handleError);
+		let urlRequest = obj.constructor.name.toLowerCase();
+		if (urlRequest != "people") {
+			urlRequest += "s";
 		}
-		else {
-			return this.http.get("https://swapi.co/api/" + obj.constructor.name.toLowerCase() + "s")
-				.map((response) => {
-					this.currentPage = 1;
-					this.lastPage = Math.ceil(response.json()["count"] / 10);
-					return jsonArrayToObjectArray(response.json()["results"], obj);
-				}).catch(this.handleError);
-		}
+		urlRequest = `https://swapi.co/api/${urlRequest}`
+		return this.http.get(urlRequest)
+			.map((response) => {
+				this.currentPage = 1;
+				this.lastPage = Math.ceil(response.json()["count"] / 10);
+				return jsonArrayToObjectArray(response.json()["results"], obj);
+			}).catch(this.handleError);
 	}
-
 	//
 	//Permet de récupèrer un object en fonction de son URL
 	//
