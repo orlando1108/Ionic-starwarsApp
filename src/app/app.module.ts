@@ -8,9 +8,12 @@ import { MyApp } from './app.component';
 import { StarWarsObject } from '../pages/starwars-tab/starWarsObject-page/starWarsObject';
 import { StarWarsIndex } from '../pages/starwars-tab/starWarsIndex-page/starWarsIndex';
 import { CommunityIndex } from '../pages/community-tab/communityIndex-page/communityIndex';
+import { ChatPage } from '../pages/community-tab/chat-page/chat';
 
 import { HttpModule } from '@angular/http';
 import { TabsPage } from '../pages/tabs/tabs';
+import { SocketIoModule, SocketIoConfig } from 'ng-socket-io';
+const config: SocketIoConfig = { url: 'http://62.210.7.82:443', options: {} };
 
 @NgModule({
   declarations: [
@@ -18,12 +21,14 @@ import { TabsPage } from '../pages/tabs/tabs';
     StarWarsIndex,
     TabsPage,
     StarWarsObject,
-    CommunityIndex
+    CommunityIndex,
+    ChatPage
 
   ],
   imports: [
     BrowserModule,
     HttpModule,
+    SocketIoModule.forRoot(config),
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
@@ -32,7 +37,8 @@ import { TabsPage } from '../pages/tabs/tabs';
     StarWarsIndex,
     TabsPage,
     StarWarsObject,
-    CommunityIndex
+    CommunityIndex,
+    ChatPage
   ],
   providers: [
     StarWarsService,
