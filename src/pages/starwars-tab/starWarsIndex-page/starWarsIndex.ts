@@ -3,6 +3,7 @@ import { NavController } from 'ionic-angular';
 import { StarWarsObject } from '../../../pages/starwars-tab/starWarsObject-page/starWarsObject';
 import { DefaultPage } from '../../../pages/defaultPage';
 import { GoogleAnalytics } from '@ionic-native/google-analytics';
+import { Vehicle } from '../../../app/models/vehicle';
 
 @Component({
     selector: 'page-starWarsIndex',
@@ -13,7 +14,10 @@ export class StarWarsIndex extends DefaultPage {
         super("Star Wars Univers", ga);
     }
     pushVehicles() {
-        this.navCtrl.push(StarWarsObject);
+        this.navCtrl.push(StarWarsObject, {
+            vehicle: new Vehicle(),
+            title: "Vehicles"
+        });
     }
     ngOnInit() {
     }
