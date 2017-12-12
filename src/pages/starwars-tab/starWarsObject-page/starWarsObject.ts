@@ -8,26 +8,28 @@ import { Planet } from '../../../app/models/planet';
 import { Film } from '../../../app/models/film';
 import { Vehicle } from '../../../app/models/vehicle';
 import { DefaultPage } from '../../../pages/defaultPage';
+import { Starwars } from '../../../app/models/starwars';
 
 @Component({
     selector: 'page-starWarsObject',
     templateUrl: 'starWarsObject.html'
 })
 export class StarWarsObject extends DefaultPage {
-    public listPersonnages: People[] = [];
+    /*public listPersonnages: People[] = [];
     public listVaisseaux: Spaceship[] = [];
     public listFilms: Film[] = [];
     public listPlanets: Planet[] = [];
-    public listVehicules: Vehicle[] = [];
+    public listVehicules: Vehicle[] = [];*/
 
-    //public listplanet: Planet[] = [];
+    public starWarsObjectsList: Starwars[] = [];
+
     constructor(public navCtrl: NavController, private navParams: NavParams, private dataService: StarWarsService) {
         super(navParams.get('title'))
-        let vehicle = navParams.get('vehicle');
+        let vehicle = navParams.get('starWarsObject');
         this.dataService.getListObject(vehicle)
             .subscribe((result) => {
-                this.listVehicules = result;
-                console.log(result);
+                this.starWarsObjectsList = result;
+                console.log('objectsList result' + result);
             }),
             (error) => {
                 console.log(error);
