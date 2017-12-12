@@ -7,6 +7,7 @@ import { Planet } from '../../../app/models/planet';
 import { Film } from '../../../app/models/film';
 import { Vehicle } from '../../../app/models/vehicle';
 import { DefaultPage } from '../../../pages/defaultPage';
+import { GoogleAnalytics } from '@ionic-native/google-analytics';
 
 @Component({
     selector: 'page-starWarsObject',
@@ -20,8 +21,8 @@ export class StarWarsObject extends DefaultPage {
     public listVehicules: Vehicle[] = [];
 
     public listplanet: Planet[] = [];
-    constructor(public navCtrl: NavController, private dataService: StarWarsService) {
-        super("Vehicles")
+    constructor(public navCtrl: NavController, private dataService: StarWarsService, public ga: GoogleAnalytics) {
+        super("Vehicles", ga)
         this.dataService.getListObject(new Vehicle())
             .subscribe((result) => {
                 this.listVehicules = result;

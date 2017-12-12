@@ -9,7 +9,7 @@ import { StarWarsObject } from '../pages/starwars-tab/starWarsObject-page/starWa
 import { StarWarsIndex } from '../pages/starwars-tab/starWarsIndex-page/starWarsIndex';
 import { CommunityIndex } from '../pages/community-tab/communityIndex-page/communityIndex';
 import { ChatPage } from '../pages/community-tab/chat-page/chat';
-
+import { GoogleAnalytics } from '@ionic-native/google-analytics';
 import { HttpModule } from '@angular/http';
 import { TabsPage } from '../pages/tabs/tabs';
 import { SocketIoModule, SocketIoConfig } from 'ng-socket-io';
@@ -23,7 +23,6 @@ const config: SocketIoConfig = { url: 'http://62.210.7.82:443', options: {} };
     StarWarsObject,
     CommunityIndex,
     ChatPage
-
   ],
   imports: [
     BrowserModule,
@@ -44,6 +43,7 @@ const config: SocketIoConfig = { url: 'http://62.210.7.82:443', options: {} };
     StarWarsService,
     StatusBar,
     SplashScreen,
+    GoogleAnalytics,
     { provide: ErrorHandler, useClass: IonicErrorHandler }
   ]
 })
