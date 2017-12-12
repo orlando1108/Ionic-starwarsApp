@@ -5,7 +5,7 @@ import { DefaultPage } from '../../../pages/defaultPage';
 import { GoogleAnalytics } from '@ionic-native/google-analytics';
 import { Vehicle } from '../../../app/models/vehicle';
 import { People } from '../../../app/models/people';
-import { Spaceship } from '../../../app/models/spaceship';
+import { Starship } from '../../../app/models/starship';
 import { Planet } from '../../../app/models/planet';
 import { Film } from '../../../app/models/film';
 import { Specie } from '../../../app/models/specie';
@@ -24,10 +24,10 @@ export class StarWarsIndex extends DefaultPage {
       title: "Vehicles"
     });
     }
-    pushSpaceShips() {
+    pushStarShips() {
         this.navCtrl.push(StarWarsObject, {
-      starWarsObject: new Spaceship(),
-      title: "Spaceships"
+      starWarsObject: new Starship(),
+      title: "Starships"
     });
     }
     pushPlanets() {
