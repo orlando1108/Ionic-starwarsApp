@@ -30,8 +30,8 @@ export class StarWarsObject extends DefaultPage {
 
     constructor(public navCtrl: NavController, private navParams: NavParams, private dataService: StarWarsService, public ga: GoogleAnalytics) {
         super(navParams.get('title'), ga)
-        let vehicle = navParams.get('starWarsObject');
-        this.dataService.getListObject(vehicle)
+        let starWarsObject = navParams.get('starWarsObject');
+        this.dataService.getListObject(starWarsObject)
             .subscribe((result) => {
                 this.starWarsObjectsList = result;
                 console.log('objectsList result' + result);
