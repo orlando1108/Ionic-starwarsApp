@@ -8,28 +8,33 @@ import { Planet } from '../../../app/models/planet';
 import { Film } from '../../../app/models/film';
 import { Vehicle } from '../../../app/models/vehicle';
 import { DefaultPage } from '../../../pages/defaultPage';
+
+import { Starwars } from '../../../app/models/starwars';
+
 import { GoogleAnalytics } from '@ionic-native/google-analytics';
+
 
 @Component({
     selector: 'page-starWarsObject',
     templateUrl: 'starWarsObject.html'
 })
 export class StarWarsObject extends DefaultPage {
-    public listPersonnages: People[] = [];
+    /*public listPersonnages: People[] = [];
     public listVaisseaux: Spaceship[] = [];
     public listFilms: Film[] = [];
     public listPlanets: Planet[] = [];
-    public listVehicules: Vehicle[] = [];
+    public listVehicules: Vehicle[] = [];*/
+
+    public starWarsObjectsList: Starwars[] = [];
 
 
-    //public listplanet: Planet[] = [];
     constructor(public navCtrl: NavController, private navParams: NavParams, private dataService: StarWarsService, public ga: GoogleAnalytics) {
         super(navParams.get('title'), ga)
-        let vehicle = navParams.get('vehicle');
+        let vehicle = navParams.get('starWarsObject');
         this.dataService.getListObject(vehicle)
             .subscribe((result) => {
-                this.listVehicules = result;
-                console.log(result);
+                this.starWarsObjectsList = result;
+                console.log('objectsList result' + result);
             }),
             (error) => {
                 console.log(error);
