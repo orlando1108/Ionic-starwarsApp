@@ -6,7 +6,7 @@ import { Film } from '../models/film';
 import { Starship } from '../models/starship';
 import { Vehicle } from '../models/vehicle';
 import { Specie } from '../models/specie';
-//import { Spaceship } from '../models/spaceship';
+import { Spaceship } from '../models/spaceship';
 import { Planet } from '../models/planet';
 import { jsonToObject, jsonArrayToObjectArray } from '../factory/starWarsFactory';
 import { Observable } from 'rxjs/Observable';
@@ -100,7 +100,7 @@ export class StarWarsService {
 				}).catch(this.handleError);
 		}
 	}
-
+*/
 	//
 	//Récupération de tout les vaisseau
 	//
@@ -108,12 +108,12 @@ export class StarWarsService {
 		return this.http.get("https://swapi.co/api/starships")
 			.map((response) => {
 				this.currentPage = 1;
-<<<<<<< HEAD
+
 				this.lastPage = Math.ceil(response.json()["count"]/10);
-				return jsonArrayToObjectArray(response.json()["results"], new People());
+				return jsonArrayToObjectArray(response.json()["results"], new Starship());
 			}).catch(this.handleError);
 			}
-	}*/
+
 
 
 

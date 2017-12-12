@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import { NavParams } from 'ionic-angular';
 import { StarWarsService } from '../../../app/services/starWars.services';
 import { People } from '../../../app/models/people';
 import { Spaceship } from '../../../app/models/spaceship';
@@ -14,15 +15,16 @@ import { DefaultPage } from '../../../pages/defaultPage';
 })
 export class StarWarsObject extends DefaultPage {
     public listPersonnages: People[] = [];
-    public listVaisseau: Spaceship[] = [];
-    public listFilm: Film[] = [];
-    public listPlanet: Planet[] = [];
+    public listVaisseaux: Spaceship[] = [];
+    public listFilms: Film[] = [];
+    public listPlanets: Planet[] = [];
     public listVehicules: Vehicle[] = [];
 
-    public listplanet: Planet[] = [];
-    constructor(public navCtrl: NavController, private dataService: StarWarsService) {
-        super("Vehicles")
-        this.dataService.getListObject(new Vehicle())
+    //public listplanet: Planet[] = [];
+    constructor(public navCtrl: NavController, private navParams: NavParams, private dataService: StarWarsService) {
+        super(navParams.get('title'))
+        let vehicle = navParams.get('vehicle');
+        this.dataService.getListObject(vehicle)
             .subscribe((result) => {
                 this.listVehicules = result;
                 console.log(result);
