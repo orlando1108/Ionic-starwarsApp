@@ -15,9 +15,9 @@ public listVaisseau: Vaisseau[] = [];
 
 public listplanet: Planet[] = [];
   constructor(public navCtrl: NavController, private dataService : DataService) {
-    this.dataService.getListPlanet()
+    this.dataService.getListVaisseau()
           .subscribe((result) => {
-             this.listplanet = result;
+             this.listVaisseau = result;
              alert("coucou");
              console.log(result);
           }),
