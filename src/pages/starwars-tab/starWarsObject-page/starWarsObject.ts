@@ -8,7 +8,7 @@ import { Planet } from '../../../app/models/planet';
 import { Film } from '../../../app/models/film';
 import { Vehicle } from '../../../app/models/vehicle';
 import { DefaultPage } from '../../../pages/defaultPage';
-
+import { FilterPipe } from '../../../tools/filterPipe';
 import { Starwars } from '../../../app/models/starwars';
 
 import { GoogleAnalytics } from '@ionic-native/google-analytics';
