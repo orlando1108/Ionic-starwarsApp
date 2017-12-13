@@ -7,14 +7,17 @@
 </ion-header>
 
 <ion-content padding>
-    Commit pour thomas
-    <p>
-        If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide toto
-    </p>
-
 
     <div *ngFor="let item of starWarsObjectsList">
-        <h2><span>{{item.url}}{{item.id}}</span></h2>
+        <ion-card>
+          <img src="http://www.slate.fr/sites/default/files/styles/1090x500/public/starwars.png"/>
+          <ion-card-header>
+            {{item.name || item.title}}
+          </ion-card-header>
+          <ion-card-content>
+            <span>{{item.url}}{{item.id}}</span>
+          </ion-card-content>
+        </ion-card>
       <!--  <div *ngFor="let film of item.films">
             <span>{{film}}</span>
         </div>-->
