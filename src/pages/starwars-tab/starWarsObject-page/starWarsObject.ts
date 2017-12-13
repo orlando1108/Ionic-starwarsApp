@@ -26,11 +26,14 @@ export class StarWarsObject extends DefaultPage {
     public listVehicules: Vehicle[] = [];*/
 
     public starWarsObjectsList: Starwars[] = [];
+    public shouldShowCancel: boolean;
+    public searchInput: any;
 
 
     constructor(public navCtrl: NavController, private navParams: NavParams, private dataService: StarWarsService, public ga: GoogleAnalytics) {
         super(navParams.get('title'), ga)
         let starWarsObject = navParams.get('starWarsObject');
+        this.shouldShowCancel = true;
         this.dataService.getListObject(starWarsObject)
             .subscribe((result) => {
                 this.starWarsObjectsList = result;
@@ -39,6 +42,12 @@ export class StarWarsObject extends DefaultPage {
             (error) => {
                 console.log(error);
             };
+    }
+    onSearchInput(){
+
+    }
+    onSearchCancel(){
+
     }
 
     ngOnInit() {
