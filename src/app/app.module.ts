@@ -13,6 +13,7 @@ import { GoogleAnalytics } from '@ionic-native/google-analytics';
 import { HttpModule } from '@angular/http';
 import { TabsPage } from '../pages/tabs/tabs';
 import { SocketIoModule, SocketIoConfig } from 'ng-socket-io';
+import { FilterPipe } from '../tools/filterPipe';
 const config: SocketIoConfig = { url: 'http://62.210.7.82:443', options: {} };
 
 @NgModule({
@@ -22,7 +23,11 @@ const config: SocketIoConfig = { url: 'http://62.210.7.82:443', options: {} };
     TabsPage,
     StarWarsObject,
     CommunityIndex,
-    ChatPage
+    ChatPage,
+    FilterPipe
+  ],
+  exports: [
+    FilterPipe
   ],
   imports: [
     BrowserModule,

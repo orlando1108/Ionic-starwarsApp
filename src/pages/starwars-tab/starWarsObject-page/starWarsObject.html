@@ -15,7 +15,7 @@
     (ionInput)="onSearchInput($event)"
     (ionCancel)="onSearchCancel($event)">
   </ion-searchbar>
-    <div *ngFor="let item of starWarsObjectsList">
+    <div *ngFor="let item of starWarsObjectsList | FilterPipe: searchInput ">
         <ion-card>
           <img src="http://www.slate.fr/sites/default/files/styles/1090x500/public/starwars.png"/>
           <ion-card-header>
