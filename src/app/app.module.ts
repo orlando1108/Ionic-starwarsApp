@@ -9,6 +9,8 @@ import { StarWarsObject } from '../pages/starwars-tab/starWarsObject-page/starWa
 import { StarWarsIndex } from '../pages/starwars-tab/starWarsIndex-page/starWarsIndex';
 import { CommunityIndex } from '../pages/community-tab/communityIndex-page/communityIndex';
 import { ChatPage } from '../pages/community-tab/chat-page/chat';
+import { EventsPage } from '../pages/community-tab/events-page/events';
+import { AboutUs } from '../pages/community-tab/aboutUs-page/aboutUs';
 import { GoogleAnalytics } from '@ionic-native/google-analytics';
 import { HttpModule } from '@angular/http';
 import { TabsPage } from '../pages/tabs/tabs';
@@ -22,7 +24,9 @@ const config: SocketIoConfig = { url: 'http://62.210.7.82:443', options: {} };
     TabsPage,
     StarWarsObject,
     CommunityIndex,
-    ChatPage
+    ChatPage,
+    EventsPage,
+    AboutUs
   ],
   imports: [
     BrowserModule,
@@ -37,7 +41,9 @@ const config: SocketIoConfig = { url: 'http://62.210.7.82:443', options: {} };
     TabsPage,
     StarWarsObject,
     CommunityIndex,
-    ChatPage
+    ChatPage,
+    EventsPage,
+    AboutUs
   ],
   providers: [
     StarWarsService,
