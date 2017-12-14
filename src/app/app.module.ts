@@ -11,6 +11,7 @@ import { CommunityIndex } from '../pages/community-tab/communityIndex-page/commu
 import { ChatPage } from '../pages/community-tab/chat-page/chat';
 import { EventsPage } from '../pages/community-tab/events-page/events';
 import { AboutUs } from '../pages/community-tab/aboutUs-page/aboutUs';
+import { ContactUs } from '../pages/community-tab/contactUs-page/contactUs';
 import { GoogleAnalytics } from '@ionic-native/google-analytics';
 import { HttpModule } from '@angular/http';
 import { TabsPage } from '../pages/tabs/tabs';
@@ -28,6 +29,7 @@ const config: SocketIoConfig = { url: 'http://62.210.7.82:443', options: {} };
     ChatPage,
     EventsPage,
     AboutUs,
+    ContactUs,
     FilterPipe
   ],
   exports: [
@@ -48,7 +50,8 @@ const config: SocketIoConfig = { url: 'http://62.210.7.82:443', options: {} };
     CommunityIndex,
     ChatPage,
     EventsPage,
-    AboutUs
+    AboutUs,
+    ContactUs
   ],
   providers: [
     StarWarsService,
