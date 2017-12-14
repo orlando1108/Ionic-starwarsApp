@@ -17,7 +17,7 @@ export class Vehicle extends Starwars{
   public pilots: string[] = [];
 	public pilotsList: People[]=[];
 	public filmsList: Film[]=[];
-	constructor(private dataService: StarWarsService)
+	constructor()
 	{
 		super();
 	}
