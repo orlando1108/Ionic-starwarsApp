@@ -8,14 +8,28 @@
 
 
 <ion-content padding>
-
-  <ion-searchbar
+  <div *ngIf="searching" class="spinner-container">
+       <ion-spinner name="bubbles"></ion-spinner>
+   </div>
+  <ion-searchbar *ngIf="!searching"
     [(ngModel)]="searchInput"
     [showCancelButton]="shouldShowCancel"
     (ionInput)="onSearchInput($event)"
     (ionCancel)="onSearchCancel($event)">
   </ion-searchbar>
-    <div *ngFor="let item of starWarsObjectsList">
+
+
+  <ion-list>
+  <ion-item *ngFor="let item of starWarsObjectsList | FilterPipe: searchInput">
+    <ion-thumbnail item-start>
+      <img src="http://www.stickpng.com/assets/thumbs/580b585b2edbce24c47b2d2d.png">
+    </ion-thumbnail>
+    <h2> {{item.name || item.title}} </h2>
+    <p>{{item.url}}{{item.id}}</p>
+    <button ion-button clear item-end>View</button>
+  </ion-item>
+</ion-list>-->
+<!-- <div *ngFor="let item of starWarsObjectsList | FilterPipe: searchInput ">
         <ion-card>
           <img src="http://www.slate.fr/sites/default/files/styles/1090x500/public/starwars.png"/>
           <ion-card-header>
@@ -27,6 +41,6 @@
         </ion-card>
       <!--  <div *ngFor="let film of item.films">
             <span>{{film}}</span>
-        </div>-->
-    </div>
+        </div>
+    </div>-->
 </ion-content>
