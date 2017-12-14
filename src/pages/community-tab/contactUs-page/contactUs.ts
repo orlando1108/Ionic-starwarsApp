@@ -9,11 +9,13 @@ import { GoogleAnalytics } from '@ionic-native/google-analytics';
 })
 export class ContactUs extends DefaultPage {
 
+    public spinnerLoading: boolean = true;
+
     constructor(public navCtrl: NavController, public ga: GoogleAnalytics) {
         super("Contact Us", ga)
     }
 
     onLoad(){
-        document.getElementById("spinnerGform").hidden = true;
+        this.spinnerLoading = false;
     }
 }
