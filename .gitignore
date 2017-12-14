@@ -26,6 +26,7 @@ hooks/
 platforms/
 plugins/
 plugins/android.json
+package-lock.json
 plugins/ios.json
 www/
 $RECYCLE.BIN/
