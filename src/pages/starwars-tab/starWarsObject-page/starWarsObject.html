@@ -13,22 +13,30 @@
    </div>
   <ion-searchbar *ngIf="!searching"
     [(ngModel)]="searchInput"
-    [showCancelButton]="shouldShowCancel"
-    (ionInput)="onSearchInput($event)"
-    (ionCancel)="onSearchCancel($event)">
+    [showCancelButton]="shouldShowCancel">
   </ion-searchbar>
 
 
-  <ion-list>
+<!--  <ion-list>
   <ion-item *ngFor="let item of starWarsObjectsList | FilterPipe: searchInput">
     <ion-thumbnail item-start>
       <img src="http://www.stickpng.com/assets/thumbs/580b585b2edbce24c47b2d2d.png">
     </ion-thumbnail>
-    <h2> {{item.name || item.title}} </h2>
     <p>{{item.url}}{{item.id}}</p>
     <button ion-button clear item-end>View</button>
   </ion-item>
 </ion-list>-->
+
+
+<ion-card *ngFor="let item of starWarsObjectsList | FilterPipe: searchInput" (click)="pushObjectDetail(item, item.name || item.title)">
+  <img src="http://www.uniqlo.com/sg/corp/pressrelease/STARWARS.PNG"/>
+  <ion-card-content>
+    <ion-card-title class="title-center">
+      {{item.name || item.title}}
+      </ion-card-title>
+
+  </ion-card-content>
+</ion-card>
 <!-- <div *ngFor="let item of starWarsObjectsList | FilterPipe: searchInput ">
         <ion-card>
           <img src="http://www.slate.fr/sites/default/files/styles/1090x500/public/starwars.png"/>

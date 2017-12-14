@@ -13,7 +13,7 @@ import { Starwars } from '../../../app/models/starwars';
 
 import { GoogleAnalytics } from '@ionic-native/google-analytics';
 import { StarWarsObjectDetail } from '../../../pages/starwars-tab/starWarsObjectDetail-page/starWarsObjectDetail';
-import { Film } from '../../../models/film';
+//import { Film } from '../../../models/film';
 
 @Component({
     selector: 'page-starWarsObject',
