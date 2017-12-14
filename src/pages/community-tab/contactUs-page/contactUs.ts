@@ -8,12 +8,12 @@ import { GoogleAnalytics } from '@ionic-native/google-analytics';
     templateUrl: 'contactUs.html'
 })
 export class ContactUs extends DefaultPage {
+
     constructor(public navCtrl: NavController, public ga: GoogleAnalytics) {
         super("Contact Us", ga)
     }
 
-    sendContactForm(){
-        alert("coucou");
+    onLoad(){
+        document.getElementById("spinnerGform").hidden = true;
     }
-
 }
