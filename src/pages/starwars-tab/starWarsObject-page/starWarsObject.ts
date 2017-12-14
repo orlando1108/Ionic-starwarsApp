@@ -2,17 +2,18 @@ import { Component, OnInit } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { NavParams } from 'ionic-angular';
 import { StarWarsService } from '../../../app/services/starWars.services';
-import { People } from '../../../app/models/people';
+/*import { People } from '../../../app/models/people';
 import { Spaceship } from '../../../app/models/spaceship';
 import { Planet } from '../../../app/models/planet';
 import { Film } from '../../../app/models/film';
-import { Vehicle } from '../../../app/models/vehicle';
+import { Vehicle } from '../../../app/models/vehicle';*/
 import { DefaultPage } from '../../../pages/defaultPage';
 import { FilterPipe } from '../../../tools/filterPipe';
 import { Starwars } from '../../../app/models/starwars';
 
 import { GoogleAnalytics } from '@ionic-native/google-analytics';
-
+import { StarWarsObjectDetail } from '../../../pages/starwars-tab/starWarsObjectDetail-page/starWarsObjectDetail';
+import { Film } from '../../../models/film';
 
 @Component({
     selector: 'page-starWarsObject',
@@ -42,31 +43,17 @@ export class StarWarsObject extends DefaultPage {
         this.dataService.getListObject(starWarsObject)
             .subscribe((result) => {
                 this.starWarsObjectsList = result;
-                console.log('objectsList result' + result);
                 this.searching = false;
-                console.log("searching  "+ this.searching  );
             }),
             (error) => {
                 console.log(error);
             };
     }
-
-    ionViewDidLoad() {
-
-
-            //this.searching = false;
-
-
-
-    }
-    onSearchInput(){
-
-    }
-    onSearchCancel(){
-
+    pushObjectDetail(obj:Starwars, name:string){
+      this.navCtrl.push(StarWarsObjectDetail, {
+        starWarsItem: obj,
+        title: name});
     }
 
-    ngOnInit() {
-    }
 
 }

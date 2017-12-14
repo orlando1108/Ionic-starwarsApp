@@ -1,0 +1,68 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      {{title}}
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content >
+
+  <!--  <ng-template [ngIf]= "isVehicle" >
+  <h2> {{selectedItem.name || selectedItem.title }} </h2>
+  <strong>Name:</strong><p>{{selectedItem.name}}</p>
+  <strong>Cargo Capacity:</strong><p>{{selectedItem.cargo_capacity}}</p>
+  <strong>Length:</strong><p>{{selectedItem.length}}</p>
+  <strong>Vehicle Class:</strong><p>{{selectedItem.vehicle_class}}</p>
+  <strong>Passengers:</strong><p>{{selectedItem.passengers}}</p>
+  <strong>Model:</strong><p>{{selectedItem.model}}</p>
+  <strong>Manufacturer:</strong><p>{{selectedItem.manufacturer}}</p>
+  <strong>Crew:</strong><p>{{selectedItem.crew}}</p>
+</ng-template>
+-->
+<ion-item>
+  <ion-thumbnail item-start>
+    <img src="http://www.freepngimg.com/thumb/star_wars/1-2-lego-star-wars-png-thumb.png">
+  </ion-thumbnail>
+
+  <ng-template [ngIf]= "isVehicle" >
+    <div class="block">
+      <strong class="inline">Cargo Capacity: </strong> <p class="inline">{{selectedItem.cargo_capacity}}</p>
+    </div>
+    <div class="block">
+      <strong class="inline">Length: </strong> <p class="inline">{{selectedItem.length}}</p>
+    </div>
+    <div class="block">
+      <strong class="inline">Vehicle Class: </strong> <p class="inline">{{selectedItem.vehicle_class}}</p>
+    </div>
+    <div class="block">
+      <strong class="inline">Passengers: </strong> <p class="inline">{{selectedItem.passengers}}</p>
+    </div>
+    <div class="block">
+      <strong class="inline">Model: </strong> <p class="inline">{{selectedItem.model}}</p>
+    </div>
+    <div class="block">
+      <strong class="inline">Crew: </strong> <p class="inline">{{selectedItem.crew}}</p>
+    </div>
+    <div class="block">
+      <strong class="inline">Manufacturer: </strong> <p class="inline">{{selectedItem.manufacturer}}</p>
+    </div>
+  </ng-template>
+
+</ion-item>
+
+<ion-scroll scrollX="true" style="width:100px; height:100px" >
+  <ion-row nowrap class="headerChip">
+    <div *ngFor="let film of selectedItem.films">
+      <ion-chip>
+        <ion-label  >{{film.title}}</ion-label>
+        <div></div>
+      </ion-chip>
+    </div>
+  </ion-row>
+</ion-scroll>
+
+
+
+</ion-content>
