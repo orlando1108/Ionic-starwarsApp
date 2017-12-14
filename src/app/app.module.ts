@@ -26,15 +26,12 @@ const config: SocketIoConfig = { url: 'http://62.210.7.82:443', options: {} };
     StarWarsObject,
     CommunityIndex,
     ChatPage,
-<<<<<<< HEAD
     EventsPage,
-    AboutUs
-=======
+    AboutUs,
     FilterPipe
   ],
   exports: [
     FilterPipe
->>>>>>> f66e8de44f0d6d0200bd7c422d7ec84450485606
   ],
   imports: [
     BrowserModule,
