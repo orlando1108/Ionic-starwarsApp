@@ -52,15 +52,28 @@
 
 </ion-item>
 
-<ion-scroll scrollX="true" style="width:100px; height:100px" >
+  <h1 class="title-center">Films</h1>
+
+<ion-scroll scrollX="true" class="scroll" >
   <ion-row nowrap class="headerChip">
-    <div *ngFor="let film of selectedItem.films">
+    <div *ngFor="let film of vehicle_FilmsList">
       <ion-chip>
-        <ion-label  >{{film.title}}</ion-label>
-        <div></div>
+        <ion-label>{{film.title}}</ion-label>
       </ion-chip>
     </div>
   </ion-row>
+</ion-scroll>
+
+<h1 class="title-center">Pilots</h1>
+
+<ion-scroll scrollX="true" class="scroll" >
+<ion-row nowrap >
+  <div *ngFor="let film of vehicle_FilmsList">
+    <ion-chip>
+      <ion-label>{{film.title}}</ion-label>
+    </ion-chip>
+  </div>
+</ion-row>
 </ion-scroll>
 
 

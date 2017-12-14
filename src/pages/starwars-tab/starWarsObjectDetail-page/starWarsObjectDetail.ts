@@ -32,6 +32,8 @@ export class StarWarsObjectDetail extends DefaultPage {
     public selectedItem: any;
     public isVehicle: boolean;
     private vehicle_FilmsList: Film[] = [];
+    private vehicle_PilotsList: People[] = [];
+
     public vehicule: Vehicle;
     //private filmsList: Film[] = [];
 
@@ -39,21 +41,25 @@ constructor(public navCtrl: NavController, private navParams: NavParams,private 
         super(navParams.get('title'), ga)
         this.selectedItem = navParams.get('starWarsItem');
 
-        console.log('selectedItem   '+ JSON.stringify(this.selectedItem));
-        console.log('name item   '+ this.selectedItem.constructor.name.toLowerCase());
+      //  console.log('selectedItem   '+ JSON.stringify(this.selectedItem));
+      //  console.log('name item   '+ this.selectedItem.constructor.name.toLowerCase());
         if(this.selectedItem.constructor.name.toLowerCase() == 'vehicle'){
           this.isVehicle = true;
           this.vehicule = this.selectedItem;
           //https://swapi.co/api/films/5/
-          //this.getAssociatedObjects(this.vehicule, this.vehicule.films[0]);
+          this.getAssociatedObjects(new Film(), this.vehicule.films[0], this.vehicule.pilots[0] );
 
         }
+
     }
 
-    getAssociatedObjects(obj: Starwars, url){
-      this.dataService.getObjectByUrl(obj, url )
+    getAssociatedObjects(obj: Starwars, urlFilm, urlPeople){
+
+      this.dataService.getObjectByUrl(obj, urlFilm)
           .subscribe((result) => {
-              this.vehicle_FilmsList = result;
+              let film:Film = result;
+              this.vehicle_FilmsList.push(film);
+              //console.log('film result !!! '+ JSON.stringify(film));
               this.searching = false;
           }),
           (error) => {

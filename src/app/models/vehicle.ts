@@ -1,4 +1,7 @@
 import { Starwars } from '../models/starwars';
+import { People } from '../models/people';
+import { Film } from '../models/film';
+import { StarWarsService } from '../services/starWars.services';
 
 export class Vehicle extends Starwars{
 	public name : string = "";
@@ -12,7 +15,9 @@ export class Vehicle extends Starwars{
   public model: string = "";
 	public films: string[] = [];
   public pilots: string[] = [];
-	constructor()
+	public pilotsList: People[]=[];
+	public filmsList: Film[]=[];
+	constructor(private dataService: StarWarsService)
 	{
 		super();
 	}
@@ -34,5 +39,20 @@ export class Vehicle extends Starwars{
 	  vehicle.vehicle_class = input.vehicle_class;
 	  vehicle.passengers = input.passengers;
 	  return vehicle;
+	}
+
+	getAssociatedFilms(){
+/*
+		for(let film )
+		this.dataService.getObjectByUrl(new Film(), urlFilm)
+				.subscribe((result) => {
+						let film:Film = result;
+						this.vehicle_FilmsList.push(film);
+						//console.log('film result !!! '+ JSON.stringify(film));
+						this.searching = false;
+				}),
+				(error) => {
+						console.log(error);
+				};*/
 	}
 }
