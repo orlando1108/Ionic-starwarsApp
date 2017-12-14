@@ -12,4 +12,8 @@ export class ContactUs extends DefaultPage {
         super("Contact Us", ga)
     }
 
+    sendContactForm(){
+        alert("coucou");
+    }
+
 }
