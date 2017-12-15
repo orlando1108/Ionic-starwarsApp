@@ -1,0 +1,37 @@
+.date{
+  float: right;
+  height: auto;
+}
+.title{
+  text-align: center;
+  font-size: 18px;
+}
+.entete{
+  color: white;
+  background-color: #2C3B63;
+  padding: 20px;
+  width: 100%;
+  font-family: Roboto;
+}
+.desc{
+  width: 100%;
+  height: auto;
+  background-color: #A8C0D8;
+  color: #424242;
+  padding: 20px;
+  padding-bottom: 30px;
+}
+.readmore{
+  margin: 5px;
+  float: right;
+  background:none;
+  border:none;
+  font-size:1em;
+  color:#0288D1;
+  font-size: 18px;
+}
+.overflow{
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
