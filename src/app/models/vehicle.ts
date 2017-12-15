@@ -15,8 +15,8 @@ export class Vehicle extends Starwars{
   public model: string = "";
 	public urlFilms: string[] = [];
   public urlPilots: string[] = [];
-	public pilots: People[]=[];
-	public films: Film[]=[];
+	public associetedPeople: People[]=[];
+	public associetedFilms: Film[]=[];
 	constructor()
 	{
 		super();
@@ -43,8 +43,8 @@ export class Vehicle extends Starwars{
 
 	public getAssociatedObjects(dataService: StarWarsService){
 
-    console.log('URLS !!! ' + this.urlPilots);
-		console.log('id  '+ this.id);
+  /*  console.log('URLS !!! ' + this.urlPilots);
+		console.log('id  '+ this.id);*/
     this.getAssociatedFilms(dataService);
 		this.getAssociatedPilots(dataService);
 
@@ -54,8 +54,8 @@ private getAssociatedFilms(dataService: StarWarsService){
 	this.urlFilms.map((elem)=>{
 		 dataService.getObjectByUrl(new Film(), elem)
 				.subscribe((result) => {
-					this.films.push(result);
-					console.log('RESULT !!! ' + result);
+					this.associetedFilms.push(result);
+					console.log('RESULT !!! ' + JSON.stringify(result));
 				}),
 				(error) => {
 						console.log(error);
@@ -67,8 +67,8 @@ private getAssociatedPilots(dataService: StarWarsService){
 	this.urlPilots.map((elem)=>{
 		dataService.getObjectByUrl(new People(), elem)
 				.subscribe((result) => {
-						this.pilots.push(result);
-						console.log('RESULT !!! ' + result);
+						this.associetedPeople.push(result);
+						console.log('RESULT !!! ' + JSON.stringify(result));
 				}),
 				(error) => {
 						console.log(error);

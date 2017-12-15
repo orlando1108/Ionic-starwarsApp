@@ -26,7 +26,7 @@
     <img src="http://www.freepngimg.com/thumb/star_wars/1-2-lego-star-wars-png-thumb.png">
   </ion-thumbnail>
 
-  <ng-template [ngIf]= "isVehicle" >
+  <ng-template [ngIf]= "objectType == 'vehicle'" >
     <div class="block">
       <strong class="inline">Cargo Capacity: </strong> <p class="inline">{{selectedItem.cargo_capacity}}</p>
     </div>
@@ -48,41 +48,142 @@
     <div class="block">
       <strong class="inline">Manufacturer: </strong> <p class="inline">{{selectedItem.manufacturer}}</p>
     </div>
+    <div class="block">
+      <strong class="inline">Cost In_Credits: </strong> <p class="inline">{{selectedItem.cost_in_credits}}</p>
+    </div>
+
   </ng-template>
 
-  
+  <ng-template [ngIf]= "objectType == 'starship'" >
+    <div class="block">
+      <strong class="inline">Model: </strong> <p class="inline">{{selectedItem.model}}</p>
+    </div>
+    <div class="block">
+      <strong class="inline">Manufacturer: </strong> <p class="inline">{{selectedItem.manufacturer}}</p>
+    </div>
+    <div class="block">
+      <strong class="inline">Cost In_Credits: </strong> <p class="inline">{{selectedItem.cost_in_credits}}</p>
+    </div>
+  </ng-template>
 
+  <ng-template [ngIf]= "objectType == 'planet'" >
+    <div class="block">
+      <strong class="inline">Climate: </strong> <p class="inline">{{selectedItem.climate}}</p>
+    </div>
+    <div class="block">
+      <strong class="inline">Created: </strong> <p class="inline">{{selectedItem.created}}</p>
+    </div>
+    <div class="block">
+      <strong class="inline">Diameter: </strong> <p class="inline">{{selectedItem.diameter}}</p>
+    </div>
+    <div class="block">
+      <strong class="inline">Gravity: </strong> <p class="inline">{{selectedItem.gravity}}</p>
+    </div>
+    <div class="block">
+      <strong class="inline">Population: </strong> <p class="inline">{{selectedItem.population}}</p>
+    </div>
+    <div class="block">
+      <strong class="inline">Terrain: </strong> <p class="inline">{{selectedItem.terrain}}</p>
+    </div>
+    <div class="block">
+      <strong class="inline">Orbital Period: </strong> <p class="inline">{{selectedItem.orbital_period}}</p>
+    </div>
 
+  </ng-template>
 
+  <ng-template [ngIf]= "objectType == 'specie'" >
+    <div class="block">
+      <strong class="inline">Eye Colors: </strong> <p class="inline">{{selectedItem.eye_colors}}</p>
+    </div>
+    <div class="block">
+      <strong class="inline">Classification: </strong> <p class="inline">{{selectedItem.classification}}</p>
+    </div>
+    <div class="block">
+      <strong class="inline">Average Lifespan: </strong> <p class="inline">{{selectedItem.average_lifespan}}</p>
+    </div>
+    <div class="block">
+      <strong class="inline">Hair Colors: </strong> <p class="inline">{{selectedItem.hair_colors}}</p>
+    </div>
+    <div class="block">
+      <strong class="inline">Homeworld: </strong> <p class="inline">{{selectedItem.homeworld}}</p>
+    </div>
+    <div class="block">
+      <strong class="inline">Language: </strong> <p class="inline">{{selectedItem.terrain}}</p>
+    </div>
+    <div class="block">
+      <strong class="inline">Skin Colors: </strong> <p class="inline">{{selectedItem.skin_colors}}</p>
+    </div>
+  </ng-template>
 
+  <ng-template [ngIf]= "objectType == 'people'" >
+    <div class="block">
+      <strong class="inline">Gender: </strong> <p class="inline">{{selectedItem.gender}}</p>
+    </div>
+    <div class="block">
+      <strong class="inline">Birth_year: </strong> <p class="inline">{{selectedItem.birth_year}}</p>
+    </div>
+    <div class="block">
+      <strong class="inline">Eye_color: </strong> <p class="inline">{{selectedItem.eye_color}}</p>
+    </div>
+    <div class="block">
+      <strong class="inline">Hair Colors: </strong> <p class="inline">{{selectedItem.hair_color}}</p>
+    </div>
+    <div class="block">
+      <strong class="inline">Skin Colors: </strong> <p class="inline">{{selectedItem.skin_color}}</p>
+    </div>
+    <div class="block">
+      <strong class="inline">Homeworld: </strong> <p class="inline">{{selectedItem.homeworld}}</p>
+    </div>
+    <div class="block">
+      <strong class="inline">Height: </strong> <p class="inline">{{selectedItem.height}}</p>
+    </div>
+    <div class="block">
+      <strong class="inline">Mass: </strong> <p class="inline">{{selectedItem.mass}}</p>
+    </div>
+  </ng-template>
 
+  <ng-template [ngIf]= "objectType == 'film'" >
+    <div class="block">
+      <strong class="inline">director: </strong> <p class="inline">{{selectedItem.director}}</p>
+    </div>
+    <div class="block">
+      <strong class="inline">producer: </strong> <p class="inline">{{selectedItem.producer}}</p>
+    </div>
+    <div class="block">
+      <strong class="inline">release_date: </strong> <p class="inline">{{selectedItem.release_date}}</p>
+    </div>
+    <div class="block">
+      <strong class="inline">opening_crawl: </strong> <p class="inline">{{selectedItem.opening_crawl}}</p>
+    </div>
 
+  </ng-template>
 </ion-item>
 
+<ng-template [ngIf]= "selectedItem_FilmsList.length>0" >
   <h1 class="title-center">Films</h1>
-
-<ion-scroll scrollX="true" class="scroll" >
+<ion-scroll scrollX="true" class="scroll">
   <ion-row nowrap class="headerChip">
-    <div *ngFor="let film of vehicle_FilmsList">
+    <div *ngFor="let film of selectedItem_FilmsList">
       <ion-chip>
         <ion-label>{{film.title}}</ion-label>
       </ion-chip>
     </div>
   </ion-row>
 </ion-scroll>
+</ng-template>
 
+
+<ng-template [ngIf]= "selectedItem_PeopleList.length>0" >
 <h1 class="title-center">Pilots</h1>
-
 <ion-scroll scrollX="true" class="scroll" >
 <ion-row nowrap >
-  <div *ngFor="let pilot of vehicle_PilotsList">
+  <div *ngFor="let people of selectedItem_PeopleList">
     <ion-chip>
-      <ion-label>{{pilot.name}}</ion-label>
+      <ion-label>{{people.name}}</ion-label>
     </ion-chip>
   </div>
 </ion-row>
 </ion-scroll>
-
-
+</ng-template>
 
 </ion-content>

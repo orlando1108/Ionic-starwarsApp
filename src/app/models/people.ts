@@ -1,15 +1,21 @@
 import { Starwars } from '../models/starwars';
+import { StarWarsService } from '../services/starWars.services';
+
+import { Film } from '../models/film';
+
 export class People extends Starwars{
     public name : string = "";
     public gender : string = "";
     public birth_year: string = "";
     public eye_color: string = "";
     public hair_color: string = "";
-    public films: string[] = [];
+    public urlFilms: string[] = [];
     public homeworld: string = "";
     public height: string = "";
     public mass: string = "";
     public skin_color: string = "";
+    public associetedFilms: Film[]=[];
+
     constructor()
     {
         super();
@@ -24,11 +30,31 @@ export class People extends Starwars{
       people.gender = input.gender;
       people.hair_color = input.hair_color;
       people.url = input.url;
-      people.films = input.films;
+      people.urlFilms = input.films;
       people.homeworld = input.homeworld;
       people.height = input.height;
       people.mass = input.mass;
       people.skin_color = input.skin_color;
       return people;
     }
+
+    public getAssociatedObjects(dataService: StarWarsService){
+
+      this.getAssociatedFilms(dataService);
+
+  }
+
+  private getAssociatedFilms(dataService: StarWarsService){
+  	this.urlFilms.map((elem)=>{
+  		 dataService.getObjectByUrl(new Film(), elem)
+  				.subscribe((result) => {
+  					this.associetedFilms.push(result);
+  					console.log('RESULT !!! ' + JSON.stringify(result));
+  				}),
+  				(error) => {
+  						console.log(error);
+  				};
+  	});
+
+  }
 }

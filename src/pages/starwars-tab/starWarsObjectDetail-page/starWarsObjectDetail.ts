@@ -10,7 +10,6 @@ import { People } from '../../../app/models/people';
 import { Starship } from '../../../app/models/starship';
 import { Vehicle } from '../../../app/models/vehicle';
 import { Specie } from '../../../app/models/specie';
-import { Spaceship } from '../../../app/models/spaceship';
 import { Planet } from '../../../app/models/planet';
 
 @Component({
@@ -19,48 +18,29 @@ import { Planet } from '../../../app/models/planet';
 })
 
 export class StarWarsObjectDetail extends DefaultPage {
-    /*public listPersonnages: People[] = [];
-    public listVaisseaux: Spaceship[] = [];
-    public listFilms: Film[] = [];
-    public listPlanets: Planet[] = [];
-    public listVehicules: Vehicle[] = [];*/
-
-  /*  public starWarsObjectsList: Starwars[] = [];
-    public shouldShowCancel: boolean;
-    public searchInput: any;*/
-    public searching: boolean = true;
+    //public searching: boolean = true;
     public selectedItem: any;
-    public isVehicle: boolean;
-    private vehicle_FilmsList: Film[] = [];
-    private vehicle_PilotsList: People[] = [];
-
-    public vehicule: Vehicle;
-    //private filmsList: Film[] = [];
+    private selectedItem_FilmsList: Film[];
+    private selectedItem_PeopleList: People[];
+    public objectType:string;
 
 constructor(public navCtrl: NavController, private navParams: NavParams,private dataService: StarWarsService, public ga: GoogleAnalytics) {
         super(navParams.get('title'), ga)
         this.selectedItem = navParams.get('starWarsItem');
-
-      //  console.log('selectedItem   '+ JSON.stringify(this.selectedItem));
-      //  console.log('name item   '+ this.selectedItem.constructor.name.toLowerCase());
-        if(this.selectedItem.constructor.name.toLowerCase() == 'vehicle'){
-          this.isVehicle = true;
-          this.vehicule = this.selectedItem;
-          //https://swapi.co/api/films/5/
-          //this.getAssociatedObjects(new Film(), this.vehicule.films[0]  );
-
-        }
-
+        this.objectType = this.selectedItem.constructor.name.toLowerCase();
+        this.selectedItem_FilmsList=[];
+        this.selectedItem_PeopleList=[];
     }
-
     ngOnInit(){
-      this.vehicule.getAssociatedObjects(this.dataService);
-      this.vehicle_FilmsList = this.vehicule.films;
-      this.vehicle_PilotsList = this.vehicule.pilots;
-      
+      this.selectedItem.associetedFilms= [];
+      this.selectedItem.associetedPeople= [];
+      if(this.selectedItem_FilmsList.length<1 || this.selectedItem_PeopleList.length <1 ){
+        this.selectedItem.getAssociatedObjects(this.dataService);
+        this.selectedItem_FilmsList = this.selectedItem.associetedFilms;
+        this.selectedItem_PeopleList = this.selectedItem.associetedPeople;
+        //console.log('list associée !!!   '+ this.selectedItem_FilmsList );
+        //console.log('list associée !!!   '+ this.selectedItem_PeopleList );
+      }
 
     }
-
-
-
   }

@@ -1,4 +1,7 @@
 import { Starwars } from '../models/starwars';
+import { StarWarsService } from '../services/starWars.services';
+import { People } from '../models/people';
+import { Film } from '../models/film';
 
 export class Specie extends Starwars{
 	public eye_colors : string = "";
@@ -7,10 +10,13 @@ export class Specie extends Starwars{
 	public hair_colors: string = "";
   public homeworld: string = "";
   public language: string = "";
-  public films: string[] = [];
+  public urlFilms: string[] = [];
   public name: string = "";
-	public people: string[] = [];
+	public urlPeople: string[] = [];
   public skin_colors: string = "";
+	public people: People[]=[];
+	public films: Film[]=[];
+
 	constructor()
 	{
 		super();
@@ -27,10 +33,46 @@ export class Specie extends Starwars{
 	  specie.hair_colors = input.hair_colors;
 	  specie.homeworld = input.homeworld;
 	  specie.language = input.language;
-	  specie.films = input.films;
+	  specie.urlFilms = input.films;
 	  specie.name = input.name;
-	  specie.people = input.people;
+	  specie.urlPeople = input.people;
 	  specie.skin_colors = input.skin_colors;
 	  return specie;
 	}
+
+	public getAssociatedObjects(dataService: StarWarsService){
+
+  /*  console.log('URLS !!! ' + this.urlPilots);
+		console.log('id  '+ this.id);*/
+    this.getAssociatedFilms(dataService);
+		this.getAssociatedPilots(dataService);
+
+}
+
+private getAssociatedFilms(dataService: StarWarsService){
+	this.urlFilms.map((elem)=>{
+		 dataService.getObjectByUrl(new Film(), elem)
+				.subscribe((result) => {
+					this.films.push(result);
+					console.log('RESULT !!! ' + JSON.stringify(result));
+				}),
+				(error) => {
+						console.log(error);
+				};
+	});
+
+}
+private getAssociatedPilots(dataService: StarWarsService){
+	this.urlPeople.map((elem)=>{
+		dataService.getObjectByUrl(new People(), elem)
+				.subscribe((result) => {
+						this.people.push(result);
+						console.log('RESULT !!! ' + JSON.stringify(result));
+				}),
+				(error) => {
+						console.log(error);
+				};
+	});
+
+}
 }
