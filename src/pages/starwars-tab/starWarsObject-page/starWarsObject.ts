@@ -8,7 +8,7 @@ import { Planet } from '../../../app/models/planet';
 import { Film } from '../../../app/models/film';
 import { Vehicle } from '../../../app/models/vehicle';*/
 import { DefaultPage } from '../../../pages/defaultPage';
-import { FilterPipe } from '../../../tools/filterPipe';
+//import { FilterPipe } from '../../../tools/filterPipe';
 import { Starwars } from '../../../app/models/starwars';
 
 import { GoogleAnalytics } from '@ionic-native/google-analytics';
@@ -26,21 +26,22 @@ export class StarWarsObject extends DefaultPage {
     public listPlanets: Planet[] = [];
     public listVehicules: Vehicle[] = [];*/
 
-    public starWarsObjectsList: Starwars[] = [];
+    public starWarsObjectsList: any[] = [];
     public shouldShowCancel: boolean;
     public searchInput: any;
     public searching: boolean = true;
+    private starWarsObject: Starwars;
 
 
     constructor(public navCtrl: NavController, private navParams: NavParams, private dataService: StarWarsService, public ga: GoogleAnalytics) {
         super(navParams.get('title'), ga)
-        let starWarsObject = navParams.get('starWarsObject');
+        this.starWarsObject = navParams.get('starWarsObject');
         this.shouldShowCancel = true;
         //this.searching = true;
         console.log("searching  "+ this.searching  );
 
 
-        this.dataService.getListObject(starWarsObject)
+        this.dataService.getListObject(this.starWarsObject)
             .subscribe((result) => {
                 this.starWarsObjectsList = result;
                 this.searching = false;
@@ -49,11 +50,29 @@ export class StarWarsObject extends DefaultPage {
                 console.log(error);
             };
     }
+
+
     pushObjectDetail(obj:Starwars, name:string){
-      this.navCtrl.push(StarWarsObjectDetail, {
-        starWarsItem: obj,
-        title: name});
-    }
+     this.navCtrl.push(StarWarsObjectDetail, {
+       starWarsItem: obj,
+       title: name});
+   }
+
+   retrieveMoreFromAPI(infiniteScroll){
+     setTimeout(() => {
+     this.starWarsObjectsList.push(this.dataService.getNextPage(this.starWarsObject));
+     console.log('Async operation has ended');
+     infiniteScroll.complete();
+   }, 500);
+
+   /*return new Promise((resolve) => {
+      setTimeout(() => {
+        this.starWarsObjectsList.push(this.dataService.getNextPage(this.starWarsObject));
+        console.log('Async operation has ended');
+        resolve();
+      }, 500);
+    })*/
+ }
 
 
 }

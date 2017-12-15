@@ -2,11 +2,7 @@
 import { Injectable } from "@angular/core";
 import { Http, Response } from "@angular/http";
 import { People } from '../models/people';
-import { Film } from '../models/film';
-import { Starship } from '../models/starship';
-import { Vehicle } from '../models/vehicle';
-import { Specie } from '../models/specie';
-import { Planet } from '../models/planet';
+
 import { jsonToObject, jsonArrayToObjectArray } from '../factory/starWarsFactory';
 import { Observable } from 'rxjs/Observable';
 import { Starwars } from '../models/starwars';
@@ -15,9 +11,10 @@ import "rxjs";
 @Injectable()
 export class StarWarsService {
 
-	private oldSearch: string = "";
+	//private oldSearch: string = "";
 	private currentPage: number = 0;
 	private lastPage: number = 0;
+	private nextPageUrl: string = "";
 
 	constructor(private http: Http) {
 	}
@@ -49,6 +46,7 @@ export class StarWarsService {
 		return this.http.get(urlRequest)
 			.map((response) => {
 				this.currentPage = 1;
+				this.nextPageUrl = response.json()["next"];
 				this.lastPage = Math.ceil(response.json()["count"] / 10);
 				return jsonArrayToObjectArray(response.json()["results"], obj);
 			}).catch(this.handleError);
@@ -64,17 +62,6 @@ export class StarWarsService {
 	}
 
 
-	getListFilm(): Observable<Film[]> {
-		return this.http.get("https://swapi.co/api/films")
-			.map((response) => {
-				this.currentPage = 1;
-				return jsonArrayToObjectArray(response.json()["results"], new Film());
-			}).catch(this.handleError);
-	}
-
-	//
-	//Fonction de récupération d'une page en particulier
-	//
 	getPage(pageNumber): Observable<People[]> {
 		this.currentPage = pageNumber;
 		return this.http.get("https://swapi.co/api/people/?page=" + pageNumber)
@@ -91,50 +78,15 @@ export class StarWarsService {
 		return this.lastPage;
 	}
 
-	getNextPage(): Observable<People[]> {
+	getNextPage(obj:any): Observable<any[]> {
+		//let urlRequest = obj.constructor.name.toLowerCase();
 		this.currentPage++;
-		return this.http.get("https://swapi.co/api/people/?page=" + this.currentPage)
+		return this.http.get(this.nextPageUrl)
 			.map((response) => {
-				return jsonArrayToObjectArray(response.json()["results"], new People());
+				console.log('JSON !!!  '+ jsonArrayToObjectArray(response.json()["results"],obj));
+				return jsonArrayToObjectArray(response.json()["results"],obj);
 			}).catch(this.handleError);
 	}
 
-	/*getPersonnageByUrl(url): Observable<People> {
-		return this.http.get(url)
-			.map((response) => {
-				return jsonToObject(response.json(), new People());
-			}).catch(this.handleError);
-	}*/
-	//
-	//Fonction qui permet de récupérer juste le nom d'un objet en fonction de son URL
-	//
-	/*getNameByUrl(url): Observable<string> {
-		return this.http.get(url)
-			.map((response) => {
-				return response.json()['name'];
-			}).catch(this.handleError);
-	}
-
-
-	getFilmByUrl(url): Observable<Film> {
-		return this.http.get(url)
-			.map((response) => {
-				return jsonToObject(response.json(), new Film());
-			}).catch(this.handleError);
-	}
-*/
-	//
-	//Fonction de recherche d'un personnage
-	//
-
-	/*searchPersonnage(motClef): Observable<People[]> {
-		this.oldSearch = motClef;
-		this.currentPage = 1;
-		return this.http.get("https://swapi.co/api/people/?search=" + motClef)
-			.map((response) => {
-				this.lastPage = Math.ceil(response.json()["count"] / 10);
-				return jsonArrayToObjectArray(response.json()["results"], new People());
-			}).catch(this.handleError);
-	}*/
 
 }

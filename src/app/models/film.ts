@@ -51,6 +51,10 @@ export class Film extends Starwars {
   /*  console.log('URLS !!! ' + this.urlPilots);
 		console.log('id  '+ this.id);*/
 		this.getAssociatedPilots(dataService);
+    this.getAssociatedPlanets(dataService);
+    this.getAssociatedStarships(dataService);
+    this.getAssociatedSpecies(dataService);
+    this.getAssociatedVehicles(dataService);
 
 }
 
