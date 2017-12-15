@@ -50,6 +50,13 @@
     </div>
   </ng-template>
 
+  
+
+
+
+
+
+
 </ion-item>
 
   <h1 class="title-center">Films</h1>
@@ -68,9 +75,9 @@
 
 <ion-scroll scrollX="true" class="scroll" >
 <ion-row nowrap >
-  <div *ngFor="let film of vehicle_FilmsList">
+  <div *ngFor="let pilot of vehicle_PilotsList">
     <ion-chip>
-      <ion-label>{{film.title}}</ion-label>
+      <ion-label>{{pilot.name}}</ion-label>
     </ion-chip>
   </div>
 </ion-row>

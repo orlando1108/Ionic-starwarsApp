@@ -47,24 +47,20 @@ constructor(public navCtrl: NavController, private navParams: NavParams,private 
           this.isVehicle = true;
           this.vehicule = this.selectedItem;
           //https://swapi.co/api/films/5/
-          this.getAssociatedObjects(new Film(), this.vehicule.films[0], this.vehicule.pilots[0] );
+          //this.getAssociatedObjects(new Film(), this.vehicule.films[0]  );
 
         }
 
     }
 
-    getAssociatedObjects(obj: Starwars, urlFilm, urlPeople){
-
-      this.dataService.getObjectByUrl(obj, urlFilm)
-          .subscribe((result) => {
-              let film:Film = result;
-              this.vehicle_FilmsList.push(film);
-              //console.log('film result !!! '+ JSON.stringify(film));
-              this.searching = false;
-          }),
-          (error) => {
-              console.log(error);
-          };
+    ngOnInit(){
+      this.vehicule.getAssociatedObjects(this.dataService);
+      this.vehicle_FilmsList = this.vehicule.films;
+      this.vehicle_PilotsList = this.vehicule.pilots;
+      
 
     }
+
+
+
   }

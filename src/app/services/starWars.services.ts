@@ -57,7 +57,7 @@ export class StarWarsService {
 	//
 	//Permet de récupèrer un object en fonction de son URL
 	//
-	getObjectByUrl(obj: Starwars, url): Observable<any> {
+ getObjectByUrl(obj: Starwars, url): Observable<any> {
 		return this.http.get(url)
 			.map((response) => {
 				return jsonToObject(response.json(), obj);
