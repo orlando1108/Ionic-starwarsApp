@@ -10,8 +10,9 @@ import { StarWarsObjectDetail } from '../pages/starwars-tab/starWarsObjectDetail
 import { StarWarsIndex } from '../pages/starwars-tab/starWarsIndex-page/starWarsIndex';
 import { CommunityIndex } from '../pages/community-tab/communityIndex-page/communityIndex';
 import { ChatPage } from '../pages/community-tab/chat-page/chat';
-import { EventsPage } from '../pages/community-tab/events-page/events';
+import { EventPage } from '../pages/community-tab/event-page/event';
 import { AboutUs } from '../pages/community-tab/aboutUs-page/aboutUs';
+import { ContactUs } from '../pages/community-tab/contactUs-page/contactUs';
 import { GoogleAnalytics } from '@ionic-native/google-analytics';
 import { HttpModule } from '@angular/http';
 import { TabsPage } from '../pages/tabs/tabs';
@@ -27,10 +28,11 @@ const config: SocketIoConfig = { url: 'http://62.210.7.82:443', options: {} };
     StarWarsObject,
     CommunityIndex,
     ChatPage,
-    EventsPage,
+    EventPage,
     AboutUs,
     FilterPipe,
-    StarWarsObjectDetail
+    StarWarsObjectDetail,
+    ContactUs,
   ],
   exports: [
     FilterPipe
@@ -49,9 +51,11 @@ const config: SocketIoConfig = { url: 'http://62.210.7.82:443', options: {} };
     StarWarsObject,
     CommunityIndex,
     ChatPage,
-    EventsPage,
     AboutUs,
-    StarWarsObjectDetail
+    StarWarsObjectDetail,
+    EventPage,
+    AboutUs,
+    ContactUs
   ],
   providers: [
     StarWarsService,

@@ -22,25 +22,36 @@ export class StarWarsObjectDetail extends DefaultPage {
     public selectedItem: any;
     private selectedItem_FilmsList: Film[];
     private selectedItem_PeopleList: People[];
+    public selectedItem_PlanetsList: Planet[] = [];
+    public selectedItem_StarshipsList: Starship[] = [];
+    public selectedItem_VehiclesList: Vehicle[] = [];
+    public selectedItem_SpeciesList: Specie[] = [];
     public objectType:string;
 
 constructor(public navCtrl: NavController, private navParams: NavParams,private dataService: StarWarsService, public ga: GoogleAnalytics) {
         super(navParams.get('title'), ga)
         this.selectedItem = navParams.get('starWarsItem');
         this.objectType = this.selectedItem.constructor.name.toLowerCase();
-        this.selectedItem_FilmsList=[];
-        this.selectedItem_PeopleList=[];
+        /*this.selectedItem_FilmsList=[];
+        this.selectedItem_PeopleList=[];*/
     }
     ngOnInit(){
       this.selectedItem.associetedFilms= [];
       this.selectedItem.associetedPeople= [];
-      if(this.selectedItem_FilmsList.length<1 || this.selectedItem_PeopleList.length <1 ){
+      this.selectedItem.associetedSpecies= [];
+      this.selectedItem.associetedVehicles= [];
+      this.selectedItem.associetedStarships= [];
+      this.selectedItem.associetedPlanets= [];
+
         this.selectedItem.getAssociatedObjects(this.dataService);
         this.selectedItem_FilmsList = this.selectedItem.associetedFilms;
         this.selectedItem_PeopleList = this.selectedItem.associetedPeople;
-        //console.log('list associée !!!   '+ this.selectedItem_FilmsList );
-        //console.log('list associée !!!   '+ this.selectedItem_PeopleList );
-      }
+        this.selectedItem_SpeciesList = this.selectedItem.associetedSpecies;
+        this.selectedItem_VehiclesList = this.selectedItem.associetedVehicles;
+        this.selectedItem_StarshipsList = this.selectedItem.associetedStarships;
+        this.selectedItem_PlanetsList = this.selectedItem.associetedPlanets;
+
+
 
     }
   }

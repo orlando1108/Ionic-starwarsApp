@@ -1,0 +1,26 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>
+            Community
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+    <!--<button ion-button (click)="pushChat()">Chat</button>-->
+    <div *ngFor="let item of listEvent">
+      <div class="entete">
+        <div class="title">{{item.title}}</div>
+        <div class="date">{{item.date}}</div>
+      </div>
+      <div class="desc" [ngClass]="{ overflow: !item.visible}">
+        {{item.desc}}
+        <br/>
+        <button *ngIf="!item.visible" class="readmore" (click)="viewMore(item.id)">Read more</button>
+        <button *ngIf="item.visible" class="readmore" (click)="viewLess(item.id)">Hide</button>
+      </div>
+    </div>
+
+
+</ion-content>

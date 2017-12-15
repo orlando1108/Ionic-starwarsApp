@@ -159,7 +159,7 @@
   </ng-template>
 </ion-item>
 
-<ng-template [ngIf]= "selectedItem_FilmsList.length>0" >
+<ng-template [ngIf]= "selectedItem_FilmsList.length > 0" >
   <h1 class="title-center">Films</h1>
 <ion-scroll scrollX="true" class="scroll">
   <ion-row nowrap class="headerChip">
@@ -173,13 +173,65 @@
 </ng-template>
 
 
-<ng-template [ngIf]= "selectedItem_PeopleList.length>0" >
+<ng-template [ngIf]= "selectedItem_PeopleList.length > 0" >
 <h1 class="title-center">Pilots</h1>
 <ion-scroll scrollX="true" class="scroll" >
 <ion-row nowrap >
   <div *ngFor="let people of selectedItem_PeopleList">
     <ion-chip>
       <ion-label>{{people.name}}</ion-label>
+    </ion-chip>
+  </div>
+</ion-row>
+</ion-scroll>
+</ng-template>
+
+<ng-template [ngIf]= "selectedItem_StarshipsList.length > 0" >
+<h1 class="title-center">Starships</h1>
+<ion-scroll scrollX="true" class="scroll" >
+<ion-row nowrap >
+  <div *ngFor="let ss of selectedItem_StarshipsList">
+    <ion-chip>
+      <ion-label>{{ss.name}}</ion-label>
+    </ion-chip>
+  </div>
+</ion-row>
+</ion-scroll>
+</ng-template>
+
+<ng-template [ngIf]= "selectedItem_SpeciesList.length > 0" >
+<h1 class="title-center">Species</h1>
+<ion-scroll scrollX="true" class="scroll" >
+<ion-row nowrap >
+  <div *ngFor="let s of selectedItem_SpeciesList">
+    <ion-chip>
+      <ion-label>{{s.name}}</ion-label>
+    </ion-chip>
+  </div>
+</ion-row>
+</ion-scroll>
+</ng-template>
+
+<ng-template [ngIf]= "selectedItem_PlanetsList.length > 0" >
+<h1 class="title-center">Planets</h1>
+<ion-scroll scrollX="true" class="scroll" >
+<ion-row nowrap >
+  <div *ngFor="let planet of selectedItem_PlanetsList">
+    <ion-chip>
+      <ion-label>{{planet.name}}</ion-label>
+    </ion-chip>
+  </div>
+</ion-row>
+</ion-scroll>
+</ng-template>
+
+<ng-template [ngIf]= "selectedItem_VehiclesList.length > 0" >
+<h1 class="title-center">Vehicles</h1>
+<ion-scroll scrollX="true" class="scroll" >
+<ion-row nowrap >
+  <div *ngFor="let v of selectedItem_VehiclesList">
+    <ion-chip>
+      <ion-label>{{v.name}}</ion-label>
     </ion-chip>
   </div>
 </ion-row>
