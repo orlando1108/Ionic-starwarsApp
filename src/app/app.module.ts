@@ -9,7 +9,7 @@ import { StarWarsObject } from '../pages/starwars-tab/starWarsObject-page/starWa
 import { StarWarsIndex } from '../pages/starwars-tab/starWarsIndex-page/starWarsIndex';
 import { CommunityIndex } from '../pages/community-tab/communityIndex-page/communityIndex';
 import { ChatPage } from '../pages/community-tab/chat-page/chat';
-import { EventsPage } from '../pages/community-tab/events-page/events';
+import { EventPage } from '../pages/community-tab/event-page/event';
 import { AboutUs } from '../pages/community-tab/aboutUs-page/aboutUs';
 import { ContactUs } from '../pages/community-tab/contactUs-page/contactUs';
 import { GoogleAnalytics } from '@ionic-native/google-analytics';
@@ -27,7 +27,7 @@ const config: SocketIoConfig = { url: 'http://62.210.7.82:443', options: {} };
     StarWarsObject,
     CommunityIndex,
     ChatPage,
-    EventsPage,
+    EventPage,
     AboutUs,
     ContactUs,
     FilterPipe
@@ -49,7 +49,7 @@ const config: SocketIoConfig = { url: 'http://62.210.7.82:443', options: {} };
     StarWarsObject,
     CommunityIndex,
     ChatPage,
-    EventsPage,
+    EventPage,
     AboutUs,
     ContactUs
   ],
