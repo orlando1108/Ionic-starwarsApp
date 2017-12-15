@@ -29,4 +29,6 @@ $textColor: white;
 
 .background{
     background-image: url('../../../assets/imgs/sw bg.jpg');
+    background-color: $backgroundColor;
+    color: $textColor;
 }
