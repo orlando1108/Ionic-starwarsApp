@@ -1,6 +1,37 @@
-#headerAbout{
-    text-align: center;
+$marginHorizontal: 25px;
+$backgroundColor : black;
+$textColor: white;
+
+//To test selectors
+@mixin mixBorders{
+    border: 1px solid blue;
 }
-#imgAsso{
-    align-items: center;
+@mixin mixMargins{
+    margin: 0 $marginHorizontal 0 $marginHorizontal;    
+}
+@mixin mixCenter{
+    text-align: center;
+    margin: auto;
+}
+
+.background{
+    background-image: url('../../../assets/imgs/sw bg.jpg');
+    background-color: $backgroundColor;
+    color : $textColor;
+}
+
+#headerAbout, #buttonAboutUs, img{
+    @include mixCenter;
+}
+img{
+    margin-top: 10px;
+    width:120px;
+    height: 120px; 
+}
+.labelAboutUs{
+    @include mixMargins;  
+}
+.cardAboutUs{
+    @include mixMargins;
+    text-align: justify;
 }
