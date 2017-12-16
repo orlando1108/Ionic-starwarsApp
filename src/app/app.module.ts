@@ -6,6 +6,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { StarWarsService } from './services/starWars.services';
 import { MyApp } from './app.component';
 import { StarWarsObject } from '../pages/starwars-tab/starWarsObject-page/starWarsObject';
+import { StarWarsObjectDetail } from '../pages/starwars-tab/starWarsObjectDetail-page/starWarsObjectDetail';
 import { StarWarsIndex } from '../pages/starwars-tab/starWarsIndex-page/starWarsIndex';
 import { CommunityIndex } from '../pages/community-tab/communityIndex-page/communityIndex';
 import { ChatPage } from '../pages/community-tab/chat-page/chat';
@@ -33,8 +34,9 @@ const config: SocketIoConfig = { url: Config.AssosApiUrl, options: {} };
     UserLogChat,
     EventPage,
     AboutUs,
+    FilterPipe,
+    StarWarsObjectDetail,
     ContactUs,
-    FilterPipe
   ],
   exports: [
     FilterPipe
@@ -54,6 +56,7 @@ const config: SocketIoConfig = { url: Config.AssosApiUrl, options: {} };
     CommunityIndex,
     ChatPage,
     UserLogChat,
+    StarWarsObjectDetail,
     EventPage,
     AboutUs,
     ContactUs

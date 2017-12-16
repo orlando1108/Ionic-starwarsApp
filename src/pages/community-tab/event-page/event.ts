@@ -3,7 +3,6 @@ import { NavController } from 'ionic-angular';
 import { NavParams } from 'ionic-angular';
 import { StarWarsService } from '../../../app/services/starWars.services';
 import { People } from '../../../app/models/people';
-import { Spaceship } from '../../../app/models/spaceship';
 import { Planet } from '../../../app/models/planet';
 import { Film } from '../../../app/models/film';
 import { Vehicle } from '../../../app/models/vehicle';
