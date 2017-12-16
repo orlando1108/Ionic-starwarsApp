@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { ChatPage } from '../../../pages/community-tab/chat-page/chat';
+import { UserLogChat } from '../../../pages/community-tab/userLogChat-page/userLogChat';
 import { EventPage } from '../../../pages/community-tab/event-page/event';
-import { AboutUs} from '../../../pages/community-tab/aboutUs-page/aboutUs';
+import { AboutUs } from '../../../pages/community-tab/aboutUs-page/aboutUs';
 import { DefaultPage } from '../../../pages/defaultPage';
 import { GoogleAnalytics } from '@ionic-native/google-analytics';
 
@@ -15,14 +15,14 @@ export class CommunityIndex extends DefaultPage {
         super("assos", ga)
     }
     pushChat() {
-        this.navCtrl.push(ChatPage);
+        this.navCtrl.push(UserLogChat);
     }
     pushEvent() {
         this.navCtrl.push(EventPage);
-      }
-    pushAboutUs(){
+    }
+    pushAboutUs() {
         this.navCtrl.push(AboutUs);
-      }
+    }
     ngOnInit() {
     }
 

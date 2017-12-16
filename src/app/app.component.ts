@@ -3,6 +3,7 @@ import { Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { TabsPage } from '../pages/tabs/tabs';
+import { UserLogChat } from '../pages/community-tab/userLogChat-page/userLogChat';
 
 @Component({
   templateUrl: 'app.html'

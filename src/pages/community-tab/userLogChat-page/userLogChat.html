@@ -1,0 +1,21 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>
+            Community
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+
+<ion-content padding="true" class="has-header">
+    <div>
+        <form class="list">
+            <div style="text-align:center;" class="show-list-numbers-and-dots">
+                <p style="color:#000000;">Condtiotns</p>
+            </div>
+            <ion-input type="mail" [(ngModel)]="mail" (ngModelChange)="mailChange($event)" name="mil" placeholder="Your mail"></ion-input>
+
+        </form>
+    </div>
+    <button ion-button (click)="enter()" [disabled]="enterBtnDisabled">Enter</button>
+</ion-content>
