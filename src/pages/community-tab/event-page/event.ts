@@ -63,5 +63,12 @@ export class EventPage extends DefaultPage {
     }
 
     ngOnInit() {
+      this.dataService.getEvents()
+          .subscribe((result) => {
+              console.log('event result' + result);
+          }),
+          (error) => {
+              console.log(error);
+          };
     }
 }

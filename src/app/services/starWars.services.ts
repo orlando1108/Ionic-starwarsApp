@@ -8,6 +8,8 @@ import { Vehicle } from '../models/vehicle';
 import { Specie } from '../models/specie';
 import { Spaceship } from '../models/spaceship';
 import { Planet } from '../models/planet';
+
+import { Event } from '../models/event';
 import { jsonToObject, jsonArrayToObjectArray } from '../factory/starWarsFactory';
 import { Observable } from 'rxjs/Observable';
 import { Starwars } from '../models/starwars';
@@ -64,6 +66,16 @@ export class StarWarsService {
 			}).catch(this.handleError);
 	}
 
+
+	//
+	//Permet de récupèrer un object en fonction de son URL
+	//
+	getEvents(): Observable<Event> {
+		return this.http.get("http://127.0.0.1:3000/event")
+			.map((response) => {
+				return jsonToObject(response.json(), new Event());
+			}).catch(this.handleError);
+	}
 	//
 	//Récupération de tout les personnages
 	//
