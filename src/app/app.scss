@@ -26,7 +26,12 @@ $textColor: white;
     text-align: center;
     margin: auto;
 }
-
+.toolbar-background{
+    background-color: $backgroundColor;
+}
+.toolbar-title, .back-button{
+    color:$textColor;
+}
 .background{
     background-image: url('../../../assets/imgs/sw bg.jpg');
     background-color: $backgroundColor;
