@@ -10,8 +10,8 @@ export class Starship extends Starwars{
 	public cost_in_credits: string = "";
 	public urlFilms: string[] = [];
   public urlPilots: string[] = [];
-	public associetedPeople: People[]=[];
-	public associetedFilms: Film[]=[];
+	public associatedPeople: People[]=[];
+	public associatedFilms: Film[]=[];
 	constructor()
 	{
 		super();
@@ -42,8 +42,8 @@ private getAssociatedFilms(dataService: StarWarsService){
 	this.urlFilms.map((elem)=>{
 		 dataService.getObjectByUrl(new Film(), elem)
 				.subscribe((result) => {
-					this.associetedFilms.push(result);
-					console.log('RESULT !!! ' + JSON.stringify(result));
+					this.associatedFilms.push(result);
+					//console.log('RESULT !!! ' + JSON.stringify(result));
 				}),
 				(error) => {
 						console.log(error);
@@ -52,11 +52,12 @@ private getAssociatedFilms(dataService: StarWarsService){
 
 }
 private getAssociatedPilots(dataService: StarWarsService){
+	console.log('url pilots length  ' + this.urlPilots.length);
 	this.urlPilots.map((elem)=>{
 		dataService.getObjectByUrl(new People(), elem)
 				.subscribe((result) => {
-						this.associetedPeople.push(result);
-						console.log('RESULT !!! ' + JSON.stringify(result));
+						this.associatedPeople.push(result);
+						//console.log('RESULT !!! ' + JSON.stringify(result));
 				}),
 				(error) => {
 						console.log(error);

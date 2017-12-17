@@ -1,6 +1,7 @@
 import { Starwars } from '../models/starwars';
 import { StarWarsService } from '../services/starWars.services';
-
+import { Vehicle } from '../models/vehicle';
+import { Specie } from '../models/specie';
 import { Film } from '../models/film';
 
 export class People extends Starwars{
@@ -10,11 +11,15 @@ export class People extends Starwars{
     public eye_color: string = "";
     public hair_color: string = "";
     public urlFilms: string[] = [];
+    public urlSpecies: string[] = [];
+    public urlVehicles: string[] = [];
     public homeworld: string = "";
     public height: string = "";
     public mass: string = "";
     public skin_color: string = "";
-    public associetedFilms: Film[]=[];
+    public associatedFilms: Film[]=[];
+    public associatedVehicles: Vehicle[] = [];
+    public associatedSpecies: Specie[] = [];
 
     constructor()
     {
@@ -31,6 +36,8 @@ export class People extends Starwars{
       people.hair_color = input.hair_color;
       people.url = input.url;
       people.urlFilms = input.films;
+      people.urlSpecies = input.species;
+      people.urlVehicles = input.vehicles;
       people.homeworld = input.homeworld;
       people.height = input.height;
       people.mass = input.mass;
@@ -41,6 +48,8 @@ export class People extends Starwars{
     public getAssociatedObjects(dataService: StarWarsService){
 
       this.getAssociatedFilms(dataService);
+      this.getAssociatedSpecies(dataService);
+      this.getAssociatedVehicles(dataService);
 
   }
 
@@ -48,13 +57,39 @@ export class People extends Starwars{
   	this.urlFilms.map((elem)=>{
   		 dataService.getObjectByUrl(new Film(), elem)
   				.subscribe((result) => {
-  					this.associetedFilms.push(result);
-  					console.log('RESULT !!! ' + JSON.stringify(result));
+  					this.associatedFilms.push(result);
+  					//console.log('RESULT !!! ' + JSON.stringify(result));
   				}),
   				(error) => {
   						console.log(error);
   				};
   	});
+
+  }
+  private getAssociatedSpecies(dataService: StarWarsService){
+    this.urlSpecies.map((elem)=>{
+       dataService.getObjectByUrl(new Specie(), elem)
+          .subscribe((result) => {
+            this.associatedSpecies.push(result);
+            //console.log('RESULT !!! ' + JSON.stringify(result));
+          }),
+          (error) => {
+              console.log(error);
+          };
+    });
+
+  }
+  private getAssociatedVehicles(dataService: StarWarsService){
+    this.urlVehicles.map((elem)=>{
+       dataService.getObjectByUrl(new Vehicle(), elem)
+          .subscribe((result) => {
+            this.associatedVehicles.push(result);
+            //console.log('RESULT !!! ' + JSON.stringify(result));
+          }),
+          (error) => {
+              console.log(error);
+          };
+    });
 
   }
 }

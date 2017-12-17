@@ -16,63 +16,100 @@ import { StarWarsObjectDetail } from '../../../pages/starwars-tab/starWarsObject
 //import { Film } from '../../../models/film';
 
 @Component({
-    selector: 'page-starWarsObject',
-    templateUrl: 'starWarsObject.html'
+  selector: 'page-starWarsObject',
+  templateUrl: 'starWarsObject.html'
 })
 export class StarWarsObject extends DefaultPage {
-    /*public listPersonnages: People[] = [];
-    public listVaisseaux: Spaceship[] = [];
-    public listFilms: Film[] = [];
-    public listPlanets: Planet[] = [];
-    public listVehicules: Vehicle[] = [];*/
+  /*public listPersonnages: People[] = [];
+  public listVaisseaux: Spaceship[] = [];
+  public listFilms: Film[] = [];
+  public listPlanets: Planet[] = [];
+  public listVehicules: Vehicle[] = [];*/
 
-    public starWarsObjectsList: any[] = [];
-    public shouldShowCancel: boolean;
-    public searchInput: any;
-    public searching: boolean = true;
-    private starWarsObject: Starwars;
+  private starWarsObjectsList: any[] = [];
+  private starWarsObjectsSearchList: any[] = [];
+  public objectsList:any[] = [];
+  public shouldShowCancel: boolean;
+  public searchInput: any;
+  public initialization: boolean = true;
+  private searching: boolean;
+  private starWarsObject: Starwars;
+  public lazyEnabled:boolean;
+
+  constructor(public navCtrl: NavController, private navParams: NavParams, private dataService: StarWarsService, public ga: GoogleAnalytics) {
+    super(navParams.get('title'), ga)
+    this.starWarsObject = navParams.get('starWarsObject');
+    this.shouldShowCancel = true;
+    this.lazyEnabled = true;
+    this.searching = false;
 
 
-    constructor(public navCtrl: NavController, private navParams: NavParams, private dataService: StarWarsService, public ga: GoogleAnalytics) {
-        super(navParams.get('title'), ga)
-        this.starWarsObject = navParams.get('starWarsObject');
-        this.shouldShowCancel = true;
-        //this.searching = true;
-        console.log("searching  "+ this.searching  );
-
-
-        this.dataService.getListObject(this.starWarsObject)
-            .subscribe((result) => {
-                this.starWarsObjectsList = result;
-                this.searching = false;
-            }),
+  }
+  ngOnInit(){
+    this.dataService.getListObject(this.starWarsObject)
+    .subscribe((result) => {
+      this.starWarsObjectsList = result;
+      this.objectsList = this.starWarsObjectsList;
+      this.initialization = false;
+    }),
+    (error) => {
+      console.log(error);
+    };
+  }
+  // go to object detail page
+  pushObjectDetail(obj:Starwars, name:string){
+    this.navCtrl.push(StarWarsObjectDetail, {
+      starWarsItem: obj,
+      title: name});
+    }
+    // lazy loading
+    retrieveMoreFromAPI(infiniteScroll){
+      this.lazyEnabled = this.dataService.isThereMoreDataToLoad();
+      console.log ('enabled ? '+ this.lazyEnabled);
+      if(this.lazyEnabled){
+        setTimeout(() => {
+          this.dataService.getNextPage(this.starWarsObject)
+          .subscribe((result) => {
+            result.map((e)=>{
+              console.log('item list api  ' + e);
+              this.searching ? this.starWarsObjectsSearchList.push(e) :this.starWarsObjectsList.push(e);
+            });
             (error) => {
-                console.log(error);
+              console.log(error);
             };
+          });
+          console.log('Async operation has ended');
+          infiniteScroll.complete();
+          this.objectsList = this.searching ? this.starWarsObjectsSearchList :this.starWarsObjectsList;
+          //this.lazyEnabled = this.dataService.isThereMoreDataToLoad();
+        }, 500);
+      }
+
+    }
+
+    //search starwars item
+    searchItems(searchEvent){
+      this.searching = true;
+      this.starWarsObjectsSearchList = [];
+      this.dataService.getSearchResult(this.starWarsObject, this.searchInput )
+      .subscribe((result) => {
+        result.map((e)=>{
+          console.log('item list api  ' + e.id);
+          this.starWarsObjectsSearchList.push(e);
+        });
+      }),
+      (error) => {
+        console.log(error);
+      };
+      this.objectsList = this.starWarsObjectsSearchList;
+      this.lazyEnabled = this.dataService.isThereMoreDataToLoad();
+      console.log('enabled lazy ? after search '+ this.lazyEnabled );
+    }
+
+    onSearchCanceled_Cleared(searchEvent){
+      this.searching = false;
+      this.dataService.resetPageInformations();
     }
 
 
-    pushObjectDetail(obj:Starwars, name:string){
-     this.navCtrl.push(StarWarsObjectDetail, {
-       starWarsItem: obj,
-       title: name});
-   }
-
-   retrieveMoreFromAPI(infiniteScroll){
-     setTimeout(() => {
-     this.starWarsObjectsList.push(this.dataService.getNextPage(this.starWarsObject));
-     console.log('Async operation has ended');
-     infiniteScroll.complete();
-   }, 500);
-
-   /*return new Promise((resolve) => {
-      setTimeout(() => {
-        this.starWarsObjectsList.push(this.dataService.getNextPage(this.starWarsObject));
-        console.log('Async operation has ended');
-        resolve();
-      }, 500);
-    })*/
- }
-
-
-}
+  }

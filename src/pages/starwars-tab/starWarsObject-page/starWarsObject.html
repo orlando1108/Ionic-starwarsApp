@@ -8,12 +8,15 @@
 
 
 <ion-content padding>
-  <div *ngIf="searching" class="spinner-container">
+  <div *ngIf="initialization" class="spinner-container">
        <ion-spinner name="bubbles"></ion-spinner>
    </div>
-  <ion-searchbar *ngIf="!searching"
+  <ion-searchbar *ngIf="!initialization"
     [(ngModel)]="searchInput"
-    [showCancelButton]="shouldShowCancel">
+    [showCancelButton]="shouldShowCancel"
+    (ionInput)="searchItems($event)"
+    (ionCancel)="onSearchCanceled_Cleared($event)"
+    (ionClear)="onSearchCanceled_Cleared($event)">
   </ion-searchbar>
 
 
@@ -29,7 +32,7 @@
 
 
      <ion-list>
-       <ion-card *ngFor="let item of starWarsObjectsList " (click)="pushObjectDetail(item, item.name || item.title)">
+       <ion-card *ngFor="let item of objectsList " (click)="pushObjectDetail(item, item.name || item.title)">
          <img src="http://www.uniqlo.com/sg/corp/pressrelease/STARWARS.PNG"/>
          <ion-card-content>
            <ion-card-title class="title-center">
@@ -40,7 +43,7 @@
        </ion-card>
 </ion-list>
 
-<ion-infinite-scroll (ionInfinite)="retrieveMoreFromAPI($event)">
+<ion-infinite-scroll (ionInfinite)="retrieveMoreFromAPI($event)" [enabled]="lazyEnabled" >
    <ion-infinite-scroll-content>
    </ion-infinite-scroll-content>
  </ion-infinite-scroll>
