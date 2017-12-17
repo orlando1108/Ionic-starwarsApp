@@ -7,7 +7,7 @@ export class DefaultPage {
     public title: string = "";
     constructor(title: string, public ga: GoogleAnalytics) {
         this.title = title;
-        this.ga.startTrackerWithId("UA-111106743-1")
+        this.ga.startTrackerWithId("UA-111264930-1")
             .then(() => {
                 this.ga.trackView(title);
             })

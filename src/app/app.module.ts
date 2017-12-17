@@ -10,6 +10,7 @@ import { StarWarsObjectDetail } from '../pages/starwars-tab/starWarsObjectDetail
 import { StarWarsIndex } from '../pages/starwars-tab/starWarsIndex-page/starWarsIndex';
 import { CommunityIndex } from '../pages/community-tab/communityIndex-page/communityIndex';
 import { ChatPage } from '../pages/community-tab/chat-page/chat';
+import { UserLogChat } from '../pages/community-tab/userLogChat-page/userLogChat';
 import { EventPage } from '../pages/community-tab/event-page/event';
 import { AboutUs } from '../pages/community-tab/aboutUs-page/aboutUs';
 import { ContactUs } from '../pages/community-tab/contactUs-page/contactUs';
@@ -18,7 +19,9 @@ import { HttpModule } from '@angular/http';
 import { TabsPage } from '../pages/tabs/tabs';
 import { SocketIoModule, SocketIoConfig } from 'ng-socket-io';
 import { FilterPipe } from '../tools/filterPipe';
-const config: SocketIoConfig = { url: 'http://62.210.7.82:443', options: {} };
+import { Config } from './config';
+
+const config: SocketIoConfig = { url: Config.AssosApiUrl, options: {} };
 
 @NgModule({
   declarations: [
@@ -28,6 +31,7 @@ const config: SocketIoConfig = { url: 'http://62.210.7.82:443', options: {} };
     StarWarsObject,
     CommunityIndex,
     ChatPage,
+    UserLogChat,
     EventPage,
     AboutUs,
     FilterPipe,
@@ -51,7 +55,7 @@ const config: SocketIoConfig = { url: 'http://62.210.7.82:443', options: {} };
     StarWarsObject,
     CommunityIndex,
     ChatPage,
-    AboutUs,
+    UserLogChat,
     StarWarsObjectDetail,
     EventPage,
     AboutUs,
