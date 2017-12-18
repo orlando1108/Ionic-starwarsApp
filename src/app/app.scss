@@ -20,7 +20,7 @@ $backgroundColor : black;
 $textColor: white;
 
 @mixin mixMargins{
-    margin: 0 $marginHorizontal 0 $marginHorizontal;    
+    margin: 0 $marginHorizontal 0 $marginHorizontal;
 }
 @mixin mixCenter{
     text-align: center;
@@ -33,7 +33,7 @@ $textColor: white;
     color:$textColor;
 }
 .background{
-    background-image: url('../../../assets/imgs/sw bg.jpg');
-    background-color: $backgroundColor;
+    background-image: url('../../../assets/imgs/sw bg.png');
+  //  background-color: $backgroundColor;
     color: $textColor;
 }

@@ -4,20 +4,24 @@
             {{title}}
         </ion-title>
     </ion-navbar>
+    <ion-toolbar>
+      <ion-searchbar *ngIf="!initialization"
+        [(ngModel)]="searchInput"
+        [showCancelButton]="shouldShowCancel"
+        (ionInput)="searchItems($event)"
+        (ionCancel)="onSearchCanceled_Cleared($event)"
+        (ionClear)="onSearchCanceled_Cleared($event)">
+      </ion-searchbar>
+    </ion-toolbar>
+
 </ion-header>
 
 
-<ion-content padding>
+<ion-content  class="background">
   <div *ngIf="initialization" class="spinner-container">
        <ion-spinner name="bubbles"></ion-spinner>
    </div>
-  <ion-searchbar *ngIf="!initialization"
-    [(ngModel)]="searchInput"
-    [showCancelButton]="shouldShowCancel"
-    (ionInput)="searchItems($event)"
-    (ionCancel)="onSearchCanceled_Cleared($event)"
-    (ionClear)="onSearchCanceled_Cleared($event)">
-  </ion-searchbar>
+
 
 
 <!--  <ion-list>
@@ -32,15 +36,13 @@
 
 
      <ion-list>
-       <ion-card *ngFor="let item of objectsList " (click)="pushObjectDetail(item, item.name || item.title)">
-         <img src="http://www.uniqlo.com/sg/corp/pressrelease/STARWARS.PNG"/>
-         <ion-card-content>
-           <ion-card-title class="title-center">
-             {{item.name || item.title}}
-             </ion-card-title>
+       <ion-item *ngFor="let item of objectsList " (click)="pushObjectDetail(item, item.name || item.title)" class="cardList" >
 
-         </ion-card-content>
-       </ion-card>
+         <ion-thumbnail item-start>
+            <img src="http://www.uniqlo.com/sg/corp/pressrelease/STARWARS.PNG" />
+         </ion-thumbnail>
+         <p> {{item.name || item.title}}</p>
+       </ion-item>
 </ion-list>
 
 <ion-infinite-scroll (ionInfinite)="retrieveMoreFromAPI($event)" [enabled]="lazyEnabled" >
