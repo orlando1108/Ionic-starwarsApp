@@ -17,7 +17,7 @@
 </ion-header>
 
 
-<ion-content  class="background">
+<ion-content padding  class="background">
   <div *ngIf="initialization" class="spinner-container">
        <ion-spinner name="bubbles"></ion-spinner>
    </div>
@@ -36,13 +36,16 @@
 
 
      <ion-list>
-       <ion-item *ngFor="let item of objectsList " (click)="pushObjectDetail(item, item.name || item.title)" class="cardList" >
+       <ion-item no-lines *ngFor="let item of objectsList " class="item" (click)="pushObjectDetail(item, item.name || item.title)" >
 
-         <ion-thumbnail item-start>
-            <img src="http://www.uniqlo.com/sg/corp/pressrelease/STARWARS.PNG" />
-         </ion-thumbnail>
-         <p> {{item.name || item.title}}</p>
-       </ion-item>
+
+  <ion-thumbnail item-start>
+    <img src="http://www.uniqlo.com/sg/corp/pressrelease/STARWARS.PNG">
+  </ion-thumbnail>
+  <p> {{item.name || item.title}}</p>
+</ion-item>
+
+
 </ion-list>
 
 <ion-infinite-scroll (ionInfinite)="retrieveMoreFromAPI($event)" [enabled]="lazyEnabled" >
