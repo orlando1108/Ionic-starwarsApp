@@ -13,7 +13,9 @@
             <div style="text-align:center;" class="show-list-numbers-and-dots">
                 <p style="color:#000000;">Condtiotns</p>
             </div>
-            <ion-input type="mail" [(ngModel)]="mail" (ngModelChange)="mailChange($event)" name="mil" placeholder="Your mail"></ion-input>
+            <ion-input type="text" [(ngModel)]="username" (ngModelChange)="updateInput($event,'username')" name="username" placeholder="Your username"></ion-input>
+
+            <ion-input type="mail" [(ngModel)]="mail" (ngModelChange)="updateInput($event,'mail')" name="mail" placeholder="Your mail"></ion-input>
 
         </form>
     </div>
