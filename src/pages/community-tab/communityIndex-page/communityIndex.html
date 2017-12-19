@@ -8,16 +8,8 @@
 
 <ion-content padding class="background">
     
-    <button ion-button color="secondary" class="buttonStarwars"  outline round (click)="pushEvent()">
-        <img class="imgStarwars" src="assets/imgs//agenda.png"/>              
-        <span class="swHomeTitle">Events</span>
-    </button>
-    <button ion-button color="danger" class="buttonStarwars"  outline round (click)="pushChat()">
-        <img class="imgStarwars" src="assets/imgs//chat.png"/>
-        <span >Chat</span>
-    </button>
-    <button ion-button class="buttonStarwars" outline round (click)="pushAboutUs()">
-        <img class="imgStarwars" src="assets/imgs//about-us.png"/>              
-        <span>About Us !</span>
-    </button>
+    <button ion-button class="buttonCommunity" outline round (click)="pushEvent()">Events</button>
+    <button ion-button class="buttonCommunity" color="danger" outline round (click)="pushChat()">Chat</button>
+    <button ion-button class="buttonCommunity" color="secondary" outline round (click)="pushAboutUs()">About Us</button>
+
 </ion-content>
