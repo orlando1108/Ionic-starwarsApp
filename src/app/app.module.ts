@@ -20,7 +20,6 @@ import { GoogleAnalytics } from '@ionic-native/google-analytics';
 import { HttpModule } from '@angular/http';
 import { TabsPage } from '../pages/tabs/tabs';
 import { SocketIoModule, SocketIoConfig } from 'ng-socket-io';
-import { FilterPipe } from '../tools/filterPipe';
 import { Config } from './config';
 
 const config: SocketIoConfig = { url: Config.AssosApiUrl, options: {} };
@@ -36,12 +35,10 @@ const config: SocketIoConfig = { url: Config.AssosApiUrl, options: {} };
     UserLogChat,
     EventPage,
     AboutUs,
-    FilterPipe,
     StarWarsObjectDetail,
     ContactUs,
   ],
   exports: [
-    FilterPipe
   ],
   imports: [
     BrowserModule,

@@ -36,20 +36,27 @@ constructor(public navCtrl: NavController, private navParams: NavParams,private 
         this.selectedItem_PeopleList=[];*/
     }
     ngOnInit(){
-      this.selectedItem.associetedFilms= [];
-      this.selectedItem.associetedPeople= [];
-      this.selectedItem.associetedSpecies= [];
-      this.selectedItem.associetedVehicles= [];
-      this.selectedItem.associetedStarships= [];
-      this.selectedItem.associetedPlanets= [];
+      this.selectedItem.associatedFilms= [];
+      this.selectedItem.associatedPeople= [];
+      this.selectedItem.associatedSpecies= [];
+      this.selectedItem.associatedVehicles= [];
+      this.selectedItem.associatedStarships= [];
+      this.selectedItem.associatedPlanets= [];
 
         this.selectedItem.getAssociatedObjects(this.dataService);
-        this.selectedItem_FilmsList = this.selectedItem.associetedFilms;
-        this.selectedItem_PeopleList = this.selectedItem.associetedPeople;
-        this.selectedItem_SpeciesList = this.selectedItem.associetedSpecies;
-        this.selectedItem_VehiclesList = this.selectedItem.associetedVehicles;
-        this.selectedItem_StarshipsList = this.selectedItem.associetedStarships;
-        this.selectedItem_PlanetsList = this.selectedItem.associetedPlanets;
+        this.selectedItem_FilmsList = this.selectedItem.associatedFilms;
+        this.selectedItem_PeopleList = this.selectedItem.associatedPeople;
+        this.selectedItem_SpeciesList = this.selectedItem.associatedSpecies;
+        this.selectedItem_VehiclesList = this.selectedItem.associatedVehicles;
+        this.selectedItem_StarshipsList = this.selectedItem.associatedStarships;
+        this.selectedItem_PlanetsList = this.selectedItem.associatedPlanets;
+
+        /*console.log('films list !!! '+ this.selectedItem_FilmsList.length);
+        console.log('planets list !!! '+ this.selectedItem_PlanetsList.length);
+        console.log('species list !!! '+ this.selectedItem_SpeciesList.length);
+        console.log('vehicles list !!! '+ this.selectedItem_VehiclesList.length);
+        console.log('people list !!! '+ this.selectedItem_PeopleList.length);
+        console.log('starships list !!! '+ this.selectedItem_StarshipsList.length);*/
 
 
 

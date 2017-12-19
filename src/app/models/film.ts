@@ -18,11 +18,11 @@ export class Film extends Starwars {
   public urlStarships: string[] = [];
   public urlVehicles: string[] = [];
   public urlSpecies: string[] = [];
-  public associetedPeople: People[] = [];
-    public associetedPlanets: People[] = [];
-      public associetedStarships: People[] = [];
-        public associetedVehicles: People[] = [];
-          public associetedSpecies: People[] = [];
+  public associatedPeople: People[] = [];
+  public associatedPlanets: Planet[] = [];
+  public associatedStarships: Starship[] = [];
+  public associatedVehicles: Vehicle[] = [];
+  public associatedSpecies: Specie[] = [];
 
   constructor() {
     super();
@@ -62,7 +62,7 @@ private getAssociatedPilots(dataService: StarWarsService){
 	this.urlCharacters.map((elem)=>{
 		dataService.getObjectByUrl(new People(), elem)
 				.subscribe((result) => {
-						this.associetedPeople.push(result);
+						this.associatedPeople.push(result);
 						console.log('RESULT !!! ' + JSON.stringify(result));
 				}),
 				(error) => {
@@ -76,7 +76,7 @@ private getAssociatedPlanets(dataService: StarWarsService){
 	this.urlPlanets.map((elem)=>{
 		dataService.getObjectByUrl(new Planet(), elem)
 				.subscribe((result) => {
-						this.associetedPlanets.push(result);
+						this.associatedPlanets.push(result);
 						console.log('RESULT !!! ' + JSON.stringify(result));
 				}),
 				(error) => {
@@ -89,7 +89,7 @@ private getAssociatedStarships(dataService: StarWarsService){
 	this.urlStarships.map((elem)=>{
 		dataService.getObjectByUrl(new Starship(), elem)
 				.subscribe((result) => {
-						this.associetedStarships.push(result);
+						this.associatedStarships.push(result);
 						console.log('RESULT !!! ' + JSON.stringify(result));
 				}),
 				(error) => {
@@ -102,7 +102,7 @@ private getAssociatedSpecies(dataService: StarWarsService){
 	this.urlSpecies.map((elem)=>{
 		dataService.getObjectByUrl(new Specie(), elem)
 				.subscribe((result) => {
-						this.associetedSpecies.push(result);
+						this.associatedSpecies.push(result);
 						console.log('RESULT !!! ' + JSON.stringify(result));
 				}),
 				(error) => {
@@ -114,7 +114,7 @@ private getAssociatedVehicles(dataService: StarWarsService){
 	this.urlVehicles.map((elem)=>{
 		dataService.getObjectByUrl(new Vehicle(), elem)
 				.subscribe((result) => {
-						this.associetedVehicles.push(result);
+						this.associatedVehicles.push(result);
 						console.log('RESULT !!! ' + JSON.stringify(result));
 				}),
 				(error) => {
