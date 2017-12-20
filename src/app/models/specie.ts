@@ -14,8 +14,8 @@ export class Specie extends Starwars{
   public name: string = "";
 	public urlPeople: string[] = [];
   public skin_colors: string = "";
-	public people: People[]=[];
-	public films: Film[]=[];
+	public associatedPeople: People[] = [];
+	public associatedFilms: Film[] = [];
 
 	constructor()
 	{
@@ -45,7 +45,7 @@ export class Specie extends Starwars{
   /*  console.log('URLS !!! ' + this.urlPilots);
 		console.log('id  '+ this.id);*/
     this.getAssociatedFilms(dataService);
-		this.getAssociatedPilots(dataService);
+		this.getAssociatedPeople(dataService);
 
 }
 
@@ -53,8 +53,8 @@ private getAssociatedFilms(dataService: StarWarsService){
 	this.urlFilms.map((elem)=>{
 		 dataService.getObjectByUrl(new Film(), elem)
 				.subscribe((result) => {
-					this.films.push(result);
-					console.log('RESULT !!! ' + JSON.stringify(result));
+					this.associatedFilms.push(result);
+					//console.log('RESULT !!! ' + JSON.stringify(result));
 				}),
 				(error) => {
 						console.log(error);
@@ -62,12 +62,12 @@ private getAssociatedFilms(dataService: StarWarsService){
 	});
 
 }
-private getAssociatedPilots(dataService: StarWarsService){
+private getAssociatedPeople(dataService: StarWarsService){
 	this.urlPeople.map((elem)=>{
 		dataService.getObjectByUrl(new People(), elem)
 				.subscribe((result) => {
-						this.people.push(result);
-						console.log('RESULT !!! ' + JSON.stringify(result));
+						this.associatedPeople.push(result);
+						//console.log('RESULT !!! ' + JSON.stringify(result));
 				}),
 				(error) => {
 						console.log(error);

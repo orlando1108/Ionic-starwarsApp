@@ -7,7 +7,7 @@
 </ion-header>
 
 
-<ion-content >
+<ion-content class="background" >
 
   <!--  <ng-template [ngIf]= "isVehicle" >
   <h2> {{selectedItem.name || selectedItem.title }} </h2>
@@ -162,25 +162,20 @@
 <ng-template [ngIf]= "selectedItem_FilmsList.length > 0" >
   <h1 class="title-center">Films</h1>
 <ion-scroll scrollX="true" class="scroll">
-  <ion-row nowrap class="headerChip">
-    <div *ngFor="let film of selectedItem_FilmsList">
-      <ion-chip>
-        <ion-label>{{film.title}}</ion-label>
-      </ion-chip>
+  <ion-row nowrap >
+  <div *ngFor="let item of selectedItem_FilmsList" class="detailCard" (click)="goToAssociatedObjectDetail(item, item.name || item.title)">
+       <p>{{item.title}}</p>
     </div>
-  </ion-row>
+    </ion-row>
 </ion-scroll>
 </ng-template>
 
-
 <ng-template [ngIf]= "selectedItem_PeopleList.length > 0" >
-<h1 class="title-center">Pilots</h1>
+<h1 class="title-center">People</h1>
 <ion-scroll scrollX="true" class="scroll" >
 <ion-row nowrap >
-  <div *ngFor="let people of selectedItem_PeopleList">
-    <ion-chip>
-      <ion-label>{{people.name}}</ion-label>
-    </ion-chip>
+  <div *ngFor="let item of selectedItem_PeopleList" class="detailCard" (click)="goToAssociatedObjectDetail(item, item.name || item.title)">
+      <p>{{item.name}}</p>
   </div>
 </ion-row>
 </ion-scroll>
@@ -190,10 +185,8 @@
 <h1 class="title-center">Starships</h1>
 <ion-scroll scrollX="true" class="scroll" >
 <ion-row nowrap >
-  <div *ngFor="let ss of selectedItem_StarshipsList">
-    <ion-chip>
-      <ion-label>{{ss.name}}</ion-label>
-    </ion-chip>
+  <div *ngFor="let item of selectedItem_StarshipsList" class="detailCard" (click)="goToAssociatedObjectDetail(item, item.name || item.title)">
+      <p>{{item.name}}</p>
   </div>
 </ion-row>
 </ion-scroll>
@@ -203,10 +196,8 @@
 <h1 class="title-center">Species</h1>
 <ion-scroll scrollX="true" class="scroll" >
 <ion-row nowrap >
-  <div *ngFor="let s of selectedItem_SpeciesList">
-    <ion-chip>
-      <ion-label>{{s.name}}</ion-label>
-    </ion-chip>
+  <div *ngFor="let item of selectedItem_SpeciesList" class="detailCard" (click)="goToAssociatedObjectDetail(item, item.name || item.title)">
+      <p>{{item.name}}</p>
   </div>
 </ion-row>
 </ion-scroll>
@@ -216,10 +207,8 @@
 <h1 class="title-center">Planets</h1>
 <ion-scroll scrollX="true" class="scroll" >
 <ion-row nowrap >
-  <div *ngFor="let planet of selectedItem_PlanetsList">
-    <ion-chip>
-      <ion-label>{{planet.name}}</ion-label>
-    </ion-chip>
+  <div *ngFor="let item of selectedItem_PlanetsList" class="detailCard" (click)="goToAssociatedObjectDetail(item, item.name || item.title)">
+      <p>{{item.name}}</p>
   </div>
 </ion-row>
 </ion-scroll>
@@ -229,10 +218,8 @@
 <h1 class="title-center">Vehicles</h1>
 <ion-scroll scrollX="true" class="scroll" >
 <ion-row nowrap >
-  <div *ngFor="let v of selectedItem_VehiclesList">
-    <ion-chip>
-      <ion-label>{{v.name}}</ion-label>
-    </ion-chip>
+  <div *ngFor="let item of selectedItem_VehiclesList" class="detailCard" (click)="goToAssociatedObjectDetail(item, item.name || item.title)">
+      <p>{{item.name}}</p>
   </div>
 </ion-row>
 </ion-scroll>

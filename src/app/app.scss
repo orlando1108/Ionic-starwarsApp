@@ -20,15 +20,21 @@ $backgroundColor : black;
 $textColor: white;
 
 @mixin mixMargins{
-    margin: 0 $marginHorizontal 0 $marginHorizontal;    
+    margin: 0 $marginHorizontal 0 $marginHorizontal;
 }
 @mixin mixCenter{
     text-align: center;
     margin: auto;
 }
-
+.toolbar-background{
+    background-color: $backgroundColor;
+}
+.toolbar-title, .back-button{
+    color:$textColor;
+}
 .background{
-    background-image: url('../../../assets/imgs/sw bg.jpg');
+    background-image: url('../../../assets/imgs/swbg.png');
     background-color: $backgroundColor;
     color: $textColor;
 }
+//c

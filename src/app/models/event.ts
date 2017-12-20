@@ -11,7 +11,7 @@ export class Event {
 
   public static jsonToObject(input): Event {
     let event = new Event();
-    event.id = input.id;
+    event.id = input.ID;
     event.title = input.Title;
     event.desc = input.Desc;
     event.visible = false;

@@ -15,8 +15,8 @@ export class Planet extends Starwars {
 	public orbital_period: string = "";
 	public urlFilms: string[] = [];
 	public urlResidents: string[] = [];
-	public associetedPeople: People[]=[];
-	public associetedFilms: Film[]=[];
+	public associatedPeople: People[]=[];
+	public associatedFilms: Film[]=[];
 
 	constructor() {
 		super();
@@ -33,8 +33,8 @@ export class Planet extends Starwars {
 		planet.gravity = input.gravity;
 		planet.url = input.url;
 		planet.population = input.population;
-		planet.associetedFilms = input.films;
-		planet.associetedPeople = input.residents;
+		planet.urlFilms = input.films;
+		planet.urlResidents = input.residents;
 		planet.terrain = input.terrain;
 		planet.orbital_period = input.orbital_period;
 		return planet;
@@ -42,10 +42,13 @@ export class Planet extends Starwars {
 
 	public getAssociatedObjects(dataService: StarWarsService){
 
-  /*  console.log('URLS !!! ' + this.urlPilots);
-		console.log('id  '+ this.id);*/
+  /* console.log('URLS !!!'+ this.urlResidents);
+	 console.log('URLS !!!'+ this.urlFilms);*/
+	 this.getAssociatedResidents(dataService);
     this.getAssociatedFilms(dataService);
-		this.getAssociatedPilots(dataService);
+
+		/*console.log(' final list residents !!!'+ this.associatedResidents.length);
+ 	 console.log('final list films !!!'+ this.associatedFilms.length);*/
 
 }
 
@@ -53,8 +56,8 @@ private getAssociatedFilms(dataService: StarWarsService){
 	this.urlFilms.map((elem)=>{
 		 dataService.getObjectByUrl(new Film(), elem)
 				.subscribe((result) => {
-					this.associetedFilms.push(result);
-					console.log('RESULT !!! ' + JSON.stringify(result));
+					this.associatedFilms.push(result);
+					//console.log('RESULT !!! ' + JSON.stringify(result));
 				}),
 				(error) => {
 						console.log(error);
@@ -62,12 +65,12 @@ private getAssociatedFilms(dataService: StarWarsService){
 	});
 
 }
-private getAssociatedPilots(dataService: StarWarsService){
+private getAssociatedResidents(dataService: StarWarsService){
 	this.urlResidents.map((elem)=>{
 		dataService.getObjectByUrl(new People(), elem)
 				.subscribe((result) => {
-						this.associetedPeople.push(result);
-						console.log('RESULT !!! ' + JSON.stringify(result));
+						this.associatedPeople.push(result);
+					//	console.log('RESULT !!! ' + JSON.stringify(result));
 				}),
 				(error) => {
 						console.log(error);

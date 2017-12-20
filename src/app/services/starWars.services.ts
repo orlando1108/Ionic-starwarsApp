@@ -18,11 +18,13 @@ import "rxjs";
 export class StarWarsService {
 
 	//private oldSearch: string = "";
-	private currentPage: number = 0;
+	private currentPage:number;
 	private lastPage: number = 0;
 	private nextPageUrl: string = "";
+	private principalNextPageUrl: string = "";
 
 	constructor(private http: Http) {
+		this.currentPage = 0;
 	}
 	//
 	//Méthode appelé en cas d'erreur
@@ -49,21 +51,27 @@ export class StarWarsService {
 		if (urlRequest != "people") {
 			urlRequest += "s";
 		}
-		urlRequest = `https://swapi.co/api/${urlRequest}`
+		urlRequest = `https://swapi.co/api/${urlRequest}`;
+		this.currentPage = 1;
 		return this.http.get(urlRequest)
 			.map((response) => {
-				this.currentPage = 1;
+
 				this.nextPageUrl = response.json()["next"];
+				this.principalNextPageUrl = this.nextPageUrl ;
 				this.lastPage = Math.ceil(response.json()["count"] / 10);
 				return jsonArrayToObjectArray(response.json()["results"], obj);
 			}).catch(this.handleError);
+
+
 	}
 	//
 	//Permet de récupèrer un object en fonction de son URL
 	//
  getObjectByUrl(obj: Starwars, url): Observable<any> {
+	 console.log('URL !!! '+ url );
 		return this.http.get(url)
 			.map((response) => {
+				console.log('OBJET PLANET ??? '+ response.json());
 				return jsonToObject(response.json(), obj);
 			}).catch(this.handleError);
 	}
@@ -217,14 +225,50 @@ export class StarWarsService {
 	getLastPage(): number {
 		return this.lastPage;
 	}
+ //prevenir un crash de l'appli si il n'y a pas d'autres pages à lire
+	isThereMoreDataToLoad(): boolean {
+		//return this.lastPage != this.currentPage;
+		return this.nextPageUrl != null;
+	}
 
 	getNextPage(obj:any): Observable<any[]> {
 		//let urlRequest = obj.constructor.name.toLowerCase();
-		this.currentPage++;
-		return this.http.get(this.nextPageUrl)
+
+			this.lastPage <2 ? this.currentPage = 1 : this.currentPage++;
+			console.log('current/last page  '+ this.currentPage+ '/'+ this.lastPage );
+			//console.log(' next page URL !  '+ this.nextPageUrl);
+			return this.http.get(this.nextPageUrl)
+				.map((response) => {
+					//console.log('JSON nb objects!!!  '+ response.json()["count"]);
+					this.nextPageUrl = response.json()["next"];
+					console.log('next page '+ this.nextPageUrl);
+					return jsonArrayToObjectArray(response.json()["results"],obj);
+				}).catch(this.handleError);
+
+
+	}
+
+	// recherche un item starwars à partir d'un type
+	getSearchResult(obj:Starwars, keyWord): Observable<any[]> {
+		let searchObject = obj.constructor.name.toLowerCase();
+		if (searchObject != "people") {
+			  searchObject += "s";
+		}
+		this.currentPage = 1;
+		console.log('current/last page  '+ this.currentPage+ '/'+ this.lastPage );
+		return this.http.get(`https://swapi.co/api/${searchObject}/?search=${keyWord}`)
 			.map((response) => {
-				console.log('JSON !!!  '+ jsonArrayToObjectArray(response.json()["results"],obj));
+				//console.log('JSON !!!  '+ jsonArrayToObjectArray(response.json()["results"],obj));
+				this.nextPageUrl = response.json()["next"];
+				this.lastPage = Math.ceil(response.json()["count"] / 10);
 				return jsonArrayToObjectArray(response.json()["results"],obj);
 			}).catch(this.handleError);
 	}
+
+	resetPageInformations(){
+		this.currentPage = 1;
+		this.nextPageUrl = this.principalNextPageUrl;
+		//this.lastPage = 0;
+	}
+
 }

@@ -4,6 +4,8 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 import { StarWarsService } from './services/starWars.services';
+import { ChatService } from './services/chat.service';
+
 import { MyApp } from './app.component';
 import { StarWarsObject } from '../pages/starwars-tab/starWarsObject-page/starWarsObject';
 import { StarWarsObjectDetail } from '../pages/starwars-tab/starWarsObjectDetail-page/starWarsObjectDetail';
@@ -18,7 +20,6 @@ import { GoogleAnalytics } from '@ionic-native/google-analytics';
 import { HttpModule } from '@angular/http';
 import { TabsPage } from '../pages/tabs/tabs';
 import { SocketIoModule, SocketIoConfig } from 'ng-socket-io';
-import { FilterPipe } from '../tools/filterPipe';
 import { Config } from './config';
 
 const config: SocketIoConfig = { url: Config.AssosApiUrl, options: {} };
@@ -34,12 +35,10 @@ const config: SocketIoConfig = { url: Config.AssosApiUrl, options: {} };
     UserLogChat,
     EventPage,
     AboutUs,
-    FilterPipe,
     StarWarsObjectDetail,
     ContactUs,
   ],
   exports: [
-    FilterPipe
   ],
   imports: [
     BrowserModule,
@@ -63,6 +62,7 @@ const config: SocketIoConfig = { url: Config.AssosApiUrl, options: {} };
   ],
   providers: [
     StarWarsService,
+    ChatService,
     StatusBar,
     SplashScreen,
     GoogleAnalytics,
