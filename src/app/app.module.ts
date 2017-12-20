@@ -4,6 +4,8 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 import { StarWarsService } from './services/starWars.services';
+import { ChatService } from './services/chat.service';
+
 import { MyApp } from './app.component';
 import { StarWarsObject } from '../pages/starwars-tab/starWarsObject-page/starWarsObject';
 import { StarWarsObjectDetail } from '../pages/starwars-tab/starWarsObjectDetail-page/starWarsObjectDetail';
@@ -60,6 +62,7 @@ const config: SocketIoConfig = { url: Config.AssosApiUrl, options: {} };
   ],
   providers: [
     StarWarsService,
+    ChatService,
     StatusBar,
     SplashScreen,
     GoogleAnalytics,
