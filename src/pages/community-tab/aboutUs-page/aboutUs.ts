@@ -10,6 +10,7 @@ import { GoogleAnalytics } from '@ionic-native/google-analytics';
     templateUrl: 'aboutUs.html'
 })
 export class AboutUs extends DefaultPage {
+
     constructor(public navCtrl: NavController, public ga: GoogleAnalytics) {
         super("About Us", ga)
     }

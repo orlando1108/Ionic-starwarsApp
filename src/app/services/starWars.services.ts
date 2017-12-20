@@ -6,7 +6,6 @@ import { Film } from '../models/film';
 import { Starship } from '../models/starship';
 import { Vehicle } from '../models/vehicle';
 import { Specie } from '../models/specie';
-import { Spaceship } from '../models/spaceship';
 import { Planet } from '../models/planet';
 
 import { Event } from '../models/event';
@@ -18,9 +17,10 @@ import "rxjs";
 @Injectable()
 export class StarWarsService {
 
-	private oldSearch: string = "";
+	//private oldSearch: string = "";
 	private currentPage: number = 0;
 	private lastPage: number = 0;
+	private nextPageUrl: string = "";
 
 	constructor(private http: Http) {
 	}
@@ -28,6 +28,7 @@ export class StarWarsService {
 	//Méthode appelé en cas d'erreur
 	//
 	private handleError(error: Response | any) {
+		console.log(error);
 		let errMsg: string;
 		if (error instanceof Response) {
 			const body = error.json() || '';
@@ -36,7 +37,7 @@ export class StarWarsService {
 		} else {
 			errMsg = error.message ? error.message : error.toString();
 		}
-		//console.error(errMsg);
+		console.log(errMsg);
 		return Observable.throw(errMsg);
 	}
 
@@ -52,6 +53,7 @@ export class StarWarsService {
 		return this.http.get(urlRequest)
 			.map((response) => {
 				this.currentPage = 1;
+				this.nextPageUrl = response.json()["next"];
 				this.lastPage = Math.ceil(response.json()["count"] / 10);
 				return jsonArrayToObjectArray(response.json()["results"], obj);
 			}).catch(this.handleError);
@@ -59,21 +61,21 @@ export class StarWarsService {
 	//
 	//Permet de récupèrer un object en fonction de son URL
 	//
-	getObjectByUrl(obj: Starwars, url): Observable<any> {
+ getObjectByUrl(obj: Starwars, url): Observable<any> {
 		return this.http.get(url)
 			.map((response) => {
 				return jsonToObject(response.json(), obj);
 			}).catch(this.handleError);
 	}
 
-
 	//
 	//Permet de récupèrer un object en fonction de son URL
 	//
-	getEvents(): Observable<Event> {
-		return this.http.get("http://127.0.0.1:3000/event")
-			.map((response) => {
-				return jsonToObject(response.json(), new Event());
+	getEvents(): Observable<Event[]> {
+		return this.http.post('/event', null, null)
+			.map((response) => {console.log(response.json()["content"]);
+				//return response.json()["content"];
+				return Event.jsonEventToEventArray(response.json()["content"]);
 			}).catch(this.handleError);
 	}
 	//
@@ -82,7 +84,6 @@ export class StarWarsService {
 	/*getListPeople(): Observable<People[]>{
 		if(this.oldSearch != "")
 		{
-=======
 	private handleError(error: Response | any) {
 		let errMsg: string;
 		if (error instanceof Response) {
@@ -100,7 +101,6 @@ export class StarWarsService {
 	//
 	getListPeople(): Observable<People[]> {
 		if (this.oldSearch != "") {
->>>>>>> f08662db8b133f75cb9c86c1ee31b20a05e23f5c
 			return this.serchPersonnage(this.oldSearch);
 		}
 		else {
@@ -116,7 +116,7 @@ export class StarWarsService {
 	//
 	//Récupération de tout les vaisseau
 	//
-	getListVaisseau(): Observable<Spaceship[]> {
+	/*getListVaisseau(): Observable<Spaceship[]> {
 		return this.http.get("https://swapi.co/api/starships")
 			.map((response) => {
 				this.currentPage = 1;
@@ -125,7 +125,7 @@ export class StarWarsService {
 				return jsonArrayToObjectArray(response.json()["results"], new Starship());
 			}).catch(this.handleError);
 			}
-
+*/
 
 
 
@@ -202,9 +202,6 @@ export class StarWarsService {
 			}).catch(this.handleError);
 	}
 
-	//
-	//Fonction de récupération d'une page en particulier
-	//
 	getPage(pageNumber): Observable<People[]> {
 		this.currentPage = pageNumber;
 		return this.http.get("https://swapi.co/api/people/?page=" + pageNumber)
@@ -221,50 +218,13 @@ export class StarWarsService {
 		return this.lastPage;
 	}
 
-	getNextPage(): Observable<People[]> {
+	getNextPage(obj:any): Observable<any[]> {
+		//let urlRequest = obj.constructor.name.toLowerCase();
 		this.currentPage++;
-		return this.http.get("https://swapi.co/api/people/?page=" + this.currentPage)
+		return this.http.get(this.nextPageUrl)
 			.map((response) => {
-				return jsonArrayToObjectArray(response.json()["results"], new People());
+				console.log('JSON !!!  '+ jsonArrayToObjectArray(response.json()["results"],obj));
+				return jsonArrayToObjectArray(response.json()["results"],obj);
 			}).catch(this.handleError);
 	}
-
-	getPersonnageByUrl(url): Observable<People> {
-		return this.http.get(url)
-			.map((response) => {
-				return jsonToObject(response.json(), new People());
-			}).catch(this.handleError);
-	}
-	//
-	//Fonction qui permet de récupérer juste le nom d'un objet en fonction de son URL
-	//
-	getNameByUrl(url): Observable<string> {
-		return this.http.get(url)
-			.map((response) => {
-				return response.json()['name'];
-			}).catch(this.handleError);
-	}
-
-
-	getFilmByUrl(url): Observable<Film> {
-		return this.http.get(url)
-			.map((response) => {
-				return jsonToObject(response.json(), new Film());
-			}).catch(this.handleError);
-	}
-
-	//
-	//Fonction de recherche d'un personnage
-	//
-
-	serchPersonnage(motClef): Observable<People[]> {
-		this.oldSearch = motClef;
-		this.currentPage = 1;
-		return this.http.get("https://swapi.co/api/people/?search=" + motClef)
-			.map((response) => {
-				this.lastPage = Math.ceil(response.json()["count"] / 10);
-				return jsonArrayToObjectArray(response.json()["results"], new People());
-			}).catch(this.handleError);
-	}
-
 }

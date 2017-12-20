@@ -11,50 +11,50 @@ import { Film } from '../../../app/models/film';
 import { Specie } from '../../../app/models/specie';
 
 @Component({
-    selector: 'page-starWarsIndex',
-    templateUrl: 'starWarsIndex.html'
+  selector: 'page-starWarsIndex',
+  templateUrl: 'starWarsIndex.html'
 })
 export class StarWarsIndex extends DefaultPage {
-    constructor(public navCtrl: NavController, public ga: GoogleAnalytics) {
-        super("Star Wars Univers", ga);
-    }
-    pushVehicles() {
-        this.navCtrl.push(StarWarsObject, {
+  constructor(public navCtrl: NavController, public ga: GoogleAnalytics) {
+    super("Star Wars Univers", ga);
+  }
+  pushVehicles() {
+    this.navCtrl.push(StarWarsObject, {
       starWarsObject: new Vehicle(),
       title: "Vehicles"
     });
-    }
-    pushStarShips() {
-        this.navCtrl.push(StarWarsObject, {
+  }
+  pushStarShips() {
+    this.navCtrl.push(StarWarsObject, {
       starWarsObject: new Starship(),
       title: "Starships"
     });
-    }
-    pushPlanets() {
-        this.navCtrl.push(StarWarsObject, {
+  }
+  pushPlanets() {
+    this.navCtrl.push(StarWarsObject, {
       starWarsObject: new Planet(),
       title: "Planets"
     });
-    }
-    pushFilms() {
-        this.navCtrl.push(StarWarsObject, {
+  }
+  pushFilms() {
+    this.navCtrl.push(StarWarsObject, {
       starWarsObject: new Film(),
       title: "Films"
     });
-    }
-    pushSpecies() {
-        this.navCtrl.push(StarWarsObject, {
+  }
+  pushSpecies() {
+    this.navCtrl.push(StarWarsObject, {
       starWarsObject: new Specie(),
       title: "Species"
     });
-    }
-    pushPeoples() {
-        this.navCtrl.push(StarWarsObject, {
+  }
+  pushPeoples() {
+    this.navCtrl.push(StarWarsObject, {
       starWarsObject: new People(),
       title: "Peoples"
     });
-    }
-    ngOnInit() {
-    }
+  }
+  ngOnInit() {
+  }
 
 }

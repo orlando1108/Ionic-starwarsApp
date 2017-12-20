@@ -1,5 +1,4 @@
 import { Starwars } from '../models/starwars';
-import { Film } from '../models/film';
 
 export function jsonArrayToObjectArray(input: Array<any>, sw: any) {
   let objs: Starwars[] = [];

@@ -1,4 +1,7 @@
 import { Starwars } from '../models/starwars';
+import { People } from '../models/people';
+import { Film } from '../models/film';
+import { StarWarsService } from '../services/starWars.services';
 
 export class Vehicle extends Starwars{
 	public name : string = "";
@@ -10,8 +13,10 @@ export class Vehicle extends Starwars{
   public passengers: string = "";
   public manufacturer: string = "";
   public model: string = "";
-	public films: string[] = [];
-  public pilots: string[] = [];
+	public urlFilms: string[] = [];
+  public urlPilots: string[] = [];
+	public associetedPeople: People[]=[];
+	public associetedFilms: Film[]=[];
 	constructor()
 	{
 		super();
@@ -26,8 +31,8 @@ export class Vehicle extends Starwars{
 	  vehicle.manufacturer = input.manufacturer;
 	  vehicle.cost_in_credits = input.cost_in_credits;
 	  vehicle.url = input.url;
-	  vehicle.films = input.films;
-	  vehicle.pilots = input.pilots;
+	  vehicle.urlFilms = input.films;
+	  vehicle.urlPilots = input.pilots;
 	  vehicle.cargo_capacity = input.cargo_capacity;
 	  vehicle.crew = input.crew;
 	  vehicle.length = input.length;
@@ -35,4 +40,40 @@ export class Vehicle extends Starwars{
 	  vehicle.passengers = input.passengers;
 	  return vehicle;
 	}
+
+	public getAssociatedObjects(dataService: StarWarsService){
+
+  /*  console.log('URLS !!! ' + this.urlPilots);
+		console.log('id  '+ this.id);*/
+    this.getAssociatedFilms(dataService);
+		this.getAssociatedPilots(dataService);
+
+}
+
+private getAssociatedFilms(dataService: StarWarsService){
+	this.urlFilms.map((elem)=>{
+		 dataService.getObjectByUrl(new Film(), elem)
+				.subscribe((result) => {
+					this.associetedFilms.push(result);
+					console.log('RESULT !!! ' + JSON.stringify(result));
+				}),
+				(error) => {
+						console.log(error);
+				};
+	});
+
+}
+private getAssociatedPilots(dataService: StarWarsService){
+	this.urlPilots.map((elem)=>{
+		dataService.getObjectByUrl(new People(), elem)
+				.subscribe((result) => {
+						this.associetedPeople.push(result);
+						console.log('RESULT !!! ' + JSON.stringify(result));
+				}),
+				(error) => {
+						console.log(error);
+				};
+	});
+
+}
 }

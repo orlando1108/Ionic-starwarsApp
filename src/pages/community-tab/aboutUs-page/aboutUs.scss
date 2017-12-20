@@ -1,0 +1,16 @@
+
+#headerAbout, #buttonAboutUs, img{
+    @include mixCenter;
+}
+img{
+    margin-top: 10px;
+    width:120px;
+    height: 120px; 
+}
+.labelAboutUs{
+    @include mixMargins;  
+}
+.cardAboutUs{
+    @include mixMargins;
+    text-align: justify;
+}

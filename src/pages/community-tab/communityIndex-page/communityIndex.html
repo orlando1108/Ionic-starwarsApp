@@ -1,17 +1,15 @@
 <ion-header>
-    <ion-navbar>
+    <ion-navbar color="dark">
         <ion-title>
             Community
         </ion-title>
     </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content padding class="background">
 
-    <button ion-button (click)="pushEvents()">Events</button>
-    <button ion-button (click)="pushChat()">Chat</button>
-    <button ion-button (click)="pushAboutUs()">About Us</button>
-
-    <button ion-button (click)="pushEvent()">Events</button>
+    <button ion-button outline round (click)="pushEvent()">Events</button>
+    <button ion-button color="danger" outline round (click)="pushChat()">Chat</button>
+    <button ion-button color="secondary" outline round (click)="pushAboutUs()">About Us</button>
 
 </ion-content>
