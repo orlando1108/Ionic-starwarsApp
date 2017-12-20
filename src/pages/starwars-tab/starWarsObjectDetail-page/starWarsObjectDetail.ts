@@ -61,4 +61,10 @@ constructor(public navCtrl: NavController, private navParams: NavParams,private 
 
 
     }
+
+    goToAssociatedObjectDetail(obj:Starwars, name:string){
+      this.navCtrl.push(StarWarsObjectDetail, {
+        starWarsItem: obj,
+        title: name});
+      }
   }
