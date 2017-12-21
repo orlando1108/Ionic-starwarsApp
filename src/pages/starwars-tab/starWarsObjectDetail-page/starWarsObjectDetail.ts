@@ -11,6 +11,7 @@ import { Starship } from '../../../app/models/starship';
 import { Vehicle } from '../../../app/models/vehicle';
 import { Specie } from '../../../app/models/specie';
 import { Planet } from '../../../app/models/planet';
+import { AlertController } from 'ionic-angular';
 
 @Component({
     selector: 'page-starWarsObjectDetail',
@@ -28,7 +29,7 @@ export class StarWarsObjectDetail extends DefaultPage {
     public selectedItem_SpeciesList: Specie[] = [];
     public objectType:string;
 
-constructor(public navCtrl: NavController, private navParams: NavParams,private dataService: StarWarsService, public ga: GoogleAnalytics) {
+constructor(public navCtrl: NavController,private alertCtrl: AlertController, private navParams: NavParams,private dataService: StarWarsService, public ga: GoogleAnalytics) {
         super(navParams.get('title'), ga)
         this.selectedItem = navParams.get('starWarsItem');
         this.objectType = this.selectedItem.constructor.name.toLowerCase();
@@ -43,22 +44,13 @@ constructor(public navCtrl: NavController, private navParams: NavParams,private 
       this.selectedItem.associatedStarships= [];
       this.selectedItem.associatedPlanets= [];
 
-        this.selectedItem.getAssociatedObjects(this.dataService);
+        this.selectedItem.getAssociatedObjects(this.dataService, this.alertCtrl);
         this.selectedItem_FilmsList = this.selectedItem.associatedFilms;
         this.selectedItem_PeopleList = this.selectedItem.associatedPeople;
         this.selectedItem_SpeciesList = this.selectedItem.associatedSpecies;
         this.selectedItem_VehiclesList = this.selectedItem.associatedVehicles;
         this.selectedItem_StarshipsList = this.selectedItem.associatedStarships;
         this.selectedItem_PlanetsList = this.selectedItem.associatedPlanets;
-
-        /*console.log('films list !!! '+ this.selectedItem_FilmsList.length);
-        console.log('planets list !!! '+ this.selectedItem_PlanetsList.length);
-        console.log('species list !!! '+ this.selectedItem_SpeciesList.length);
-        console.log('vehicles list !!! '+ this.selectedItem_VehiclesList.length);
-        console.log('people list !!! '+ this.selectedItem_PeopleList.length);
-        console.log('starships list !!! '+ this.selectedItem_StarshipsList.length);*/
-
-
 
     }
 

@@ -31,11 +31,12 @@ export class ChatService {
     }
     public connect(mail: String, username: String): Observable<Request> {
 
+
         let self = this;
-        return this.http.post(Config.AssosApiUrl + "/chat/connect", { mail: mail, username: username }, null)
+        return this.http.post("http://62.210.7.82:443/chat/connect", JSON.stringify({ mail: mail, username: username }), null)
             .map((res: Response) => self.statutToRequest(res))
             .catch((error: any) => {
-                return Observable.throw("Network error");
+                return Observable.throw(error);
             });
     }
     public statutToRequest(res: Response) {

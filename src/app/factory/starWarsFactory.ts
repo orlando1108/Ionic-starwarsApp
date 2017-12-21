@@ -1,4 +1,5 @@
 import { Starwars } from '../models/starwars';
+import { AlertController } from 'ionic-angular';
 
 export function jsonArrayToObjectArray(input: Array<any>, sw: any) {
   let objs: Starwars[] = [];
@@ -10,6 +11,16 @@ export function jsonArrayToObjectArray(input: Array<any>, sw: any) {
 
 export function jsonToObject(input, sw: any) {
   return sw.jsonToObject(input);
+}
+
+
+export function presentAlert(alertCtrl: AlertController) {
+ let alert = alertCtrl.create({
+    title: 'Starwars Alert',
+    subTitle: '\n The Dark Side has blocked your request. Please wait Rebel Alliance to continue or try again later !',
+    buttons: ['Dismiss']
+  });
+  alert.present();
 }
 
 export var version:string = "Version 1.0.0";

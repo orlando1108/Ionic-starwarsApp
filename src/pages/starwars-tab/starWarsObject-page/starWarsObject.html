@@ -19,7 +19,7 @@
 
 <ion-content padding  class="background">
   <div *ngIf="initialization" class="spinner-container">
-       <ion-spinner name="bubbles"></ion-spinner>
+       <ion-spinner name="bubbles" class="spinner"></ion-spinner>
    </div>
 
 
@@ -40,8 +40,6 @@
      <img item-start class="imgList " src="assets/imgs/swlogo.png">
      <p> {{item.name || item.title}}</p>
    </ion-item>
-
-
 </ion-list>
 
 <ion-infinite-scroll (ionInfinite)="retrieveMoreFromAPI($event)" [enabled]="lazyEnabled" >
