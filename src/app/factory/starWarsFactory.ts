@@ -12,8 +12,6 @@ export function jsonArrayToObjectArray(input: Array<any>, sw: any) {
 export function jsonToObject(input, sw: any) {
   return sw.jsonToObject(input);
 }
-<<<<<<< HEAD
-=======
 
 
 export function presentAlert(alertCtrl: AlertController) {
@@ -26,4 +24,3 @@ export function presentAlert(alertCtrl: AlertController) {
 }
 
 export var version:string = "Version 1.0.0";
->>>>>>> f63cc0c60eafe262410c3c7af7919ad246bdff80
