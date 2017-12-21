@@ -22,7 +22,7 @@ export class ChatPage extends DefaultPage {
 
         super("chat", ga);
         this.mail = this.navParams.get('mail');
-        this.id = this.navParams.get('id')
+        this.id = this.navParams.get('id');
         this.username = this.navParams.get('username');
         this.socket.connect();
         this.socket.emit("login", this.mail)
@@ -38,6 +38,11 @@ export class ChatPage extends DefaultPage {
 
             this.messages.push(new Message(response.mail, response.message, response.date, this.username));
         });
+        this.lastMessage().subscribe((response: Message[]) => {
+
+            console.log(response)
+            this.messages = response;
+        });
 
 
     }
@@ -48,6 +53,14 @@ export class ChatPage extends DefaultPage {
     returnLogin() {
         let observable = new Observable(observer => {
             this.socket.on('returnLogin', (data) => {
+                observer.next(data);
+            });
+        })
+        return observable;
+    }
+    lastMessage() {
+        let observable = new Observable(observer => {
+            this.socket.on('lastMessage', (data) => {
                 observer.next(data);
             });
         })

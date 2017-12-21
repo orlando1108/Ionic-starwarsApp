@@ -13,6 +13,7 @@ export function jsonToObject(input, sw: any) {
   return sw.jsonToObject(input);
 }
 
+
 export function presentAlert(alertCtrl: AlertController) {
  let alert = alertCtrl.create({
     title: 'Starwars Alert',
@@ -21,3 +22,5 @@ export function presentAlert(alertCtrl: AlertController) {
   });
   alert.present();
 }
+
+export var version:string = "Version 1.0.0";

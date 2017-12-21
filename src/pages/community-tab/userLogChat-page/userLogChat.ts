@@ -15,11 +15,15 @@ export class UserLogChat extends DefaultPage {
     public mail: string;
     public username: string;
     public enterBtnDisabled: boolean;
+    public error: string = "";
     constructor(private navCtrl: NavController, private navParams: NavParams, public ga: GoogleAnalytics, public chatService: ChatService) {
-        //this.socket.emit('add-message', { text: this.message });
         super("LoginChat", ga);
         this.mail = "ke";
         this.enterBtnDisabled = false;
+        this.error = "";
+        if (this.navParams.get('error')) {
+            this.error = this.navParams.get('error');
+        }
     }
     updateInput(newValue, input) {
         if (input === "mail") {
@@ -30,15 +34,16 @@ export class UserLogChat extends DefaultPage {
         }
     }
     enter() {
-        this.chatService.connect(this.mail, this.username).subscribe((result: SuccesRequest) => {
-
-            if (result.content) {
-                this.navCtrl.push(ChatPage, { id: result.content.Id, mail: result.content.Mail, username: result.content.Username });
-            } else {
-
+        this.chatService.connect(this.mail, this.username).subscribe((result: any) => {
+            if (result.statut == 200) {
+                if (result.content) {
+                    this.navCtrl.push(ChatPage, { id: result.content.Id, mail: result.content.Mail, username: result.content.Username });
+                } else {
+                    alert()
+                    this.error = result.exception;
+                }
             }
-
-        }, (error) => { console.log(error) })
+        }, (error) => { this.error = error; })
         // 
     }
     validateEmail(email) {
