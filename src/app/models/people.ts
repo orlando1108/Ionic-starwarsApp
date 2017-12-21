@@ -3,6 +3,9 @@ import { StarWarsService } from '../services/starWars.services';
 import { Vehicle } from '../models/vehicle';
 import { Specie } from '../models/specie';
 import { Film } from '../models/film';
+import { presentAlert } from '../factory/starWarsFactory';
+import { AlertController } from 'ionic-angular';
+
 
 export class People extends Starwars{
     public name : string = "";
@@ -45,50 +48,48 @@ export class People extends Starwars{
       return people;
     }
 
-    public getAssociatedObjects(dataService: StarWarsService){
+    public getAssociatedObjects(dataService: StarWarsService,alertCtrl: AlertController){
 
-      this.getAssociatedFilms(dataService);
-      this.getAssociatedSpecies(dataService);
-      this.getAssociatedVehicles(dataService);
+      this.getAssociatedFilms(dataService,alertCtrl);
+      this.getAssociatedSpecies(dataService,alertCtrl);
+      this.getAssociatedVehicles(dataService,alertCtrl);
 
   }
 
-  private getAssociatedFilms(dataService: StarWarsService){
+  private getAssociatedFilms(dataService: StarWarsService,alertCtrl: AlertController){
   	this.urlFilms.map((elem)=>{
   		 dataService.getObjectByUrl(new Film(), elem)
   				.subscribe((result) => {
   					this.associatedFilms.push(result);
   					//console.log('RESULT !!! ' + JSON.stringify(result));
-  				}),
+  				},
   				(error) => {
-  						console.log(error);
-  				};
+  						presentAlert(alertCtrl);
+  				});
   	});
 
   }
-  private getAssociatedSpecies(dataService: StarWarsService){
+  private getAssociatedSpecies(dataService: StarWarsService,alertCtrl: AlertController){
     this.urlSpecies.map((elem)=>{
        dataService.getObjectByUrl(new Specie(), elem)
           .subscribe((result) => {
             this.associatedSpecies.push(result);
-            //console.log('RESULT !!! ' + JSON.stringify(result));
-          }),
+          },
           (error) => {
-              console.log(error);
-          };
+              presentAlert(alertCtrl);
+          });
     });
 
   }
-  private getAssociatedVehicles(dataService: StarWarsService){
+  private getAssociatedVehicles(dataService: StarWarsService,alertCtrl: AlertController){
     this.urlVehicles.map((elem)=>{
        dataService.getObjectByUrl(new Vehicle(), elem)
           .subscribe((result) => {
             this.associatedVehicles.push(result);
-            //console.log('RESULT !!! ' + JSON.stringify(result));
-          }),
+          },
           (error) => {
-              console.log(error);
-          };
+              presentAlert(alertCtrl);
+          });
     });
 
   }

@@ -1,19 +1,20 @@
 
-#headerAbout, #buttonAboutUs, img{
+#headerAbout, #buttonAboutUs, #logo-asso{
     @include mixCenter;
 }
-img{
+#logo-asso{
     margin-top: 10px;
     width:120px;
     height: 120px; 
 }
-.labelAboutUs{
+.labelAboutUs, .cardAboutUs{
     @include mixMargins;  
-}
-.cardAboutUs{
-    @include mixMargins;
-    text-align: justify;
 }
 #headerAbout, #cardHeader{
     color: #488aff;
+}
+#label-version{
+    position: absolute;
+    right:10px;
+    color:grey;    
 }
