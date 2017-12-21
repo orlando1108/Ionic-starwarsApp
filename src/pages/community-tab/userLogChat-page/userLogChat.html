@@ -9,7 +9,10 @@
 
 <ion-content padding="true" class="has-header background">
     <div>
+        <p class="sino">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur asperiores, illum quo nostrum vero ducimus ipsam
+            explicabo nam accusantium totam in ex nobis ut non quasi quisquam reiciendis iusto aspernatur?</p>
         <form class="list">
+
             <div style="text-align:center;" class="show-list-numbers-and-dots">
                 <p style="color:#000000;">Condtiotns</p>
             </div>
@@ -17,7 +20,7 @@
 
             <ion-input type="mail" [(ngModel)]="mail" (ngModelChange)="updateInput($event,'mail')" name="mail" placeholder="Your mail"></ion-input>
             <p>{{error}}</p>
-            <button ion-button (click)="enter()" [disabled]="enterBtnDisabled">Enter</button>
+            <button ion-button (click)="enter()" color="secondary" class="button-inner" [disabled]="enterBtnDisabled">Enter</button>
 
         </form>
     </div>

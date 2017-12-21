@@ -2,6 +2,7 @@
 page-chat {
     .user_name {
         color: white ;
+        margin-bottom: 10px!important;
     }
     .message {
         padding: 10px !important;
@@ -14,11 +15,11 @@ page-chat {
         color: white !important;
     }
     .other_message {
-        background: #dcdcdc !important;
-        color: #000 !important;
+        background: color($colors, secondary) !important;
+        color: white !important;
     }
     .time {
-        color: #afafaf;
+        color: white;
         float: right;
         font-size: small;
     }

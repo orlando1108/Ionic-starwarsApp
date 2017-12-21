@@ -17,34 +17,37 @@ export class ChatPage extends DefaultPage {
     id = '';
     mail = '';
     message = '';
-    username = ""
-    constructor(private navCtrl: NavController, private navParams: NavParams, private socket: Socket, public ga: GoogleAnalytics) {
+    nickname = ""
+    constructor(private navCtrl: NavController, private navParams: NavParams, private socket: Socket, public ga: GoogleAnalytics, ) {
 
         super("chat", ga);
         this.mail = this.navParams.get('mail');
         this.id = this.navParams.get('id');
-        this.username = this.navParams.get('username');
+        this.nickname = this.navParams.get('username');
         this.socket.connect();
+        console.log(this.nickname)
         this.socket.emit("login", this.mail)
         this.returnLogin().subscribe(result => {
             if (result == true) {
-
+                console.log(result)
             } else {
-                this.navCtrl.push(UserLogChat, { error: "Your are bam" });
+                this.navCtrl.push(UserLogChat, { error: "You are not allowed to access chat" });
             }
         });
 
         this.getMessages().subscribe((response: Message) => {
             console.log(response)
-            this.messages.push(new Message(response.mail, response.message, response.date, this.username));
+            this.messages.push(new Message(response.mail, response.message, response.date, response.username));
         });
         this.lastMessage().subscribe((response: Message[]) => {
-
-            console.log(response)
             this.messages = response;
         });
 
 
+    }
+    popView() {
+        alert();
+        this.navCtrl.pop();
     }
     connect() {
         this.socket.emit("connect", { mail: this.mail })
@@ -75,7 +78,7 @@ export class ChatPage extends DefaultPage {
         return observable;
     }
     sendMessage() {
-        this.socket.emit('add-message', new Message(this.mail, this.message, new Date(), this.username));
+        this.socket.emit('add-message', new Message(this.mail, this.message, new Date(), this.nickname));
         this.message = '';
     }
 

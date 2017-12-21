@@ -17,7 +17,7 @@ export class UserLogChat extends DefaultPage {
     public enterBtnDisabled: boolean;
     public error: string = "";
     constructor(private navCtrl: NavController, private navParams: NavParams, public ga: GoogleAnalytics, public chatService: ChatService) {
-        super("LoginChat", ga);
+        super("Sign in to chat", ga);
         this.mail = "";
         this.enterBtnDisabled = true;
         this.error = "";

@@ -30,9 +30,14 @@ export class ChatService {
         return Observable.throw(errMsg);
     }
     public connect(mail: String, username: String): Observable<Request> {
-
+        var headers = new Headers();
+        headers.append('Access-Control-Allow-Origin', '*');
+        headers.append('Access-Control-Allow-Methods', 'POST, GET, OPTIONS, PUT');
+        headers.append('Accept', 'application/json');
+        headers.append('content-type', 'application/json');
+        let options = new RequestOptions({ headers: headers });
         let self = this;
-        return this.http.post("http://62.210.7.82:443/chat/connect", JSON.stringify({ mail: mail, username: username }), null)
+        return this.http.post(Config.AssosApiUrl + "/chat/connect", { mail: mail, username: username }, options)
             .map((res: Response) => self.statutToRequest(res))
             .catch((error: any) => {
                 return Observable.throw(error);
