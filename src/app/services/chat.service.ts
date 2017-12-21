@@ -31,7 +31,6 @@ export class ChatService {
     }
     public connect(mail: String, username: String): Observable<Request> {
 
-
         let self = this;
         return this.http.post("http://62.210.7.82:443/chat/connect", JSON.stringify({ mail: mail, username: username }), null)
             .map((res: Response) => self.statutToRequest(res))
