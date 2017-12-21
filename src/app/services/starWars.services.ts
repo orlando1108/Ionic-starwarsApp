@@ -42,14 +42,7 @@ export class StarWarsService {
 		}
 		console.log(errMsg);
 		return Observable.throw(errMsg);
-	}*/
-/*
-	this.alert = this.alertCtrl.create({
-			title: "Starwars Alert",
-			subTitle: 'The Dark Side has blocked your request, try again later in more safe conditions !!!',
-			buttons: ["close"]
-	});
-	//console.log('ALEEEERRRT   ' + this.alert);
+	}
 
 	return this.alert.present();*/
 
@@ -78,7 +71,7 @@ export class StarWarsService {
 	//Permet de récupèrer un object en fonction de son URL
 	//
  getObjectByUrl(obj: Starwars, url): Observable<any> {
-		return this.http.get(url+'toto')
+		return this.http.get(url)
 			.map((response) => {
 				console.log('OBJET PLANET ??? '+ response.json());
 				return jsonToObject(response.json(), obj);

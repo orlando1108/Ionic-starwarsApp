@@ -65,7 +65,7 @@ export class People extends Starwars{
   					//console.log('RESULT !!! ' + JSON.stringify(result));
   				},
   				(error) => {
-  						presentAlert(alertCtrl);
+  						//presentAlert(alertCtrl);
   				});
   	});
 
@@ -77,7 +77,7 @@ export class People extends Starwars{
             this.associatedSpecies.push(result);
           },
           (error) => {
-              presentAlert(alertCtrl);
+              //presentAlert(alertCtrl);
           });
     });
 
@@ -89,7 +89,7 @@ export class People extends Starwars{
             this.associatedVehicles.push(result);
           },
           (error) => {
-              presentAlert(alertCtrl);
+            //  presentAlert(alertCtrl);
           });
     });
 
