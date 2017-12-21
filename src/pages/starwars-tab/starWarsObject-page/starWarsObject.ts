@@ -24,7 +24,7 @@ export class StarWarsObject extends DefaultPage {
   private searching: boolean;
   private starWarsObject: Starwars;
   public lazyEnabled:boolean;
-  private alert: any;
+  public respectivePathImage: string;
 
   constructor(public navCtrl: NavController,private alertCtrl: AlertController, private navParams: NavParams, private dataService: StarWarsService, public ga: GoogleAnalytics) {
     super(navParams.get('title'), ga)
@@ -32,6 +32,7 @@ export class StarWarsObject extends DefaultPage {
     this.shouldShowCancel = true;
     this.lazyEnabled = true;
     this.searching = false;
+
   }
 
   ngOnInit(){
@@ -105,14 +106,5 @@ export class StarWarsObject extends DefaultPage {
       this.searching = false;
       this.dataService.resetPageInformations();
     }
-
-  /*  presentAlert() {
-      let alert = this.alertCtrl.create({
-        title: 'Starwars Alert',
-        subTitle: '\n The Dark Side has blocked your request. Please wait Rebel Alliance to continue or try again later !',
-        buttons: ['Dismiss']
-      });
-      alert.present();
-    }*/
 
   }

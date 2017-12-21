@@ -31,7 +31,7 @@ export class People extends Starwars{
     public jsonToObject(input) {
       let people = new People();
       let arrayUrl = input.url.split("/");
-      people.id = arrayUrl[arrayUrl.length - 2]
+      people.id = arrayUrl[arrayUrl.length - 2];
       people.name = input.name;
       people.birth_year = input.birth_year;
       people.eye_color = input.eye_color;
@@ -45,6 +45,7 @@ export class People extends Starwars{
       people.height = input.height;
       people.mass = input.mass;
       people.skin_color = input.skin_color;
+      people.pathImage = `assets/imgs/starwars/people/${people.id}.jpg`;
       return people;
     }
 
