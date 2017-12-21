@@ -28,7 +28,7 @@ export class Vehicle extends Starwars{
 	public jsonToObject(input) {
 	  let vehicle = new Vehicle();
 	  let arrayUrl = input.url.split("/");
-	  vehicle.id = arrayUrl[arrayUrl.length - 2]
+	  vehicle.id = arrayUrl[arrayUrl.length - 2];
 	  vehicle.name = input.name;
 	  vehicle.model = input.model;
 	  vehicle.manufacturer = input.manufacturer;
@@ -41,6 +41,7 @@ export class Vehicle extends Starwars{
 	  vehicle.length = input.length;
 	  vehicle.vehicle_class = input.vehicle_class;
 	  vehicle.passengers = input.passengers;
+		vehicle.pathImage = `assets/imgs/starwars/vehicles/${vehicle.id}.jpg`;
 	  return vehicle;
 	}
 

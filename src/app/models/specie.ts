@@ -40,6 +40,7 @@ export class Specie extends Starwars{
 	  specie.name = input.name;
 	  specie.urlPeople = input.people;
 	  specie.skin_colors = input.skin_colors;
+		specie.pathImage = `assets/imgs/starwars/species/${specie.id}.jpg`;
 	  return specie;
 	}
 

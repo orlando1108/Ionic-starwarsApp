@@ -28,7 +28,7 @@ export class Planet extends Starwars {
 	public jsonToObject(input) {
 		let planet = new Planet();
 		let arrayUrl = input.url.split("/");
-		planet.id = arrayUrl[arrayUrl.length - 2]
+		planet.id = arrayUrl[arrayUrl.length - 2];
 		planet.name = input.name;
 		planet.climate = input.climate;
 		planet.created = input.created;
@@ -40,6 +40,7 @@ export class Planet extends Starwars {
 		planet.urlResidents = input.residents;
 		planet.terrain = input.terrain;
 		planet.orbital_period = input.orbital_period;
+		planet.pathImage = `assets/imgs/starwars/planets/${planet.id}.jpg`;
 		return planet;
 	}
 

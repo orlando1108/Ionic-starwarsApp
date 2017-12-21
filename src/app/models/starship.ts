@@ -23,7 +23,7 @@ export class Starship extends Starwars{
 	public jsonToObject(input) {
 	  let starship = new Starship();
 	  let arrayUrl = input.url.split("/");
-	  starship.id = arrayUrl[arrayUrl.length - 2]
+	  starship.id = arrayUrl[arrayUrl.length - 2];
 	  starship.name = input.name;
 	  starship.model = input.model;
 	  starship.manufacturer = input.manufacturer;
@@ -31,6 +31,7 @@ export class Starship extends Starwars{
 	  starship.url = input.url;
 	  starship.urlFilms = input.films;
 	  starship.urlPilots = input.pilots;
+		starship.pathImage = `assets/imgs/starwars/starships/${starship.id}.jpg`;
 	  return starship;
 	}
 

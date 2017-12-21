@@ -37,7 +37,7 @@
 
      <ion-list class="swList"  style="swObjectsList">
        <ion-item no-lines *ngFor="let item of objectsList " class="itemList" (click)="pushObjectDetail(item, item.name || item.title)" >
-     <img item-start class="imgList " src="assets/imgs/swlogo.png">
+     <img item-start class="imgList" src= {{item.pathImage}}>
      <p> {{item.name || item.title}}</p>
    </ion-item>
 </ion-list>
