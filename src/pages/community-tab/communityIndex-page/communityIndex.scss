@@ -2,5 +2,30 @@
     @include mixCenter;
     display: block;
     margin-top: 25px;
-    height:80px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    text-align: center;
+    font-family: STARWARS;
+}
+.littleButton{
+  width: 44%;
+  margin: 3%;
+  float: left;
+  margin-top: 40%;
+  height: 20%;
+}
+.bigButton{
+  width: 94%;
+  margin: 3%;
+  height: 20%;
+}
+.imgComm{
+  width: 50px;
+  height: auto;
+  vertical-align: middle;
+  margin-top: 0px;
+  margin: inherit;
+  padding: 5px;
+  text-align: center;
+
 }

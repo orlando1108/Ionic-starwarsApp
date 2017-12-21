@@ -21,6 +21,7 @@ import { HttpModule } from '@angular/http';
 import { TabsPage } from '../pages/tabs/tabs';
 import { SocketIoModule, SocketIoConfig } from 'ng-socket-io';
 import { Config } from './config';
+import { AppVersion } from '@ionic-native/app-version';
 
 const config: SocketIoConfig = { url: Config.AssosApiUrl, options: {} };
 
@@ -66,6 +67,7 @@ const config: SocketIoConfig = { url: Config.AssosApiUrl, options: {} };
     StatusBar,
     SplashScreen,
     GoogleAnalytics,
+    AppVersion,
     { provide: ErrorHandler, useClass: IonicErrorHandler }
   ]
 })
