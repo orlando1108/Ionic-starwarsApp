@@ -2,7 +2,6 @@ import { ErrorType } from '../models/error';
 
 export class Request {
     statut: Number
-
     constructor() {
         this.statut = null;
 

@@ -1,13 +1,13 @@
 <ion-header>
     <ion-navbar>
         <ion-title>
-            Community
+            {{title}}
         </ion-title>
     </ion-navbar>
 </ion-header>
 
 
-<ion-content padding="true" class="has-header">
+<ion-content padding="true" class="has-header background">
     <div>
         <form class="list">
             <div style="text-align:center;" class="show-list-numbers-and-dots">
@@ -16,8 +16,10 @@
             <ion-input type="text" [(ngModel)]="username" (ngModelChange)="updateInput($event,'username')" name="username" placeholder="Your username"></ion-input>
 
             <ion-input type="mail" [(ngModel)]="mail" (ngModelChange)="updateInput($event,'mail')" name="mail" placeholder="Your mail"></ion-input>
+            <p>{{error}}</p>
+            <button ion-button (click)="enter()" [disabled]="enterBtnDisabled">Enter</button>
 
         </form>
     </div>
-    <button ion-button (click)="enter()" [disabled]="enterBtnDisabled">Enter</button>
+
 </ion-content>
