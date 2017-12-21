@@ -7,16 +7,27 @@
 .title-center{
   text-align: center;
 }
-.scrollList{
-  width:100%;
-  height:100%;
+.swList{
+  text-align: center
 }
-.item{
-  background-color: rgba(5, 23, 40, 0.95);
-  margin-bottom: 10px
+.itemList{
+  background-color: rgba(10, 9, 9, 1);
+  margin-bottom: 10px;
+  width:60%;
+  height: 70px;
+  text-align: center;
+  border-radius: 50px;
+  margin-left: 20%;
+  border-color: "#FFF";
+  border-width: 5px;
+
 
 }
 
 .itemDiv{
   text-align: center;
+}
+.imgList{
+  width:50px;
+  height:50px;
 }
