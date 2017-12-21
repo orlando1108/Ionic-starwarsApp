@@ -46,8 +46,9 @@ export class UserLogChat extends DefaultPage {
                 this.error = result.exception;
             }
         }, (error) => {
-          console.log(error);
-          this.error = error; })
+            console.log(error);
+            this.error = error;
+        })
         //
     }
     validateEmail(email) {
