@@ -4,7 +4,7 @@ import { ChatPage } from '../../../pages/community-tab/chat-page/chat';
 import { ContactUs} from '../../../pages/community-tab/contactUs-page/contactUs';
 import { DefaultPage } from '../../../pages/defaultPage';
 import { GoogleAnalytics } from '@ionic-native/google-analytics';
-import { version } from '../../../app/factory/starWarsFactory';
+import { AppVersion } from '@ionic-native/app-version';
 
 @Component({
     selector: 'page-aboutUs',
@@ -12,14 +12,17 @@ import { version } from '../../../app/factory/starWarsFactory';
 })
 export class AboutUs extends DefaultPage {
 
-    private version:string;
-    
-    constructor(public navCtrl: NavController, public ga: GoogleAnalytics) {
+    private version:any;
+
+    constructor(public navCtrl: NavController, public ga: GoogleAnalytics, private app : AppVersion) {
         super("About Us", ga)
-        this.version = version;
     }
     pushContactUs(){
         this.navCtrl.push(ContactUs);
     }
-
+    async ngOnInit(){
+        const appVersion = await this.app.getVersionNumber();
+        this.version = appVersion;
+    }
+    
 }

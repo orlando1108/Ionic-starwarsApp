@@ -11,5 +11,3 @@ export function jsonArrayToObjectArray(input: Array<any>, sw: any) {
 export function jsonToObject(input, sw: any) {
   return sw.jsonToObject(input);
 }
-
-export var version:string = "Version 1.0.0";
