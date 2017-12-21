@@ -58,7 +58,7 @@ private getAssociatedFilms(dataService: StarWarsService,alertCtrl: AlertControll
 					this.associatedFilms.push(result);
 				},
 				(error) => {
-						presentAlert(alertCtrl);
+						//presentAlert(alertCtrl);
 				});
 	});
 
@@ -70,7 +70,7 @@ private getAssociatedPilots(dataService: StarWarsService,alertCtrl: AlertControl
 						this.associatedPeople.push(result);
 				},
 				(error) => {
-						presentAlert(alertCtrl);
+						//presentAlert(alertCtrl);
 				});
 	});
 

@@ -68,7 +68,7 @@ private getAssociatedPilots(dataService: StarWarsService,alertCtrl: AlertControl
 						this.associatedPeople.push(result);
 				},
         (error) => {
-          presentAlert(alertCtrl);
+        //  presentAlert(alertCtrl);
         });
 	})
 
@@ -81,7 +81,7 @@ private getAssociatedPlanets(dataService: StarWarsService,alertCtrl: AlertContro
 						this.associatedPlanets.push(result);
 				},
 				(error) => {
-						presentAlert(alertCtrl);
+					//	presentAlert(alertCtrl);
 				});
 	});
 
@@ -93,7 +93,7 @@ private getAssociatedStarships(dataService: StarWarsService,alertCtrl: AlertCont
 						this.associatedStarships.push(result);
 				}),
 				(error) => {
-						presentAlert(alertCtrl);
+					//	presentAlert(alertCtrl);
 				};
 	});
 
@@ -105,7 +105,7 @@ private getAssociatedSpecies(dataService: StarWarsService,alertCtrl: AlertContro
 						this.associatedSpecies.push(result);
 				},
 				(error) => {
-						presentAlert(alertCtrl);
+					//	presentAlert(alertCtrl);
 				});
 	});
 }
@@ -116,7 +116,7 @@ private getAssociatedVehicles(dataService: StarWarsService, alertCtrl: AlertCont
 						this.associatedVehicles.push(result);
 				},
 				(error) => {
-						presentAlert(alertCtrl);
+					//	presentAlert(alertCtrl);
 				});
 	});
 

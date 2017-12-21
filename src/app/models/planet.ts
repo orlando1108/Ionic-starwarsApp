@@ -20,6 +20,7 @@ export class Planet extends Starwars {
 	public urlResidents: string[] = [];
 	public associatedPeople: People[]=[];
 	public associatedFilms: Film[]=[];
+	private nbErrors: number = 0;
 
 	constructor() {
 		super();
@@ -48,6 +49,11 @@ export class Planet extends Starwars {
 
 	 this.getAssociatedResidents(dataService,alertCtrl);
     this.getAssociatedFilms(dataService,alertCtrl);
+
+		if(this.nbErrors > 0){
+			console.log(' errors !!! '+ this.nbErrors);
+			//presentAlert(alertCtrl);
+		}
 }
 
 private getAssociatedFilms(dataService: StarWarsService,alertCtrl: AlertController){
@@ -57,7 +63,8 @@ private getAssociatedFilms(dataService: StarWarsService,alertCtrl: AlertControll
 					this.associatedFilms.push(result);
 				},
 				(error) => {
-						presentAlert(alertCtrl);
+						//this.nbErrors ++;
+						//presentAlert(alertCtrl);
 				});
 	});
 
@@ -69,7 +76,8 @@ private getAssociatedResidents(dataService: StarWarsService,alertCtrl: AlertCont
 						this.associatedPeople.push(result);
 				},
 				(error) => {
-						presentAlert(alertCtrl);
+					//this.nbErrors ++;
+          //presentAlert(alertCtrl);
 				});
 	});
 
