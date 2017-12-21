@@ -4,11 +4,5 @@
   "type": "ionic-angular",
   "integrations": {
     "cordova": {}
-  },
-  "proxies": [
-    {
-      "path": "/event",
-      "proxyUrl": "http://62.210.7.82:443/event/"
-    }
-  ]
+  }
 }

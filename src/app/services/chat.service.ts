@@ -31,12 +31,6 @@ export class ChatService {
     }
     public connect(mail: String, username: String): Observable<Request> {
 
-        /*var headers = new Headers();
-        headers.append('Access-Control-Allow-Origin', '*');
-        headers.append('Access-Control-Allow-Methods', 'POST, GET, OPTIONS, PUT');
-        headers.append('Accept', 'application/json');
-        headers.append('content-type', 'application/json');
-        let options = new RequestOptions({ headers: headers });*/
         let self = this;
         return this.http.post(Config.AssosApiUrl + "/chat/connect", { mail: mail, username: username }, null)
             .map((res: Response) => self.statutToRequest(res))

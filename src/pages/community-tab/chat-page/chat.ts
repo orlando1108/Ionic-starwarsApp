@@ -35,7 +35,7 @@ export class ChatPage extends DefaultPage {
         });
 
         this.getMessages().subscribe((response: Message) => {
-
+            console.log(response)
             this.messages.push(new Message(response.mail, response.message, response.date, this.username));
         });
         this.lastMessage().subscribe((response: Message[]) => {

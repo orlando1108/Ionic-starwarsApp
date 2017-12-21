@@ -18,8 +18,8 @@ export class UserLogChat extends DefaultPage {
     public error: string = "";
     constructor(private navCtrl: NavController, private navParams: NavParams, public ga: GoogleAnalytics, public chatService: ChatService) {
         super("LoginChat", ga);
-        this.mail = "ke";
-        this.enterBtnDisabled = false;
+        this.mail = "";
+        this.enterBtnDisabled = true;
         this.error = "";
         if (this.navParams.get('error')) {
             this.error = this.navParams.get('error');
@@ -36,12 +36,14 @@ export class UserLogChat extends DefaultPage {
     enter() {
         this.chatService.connect(this.mail, this.username).subscribe((result: any) => {
             if (result.statut == 200) {
-                if (result.content) {
+                if (!result.content.insertId) {
                     this.navCtrl.push(ChatPage, { id: result.content.Id, mail: result.content.Mail, username: result.content.Username });
                 } else {
-                    alert()
-                    this.error = result.exception;
+                    this.navCtrl.push(ChatPage, { id: result.content.insertId, mail: this.mail, username: this.username });
+
                 }
+            } else {
+                this.error = result.exception;
             }
         }, (error) => { this.error = error; })
         // 
