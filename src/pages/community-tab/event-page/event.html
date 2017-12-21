@@ -12,7 +12,7 @@
     <div *ngFor="let item of listEvent">
       <div class="entete">
         <div class="title">{{item.title}}</div>
-        <div class="date">{{item.date}}</div>
+        <div class="date">{{item.date | date: 'dd/MM/yyyy'}}</div>
       </div>
       <div class="desc" [ngClass]="{ overflow: !item.visible}">
         {{item.desc}}
