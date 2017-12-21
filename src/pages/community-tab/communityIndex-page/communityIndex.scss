@@ -1,3 +1,9 @@
+@font-face {
+font-family: starwars;
+src: url(../assets/fonts/STARWARS.ttf) format("ttf");
+font-weight: 200
+}
+
 .buttonCommunity{
     @include mixCenter;
     display: block;
@@ -5,7 +11,7 @@
     padding-top: 30px;
     padding-bottom: 30px;
     text-align: center;
-    font-family: STARWARS;
+    font-family: starwars;
 }
 .littleButton{
   width: 44%;
@@ -13,11 +19,13 @@
   float: left;
   margin-top: 40%;
   height: 20%;
+  font-family: starwars;
 }
 .bigButton{
   width: 94%;
   margin: 3%;
   height: 20%;
+  font-family: starwars;
 }
 .imgComm{
   width: 50px;

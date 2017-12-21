@@ -1,16 +1,39 @@
 .buttonStarwars{
   @include mixCenter;
   display: block;
-  margin-top: 25px;
 /*  padding-top: 30px;*/
 //  padding-bottom: 0px;
-  height:80px
+}
+
+.startImg{
+  width: 90%;
+  margin: 5%;
+}
+
+.big{
+  width: 94%;
+  margin: 3%;
+  font-family: starwars;
+  text-align: center;
+  vertical-align: middle;
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+.little{
+  width: 44%;
+  float: left;
+  margin: 3%;
+  font-family: starwars;
+  text-align: center;
+  vertical-align: middle;
+  padding-top: 25px;
+  padding-bottom: 25px;
 }
 
 .imgStarwars{
-  width:60px;
-  height:60px;
-  margin-right:10px;
+  width:50px;
+  height:auto;
 //  width: 150px
 }
 .swHomeTitle{
