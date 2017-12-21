@@ -5,6 +5,8 @@ import { Starship } from '../models/starship';
 import { Vehicle } from '../models/vehicle';
 import { Specie } from '../models/specie';
 import { Planet } from '../models/planet';
+import { presentAlert } from '../factory/starWarsFactory';
+import { AlertController } from 'ionic-angular';
 
 export class Film extends Starwars {
 
@@ -46,80 +48,75 @@ export class Film extends Starwars {
     return film;
   }
 
-  public getAssociatedObjects(dataService: StarWarsService){
+  public getAssociatedObjects(dataService: StarWarsService, alertCtrl: AlertController){
 
   /*  console.log('URLS !!! ' + this.urlPilots);
 		console.log('id  '+ this.id);*/
-		this.getAssociatedPilots(dataService);
-    this.getAssociatedPlanets(dataService);
-    this.getAssociatedStarships(dataService);
-    this.getAssociatedSpecies(dataService);
-    this.getAssociatedVehicles(dataService);
+		this.getAssociatedPilots(dataService,alertCtrl);
+    this.getAssociatedPlanets(dataService,alertCtrl);
+    this.getAssociatedStarships(dataService,alertCtrl);
+    this.getAssociatedSpecies(dataService,alertCtrl);
+    this.getAssociatedVehicles(dataService,alertCtrl);
 
 }
 
-private getAssociatedPilots(dataService: StarWarsService){
+private getAssociatedPilots(dataService: StarWarsService,alertCtrl: AlertController){
 	this.urlCharacters.map((elem)=>{
 		dataService.getObjectByUrl(new People(), elem)
 				.subscribe((result) => {
 						this.associatedPeople.push(result);
-						console.log('RESULT !!! ' + JSON.stringify(result));
-				}),
-				(error) => {
-						console.log(error);
-				};
-	});
+				},
+        (error) => {
+          presentAlert(alertCtrl);
+        });
+	})
 
 }
 
-private getAssociatedPlanets(dataService: StarWarsService){
+private getAssociatedPlanets(dataService: StarWarsService,alertCtrl: AlertController){
 	this.urlPlanets.map((elem)=>{
 		dataService.getObjectByUrl(new Planet(), elem)
 				.subscribe((result) => {
 						this.associatedPlanets.push(result);
-						console.log('RESULT !!! ' + JSON.stringify(result));
-				}),
+				},
 				(error) => {
-						console.log(error);
-				};
+						presentAlert(alertCtrl);
+				});
 	});
 
 }
-private getAssociatedStarships(dataService: StarWarsService){
+private getAssociatedStarships(dataService: StarWarsService,alertCtrl: AlertController){
 	this.urlStarships.map((elem)=>{
 		dataService.getObjectByUrl(new Starship(), elem)
 				.subscribe((result) => {
 						this.associatedStarships.push(result);
-						console.log('RESULT !!! ' + JSON.stringify(result));
 				}),
 				(error) => {
-						console.log(error);
+						presentAlert(alertCtrl);
 				};
 	});
 
 }
-private getAssociatedSpecies(dataService: StarWarsService){
+private getAssociatedSpecies(dataService: StarWarsService,alertCtrl: AlertController){
 	this.urlSpecies.map((elem)=>{
 		dataService.getObjectByUrl(new Specie(), elem)
 				.subscribe((result) => {
 						this.associatedSpecies.push(result);
-						console.log('RESULT !!! ' + JSON.stringify(result));
-				}),
+				},
 				(error) => {
-						console.log(error);
-				};
+						presentAlert(alertCtrl);
+				});
 	});
 }
-private getAssociatedVehicles(dataService: StarWarsService){
+private getAssociatedVehicles(dataService: StarWarsService, alertCtrl: AlertController){
 	this.urlVehicles.map((elem)=>{
 		dataService.getObjectByUrl(new Vehicle(), elem)
 				.subscribe((result) => {
 						this.associatedVehicles.push(result);
-						console.log('RESULT !!! ' + JSON.stringify(result));
-				}),
+				},
 				(error) => {
-						console.log(error);
-				};
+						presentAlert(alertCtrl);
+				});
 	});
 
 }

@@ -2,6 +2,9 @@ import { Starwars } from '../models/starwars';
 import { StarWarsService } from '../services/starWars.services';
 import { People } from '../models/people';
 import { Film } from '../models/film';
+import { presentAlert } from '../factory/starWarsFactory';
+import { AlertController } from 'ionic-angular';
+
 
 export class Planet extends Starwars {
 
@@ -40,41 +43,33 @@ export class Planet extends Starwars {
 		return planet;
 	}
 
-	public getAssociatedObjects(dataService: StarWarsService){
+	public getAssociatedObjects(dataService: StarWarsService,alertCtrl: AlertController){
 
-  /* console.log('URLS !!!'+ this.urlResidents);
-	 console.log('URLS !!!'+ this.urlFilms);*/
-	 this.getAssociatedResidents(dataService);
-    this.getAssociatedFilms(dataService);
-
-		/*console.log(' final list residents !!!'+ this.associatedResidents.length);
- 	 console.log('final list films !!!'+ this.associatedFilms.length);*/
-
+	 this.getAssociatedResidents(dataService,alertCtrl);
+    this.getAssociatedFilms(dataService,alertCtrl);
 }
 
-private getAssociatedFilms(dataService: StarWarsService){
+private getAssociatedFilms(dataService: StarWarsService,alertCtrl: AlertController){
 	this.urlFilms.map((elem)=>{
 		 dataService.getObjectByUrl(new Film(), elem)
 				.subscribe((result) => {
 					this.associatedFilms.push(result);
-					//console.log('RESULT !!! ' + JSON.stringify(result));
-				}),
+				},
 				(error) => {
-						console.log(error);
-				};
+						presentAlert(alertCtrl);
+				});
 	});
 
 }
-private getAssociatedResidents(dataService: StarWarsService){
+private getAssociatedResidents(dataService: StarWarsService,alertCtrl: AlertController){
 	this.urlResidents.map((elem)=>{
 		dataService.getObjectByUrl(new People(), elem)
 				.subscribe((result) => {
 						this.associatedPeople.push(result);
-					//	console.log('RESULT !!! ' + JSON.stringify(result));
-				}),
+				},
 				(error) => {
-						console.log(error);
-				};
+						presentAlert(alertCtrl);
+				});
 	});
 
 }
