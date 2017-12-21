@@ -33,7 +33,7 @@ export class Film extends Starwars {
   public jsonToObject(input): Starwars {
     let film = new Film();
     let arrayUrl = input.url.split("/");
-    film.id = arrayUrl[arrayUrl.length - 2]
+    film.id = arrayUrl[arrayUrl.length - 2];
     film.title = input.title;
     film.director = input.director;
     film.producer = input.producer;
@@ -45,6 +45,7 @@ export class Film extends Starwars {
     film.urlStarships= input.starships;
     film.urlVehicles= input.vehicles;
     film.urlSpecies= input.species;
+    film.pathImage = `assets/imgs/starwars/films/${film.id}.jpg`;
     return film;
   }
 
