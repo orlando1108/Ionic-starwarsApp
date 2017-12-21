@@ -20,8 +20,11 @@ $backgroundColor : black;
 $textColor: white;
 @font-face {
 font-family: starwars;
-src: url(../assets/fonts/STARWARS.ttf) format("ttf");
+src: url(../fonts/STARWARS.ttf) format("ttf");
 font-weight: 200
+}
+body{
+    font-family: starwars !important;
 }
 @mixin mixMargins{
     margin: 0 $marginHorizontal 0 $marginHorizontal;
