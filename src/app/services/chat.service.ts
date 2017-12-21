@@ -41,7 +41,7 @@ export class ChatService {
         return this.http.post(Config.AssosApiUrl + "/chat/connect", { mail: mail, username: username }, options)
             .map((res: Response) => self.statutToRequest(res))
             .catch((error: any) => {
-                return Observable.throw("Network error");
+                return Observable.throw(error);
             });
     }
     public statutToRequest(res: Response) {
