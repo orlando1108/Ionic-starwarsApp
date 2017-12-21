@@ -25678,6 +25678,12 @@ ion-navbar.toolbar {
   min-height: calc(46px + env(safe-area-inset-bottom));
 }
 
+@font-face {
+  font-family: starwars;
+  src: url(../assets/fonts/STARWARS.ttf) format("ttf");
+  font-weight: 200;
+}
+
 .toolbar-background {
   background-color: black;
 }
@@ -25749,6 +25755,12 @@ page-chat .message_row {
   background-color: #fff;
 }
 
+@font-face {
+  font-family: starwars;
+  src: url(../assets/fonts/STARWARS.ttf) format("ttf");
+  font-weight: 200;
+}
+
 .buttonCommunity {
   text-align: center;
   margin: auto;
@@ -25757,7 +25769,7 @@ page-chat .message_row {
   padding-top: 30px;
   padding-bottom: 30px;
   text-align: center;
-  font-family: STARWARS;
+  font-family: starwars;
 }
 
 .littleButton {
@@ -25766,12 +25778,14 @@ page-chat .message_row {
   float: left;
   margin-top: 40%;
   height: 20%;
+  font-family: starwars;
 }
 
 .bigButton {
   width: 94%;
   margin: 3%;
   height: 20%;
+  font-family: starwars;
 }
 
 .imgComm {
@@ -25814,6 +25828,7 @@ page-chat .message_row {
   color: #424242;
   padding: 20px;
   padding-bottom: 30px;
+  font-family: STARWARS;
 }
 
 .readmore {
@@ -25824,6 +25839,7 @@ page-chat .message_row {
   font-size: 1em;
   color: #0288D1;
   font-size: 18px;
+  font-family: STARWARS;
 }
 
 .overflow {
@@ -25858,15 +25874,38 @@ page-chat .message_row {
   text-align: center;
   margin: auto;
   display: block;
-  margin-top: 25px;
   /*  padding-top: 30px;*/
-  height: 80px;
+}
+
+.startImg {
+  width: 90%;
+  margin: 5%;
+}
+
+.big {
+  width: 94%;
+  margin: 3%;
+  font-family: starwars;
+  text-align: center;
+  vertical-align: middle;
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+.little {
+  width: 44%;
+  float: left;
+  margin: 3%;
+  font-family: starwars;
+  text-align: center;
+  vertical-align: middle;
+  padding-top: 25px;
+  padding-bottom: 25px;
 }
 
 .imgStarwars {
-  width: 60px;
-  height: 60px;
-  margin-right: 10px;
+  width: 50px;
+  height: auto;
 }
 
 .swHomeTitle {
