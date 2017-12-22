@@ -1,14 +1,13 @@
 webpackJsonp([0],{
 
-/***/ 147:
+/***/ 146:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Vehicle; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__models_starwars__ = __webpack_require__(50);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__models_people__ = __webpack_require__(48);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__models_film__ = __webpack_require__(51);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__factory_starWarsFactory__ = __webpack_require__(42);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__models_starwars__ = __webpack_require__(49);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__models_people__ = __webpack_require__(47);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__models_film__ = __webpack_require__(50);
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
         ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
@@ -19,7 +18,6 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-
 
 
 
@@ -72,7 +70,7 @@ var Vehicle = (function (_super) {
                 .subscribe(function (result) {
                 _this.associatedFilms.push(result);
             }, function (error) {
-                Object(__WEBPACK_IMPORTED_MODULE_3__factory_starWarsFactory__["c" /* presentAlert */])(alertCtrl);
+                //presentAlert(alertCtrl);
             });
         });
     };
@@ -83,7 +81,7 @@ var Vehicle = (function (_super) {
                 .subscribe(function (result) {
                 _this.associatedPeople.push(result);
             }, function (error) {
-                Object(__WEBPACK_IMPORTED_MODULE_3__factory_starWarsFactory__["c" /* presentAlert */])(alertCtrl);
+                //presentAlert(alertCtrl);
             });
         });
     };
@@ -94,15 +92,14 @@ var Vehicle = (function (_super) {
 
 /***/ }),
 
-/***/ 148:
+/***/ 147:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Specie; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__models_starwars__ = __webpack_require__(50);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__models_people__ = __webpack_require__(48);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__models_film__ = __webpack_require__(51);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__factory_starWarsFactory__ = __webpack_require__(42);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__models_starwars__ = __webpack_require__(49);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__models_people__ = __webpack_require__(47);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__models_film__ = __webpack_require__(50);
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
         ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
@@ -113,7 +110,6 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-
 
 
 
@@ -164,7 +160,7 @@ var Specie = (function (_super) {
                 .subscribe(function (result) {
                 _this.associatedFilms.push(result);
             }, function (error) {
-                Object(__WEBPACK_IMPORTED_MODULE_3__factory_starWarsFactory__["c" /* presentAlert */])(alertCtrl);
+                ///presentAlert(alertCtrl);
             });
         });
     };
@@ -175,7 +171,7 @@ var Specie = (function (_super) {
                 .subscribe(function (result) {
                 _this.associatedPeople.push(result);
             }, function (error) {
-                Object(__WEBPACK_IMPORTED_MODULE_3__factory_starWarsFactory__["c" /* presentAlert */])(alertCtrl);
+                //presentAlert(alertCtrl);
             });
         });
     };
@@ -186,7 +182,7 @@ var Specie = (function (_super) {
 
 /***/ }),
 
-/***/ 163:
+/***/ 162:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -274,8 +270,8 @@ var UserLogChat = (function (_super) {
         return re.test(email.toLowerCase());
     };
     UserLogChat = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'userLogChat',template:/*ion-inline-start:"C:\Users\pc\Documents\ynov\js\alvin\starwars2\starwars\src\pages\community-tab\userLogChat-page\userLogChat.html"*/'<ion-header>\n\n    <ion-navbar>\n\n        <ion-title>\n\n            {{title}}\n\n        </ion-title>\n\n    </ion-navbar>\n\n</ion-header>\n\n\n\n\n\n<ion-content padding="true" class="has-header background">\n\n    <div>\n\n        <p class="sino">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur asperiores, illum quo nostrum vero ducimus ipsam\n\n            explicabo nam accusantium totam in ex nobis ut non quasi quisquam reiciendis iusto aspernatur?</p>\n\n        <form class="list">\n\n\n\n            <div style="text-align:center;" class="show-list-numbers-and-dots">\n\n                <p style="color:#000000;">Condtiotns</p>\n\n            </div>\n\n            <ion-input type="text" [(ngModel)]="username" (ngModelChange)="updateInput($event,\'username\')" name="username" placeholder="Your username"></ion-input>\n\n\n\n            <ion-input type="mail" [(ngModel)]="mail" (ngModelChange)="updateInput($event,\'mail\')" name="mail" placeholder="Your mail"></ion-input>\n\n            <p>{{error}}</p>\n\n            <button ion-button (click)="enter()" color="secondary" class="button-inner" [disabled]="enterBtnDisabled">Enter</button>\n\n\n\n        </form>\n\n    </div>\n\n\n\n</ion-content>'/*ion-inline-end:"C:\Users\pc\Documents\ynov\js\alvin\starwars2\starwars\src\pages\community-tab\userLogChat-page\userLogChat.html"*/,
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: 'userLogChat',template:/*ion-inline-start:"D:\DEV\YNOV\dev mobile\starwars\src\pages\community-tab\userLogChat-page\userLogChat.html"*/'<ion-header>\n\n    <ion-navbar>\n\n        <ion-title>\n\n            {{title}}\n\n        </ion-title>\n\n    </ion-navbar>\n\n</ion-header>\n\n\n\n\n\n<ion-content padding="true" class="has-header background">\n\n    <div>\n\n        <p class="sino">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur asperiores, illum quo nostrum vero ducimus ipsam\n\n            explicabo nam accusantium totam in ex nobis ut non quasi quisquam reiciendis iusto aspernatur?</p>\n\n        <form class="list">\n\n\n\n            <div style="text-align:center;" class="show-list-numbers-and-dots">\n\n                <p style="color:#000000;">Condtiotns</p>\n\n            </div>\n\n            <ion-input type="text" [(ngModel)]="username" (ngModelChange)="updateInput($event,\'username\')" name="username" placeholder="Your username"></ion-input>\n\n\n\n            <ion-input type="mail" [(ngModel)]="mail" (ngModelChange)="updateInput($event,\'mail\')" name="mail" placeholder="Your mail"></ion-input>\n\n            <p>{{error}}</p>\n\n            <button ion-button (click)="enter()" color="secondary" class="button-inner" [disabled]="enterBtnDisabled">Enter</button>\n\n\n\n        </form>\n\n    </div>\n\n\n\n</ion-content>'/*ion-inline-end:"D:\DEV\YNOV\dev mobile\starwars\src\pages\community-tab\userLogChat-page\userLogChat.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_google_analytics__["a" /* GoogleAnalytics */], __WEBPACK_IMPORTED_MODULE_5__app_services_chat_service__["a" /* ChatService */]])
     ], UserLogChat);
@@ -286,7 +282,7 @@ var UserLogChat = (function (_super) {
 
 /***/ }),
 
-/***/ 179:
+/***/ 178:
 /***/ (function(module, exports) {
 
 function webpackEmptyAsyncContext(req) {
@@ -299,11 +295,11 @@ function webpackEmptyAsyncContext(req) {
 webpackEmptyAsyncContext.keys = function() { return []; };
 webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
 module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = 179;
+webpackEmptyAsyncContext.id = 178;
 
 /***/ }),
 
-/***/ 224:
+/***/ 223:
 /***/ (function(module, exports) {
 
 function webpackEmptyAsyncContext(req) {
@@ -316,19 +312,18 @@ function webpackEmptyAsyncContext(req) {
 webpackEmptyAsyncContext.keys = function() { return []; };
 webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
 module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = 224;
+webpackEmptyAsyncContext.id = 223;
 
 /***/ }),
 
-/***/ 269:
+/***/ 268:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Starship; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__models_starwars__ = __webpack_require__(50);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__models_people__ = __webpack_require__(48);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__models_film__ = __webpack_require__(51);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__factory_starWarsFactory__ = __webpack_require__(42);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__models_starwars__ = __webpack_require__(49);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__models_people__ = __webpack_require__(47);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__models_film__ = __webpack_require__(50);
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
         ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
@@ -339,7 +334,6 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-
 
 
 
@@ -382,7 +376,7 @@ var Starship = (function (_super) {
                 .subscribe(function (result) {
                 _this.associatedFilms.push(result);
             }, function (error) {
-                Object(__WEBPACK_IMPORTED_MODULE_3__factory_starWarsFactory__["c" /* presentAlert */])(alertCtrl);
+                //presentAlert(alertCtrl);
             });
         });
     };
@@ -394,7 +388,7 @@ var Starship = (function (_super) {
                 .subscribe(function (result) {
                 _this.associatedPeople.push(result);
             }, function (error) {
-                Object(__WEBPACK_IMPORTED_MODULE_3__factory_starWarsFactory__["c" /* presentAlert */])(alertCtrl);
+                //presentAlert(alertCtrl);
             });
         });
     };
@@ -405,15 +399,14 @@ var Starship = (function (_super) {
 
 /***/ }),
 
-/***/ 270:
+/***/ 269:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Planet; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__models_starwars__ = __webpack_require__(50);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__models_people__ = __webpack_require__(48);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__models_film__ = __webpack_require__(51);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__factory_starWarsFactory__ = __webpack_require__(42);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__models_starwars__ = __webpack_require__(49);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__models_people__ = __webpack_require__(47);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__models_film__ = __webpack_require__(50);
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
         ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
@@ -424,7 +417,6 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-
 
 
 
@@ -444,6 +436,7 @@ var Planet = (function (_super) {
         _this.urlResidents = [];
         _this.associatedPeople = [];
         _this.associatedFilms = [];
+        _this.nbErrors = 0;
         return _this;
     }
     Planet.prototype.jsonToObject = function (input) {
@@ -467,6 +460,10 @@ var Planet = (function (_super) {
     Planet.prototype.getAssociatedObjects = function (dataService, alertCtrl) {
         this.getAssociatedResidents(dataService, alertCtrl);
         this.getAssociatedFilms(dataService, alertCtrl);
+        if (this.nbErrors > 0) {
+            console.log(' errors !!! ' + this.nbErrors);
+            //presentAlert(alertCtrl);
+        }
     };
     Planet.prototype.getAssociatedFilms = function (dataService, alertCtrl) {
         var _this = this;
@@ -475,7 +472,8 @@ var Planet = (function (_super) {
                 .subscribe(function (result) {
                 _this.associatedFilms.push(result);
             }, function (error) {
-                Object(__WEBPACK_IMPORTED_MODULE_3__factory_starWarsFactory__["c" /* presentAlert */])(alertCtrl);
+                //this.nbErrors ++;
+                //presentAlert(alertCtrl);
             });
         });
     };
@@ -486,7 +484,8 @@ var Planet = (function (_super) {
                 .subscribe(function (result) {
                 _this.associatedPeople.push(result);
             }, function (error) {
-                Object(__WEBPACK_IMPORTED_MODULE_3__factory_starWarsFactory__["c" /* presentAlert */])(alertCtrl);
+                //this.nbErrors ++;
+                //presentAlert(alertCtrl);
             });
         });
     };
@@ -497,7 +496,7 @@ var Planet = (function (_super) {
 
 /***/ }),
 
-/***/ 271:
+/***/ 270:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -533,6 +532,38 @@ var Event = (function () {
 
 /***/ }),
 
+/***/ 271:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (immutable) */ __webpack_exports__["a"] = jsonArrayToObjectArray;
+/* harmony export (immutable) */ __webpack_exports__["b"] = jsonToObject;
+/* harmony export (immutable) */ __webpack_exports__["c"] = presentAlert;
+/* unused harmony export version */
+function jsonArrayToObjectArray(input, sw) {
+    var objs = [];
+    for (var _i = 0, input_1 = input; _i < input_1.length; _i++) {
+        var entry = input_1[_i];
+        objs.push(jsonToObject(entry, sw));
+    }
+    return objs;
+}
+function jsonToObject(input, sw) {
+    return sw.jsonToObject(input);
+}
+function presentAlert(alertCtrl) {
+    var alert = alertCtrl.create({
+        title: 'Starwars Alert',
+        subTitle: '\n The Dark Side has blocked your request. Please wait Rebel Alliance to continue or try again later !',
+        buttons: ['Dismiss']
+    });
+    alert.present();
+}
+var version = "Version 1.0.0";
+//# sourceMappingURL=starWarsFactory.js.map
+
+/***/ }),
+
 /***/ 34:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -563,7 +594,7 @@ var DefaultPage = (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ChatService; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(146);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(145);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__config__ = __webpack_require__(366);
@@ -632,7 +663,7 @@ var ChatService = (function () {
         }
     };
     ChatService = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* Injectable */])(),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]])
     ], ChatService);
     return ChatService;
@@ -687,7 +718,7 @@ var TabsPage = (function () {
         this.tabCommunityRoot = __WEBPACK_IMPORTED_MODULE_2__community_tab_communityIndex_page_communityIndex__["a" /* CommunityIndex */];
     }
     TabsPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"C:\Users\pc\Documents\ynov\js\alvin\starwars2\starwars\src\pages\tabs\tabs.html"*/'<ion-tabs color="dark">\n\n    <ion-tab [root]="tabStarWarsRoot" tabTitle="StarWars" tabIcon="planet"></ion-tab>\n\n    <ion-tab [root]="tabCommunityRoot" tabTitle="Our community" tabIcon="people"></ion-tab>\n\n</ion-tabs>'/*ion-inline-end:"C:\Users\pc\Documents\ynov\js\alvin\starwars2\starwars\src\pages\tabs\tabs.html"*/
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({template:/*ion-inline-start:"D:\DEV\YNOV\dev mobile\starwars\src\pages\tabs\tabs.html"*/'<ion-tabs color="dark">\n\n    <ion-tab [root]="tabStarWarsRoot" tabTitle="StarWars" tabIcon="planet"></ion-tab>\n\n    <ion-tab [root]="tabCommunityRoot" tabTitle="Our community" tabIcon="people"></ion-tab>\n\n</ion-tabs>'/*ion-inline-end:"D:\DEV\YNOV\dev mobile\starwars\src\pages\tabs\tabs.html"*/
         }),
         __metadata("design:paramtypes", [])
     ], TabsPage);
@@ -708,12 +739,12 @@ var TabsPage = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__pages_starwars_tab_starWarsObject_page_starWarsObject__ = __webpack_require__(369);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pages_defaultPage__ = __webpack_require__(34);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_google_analytics__ = __webpack_require__(31);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_models_vehicle__ = __webpack_require__(147);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__app_models_people__ = __webpack_require__(48);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__app_models_starship__ = __webpack_require__(269);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__app_models_planet__ = __webpack_require__(270);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__app_models_film__ = __webpack_require__(51);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__app_models_specie__ = __webpack_require__(148);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_models_vehicle__ = __webpack_require__(146);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__app_models_people__ = __webpack_require__(47);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__app_models_starship__ = __webpack_require__(268);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__app_models_planet__ = __webpack_require__(269);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__app_models_film__ = __webpack_require__(50);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__app_models_specie__ = __webpack_require__(147);
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
         ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
@@ -791,8 +822,8 @@ var StarWarsIndex = (function (_super) {
     StarWarsIndex.prototype.ngOnInit = function () {
     };
     StarWarsIndex = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-starWarsIndex',template:/*ion-inline-start:"C:\Users\pc\Documents\ynov\js\alvin\starwars2\starwars\src\pages\starwars-tab\starWarsIndex-page\starWarsIndex.html"*/'<ion-header>\n\n    <ion-navbar>\n\n        <ion-title>\n\n            {{title}}\n\n        </ion-title>\n\n    </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding class="background">\n\n    <img class="startImg" src=\'assets/imgs/start.png\'/>\n\n    <button ion-button button-royal class="buttonStarwars big margintop"  outline round (click)="pushPlanets()">\n\n      <img class="imgStarwars" src=\'assets/imgs/planet.png\'/>\n\n        <img class="imgStarwars" src=\'assets/imgs/planet2.png\'/>\n\n          <img class="imgStarwars" src=\'assets/imgs/planet3.png\'/>\n\n      <span class="swHomeTitle">Planets</span>\n\n    </button>\n\n    <ion-row>\n\n    <button ion-button button-royal class="buttonStarwars little" outline round  (click)="pushSpecies()">\n\n      <img class="imgStarwars" src=\'assets/imgs/species.png\'/>\n\n      <span class="swHomeTitle">Species</span>\n\n    </button>\n\n    <button ion-button button-royal class="buttonStarwars little" outline round (click)="pushPeoples()">\n\n      <img class="imgStarwars" src=\'assets/imgs/people.png\'/>\n\n      <span class="swHomeTitle">People</span>\n\n    </button>\n\n  </ion-row>\n\n    <button ion-button button-royal class="buttonStarwars big" outline round (click)="pushStarShips()">\n\n      <img class="imgStarwars" src=\'assets/imgs/starship.png\'/>\n\n      <img class="imgStarwars" src=\'assets/imgs/starship3.png\'/>\n\n      <img class="imgStarwars" src=\'assets/imgs/starship4.png\'/>\n\n\n\n      <span class="swHomeTitle">Starships</span>\n\n    </button>\n\n    <button ion-button button-royal class="buttonStarwars little" outline round (click)="pushFilms()">\n\n      <img class="imgStarwars" src=\'assets/imgs/films.png\'/>\n\n      <span class="swHomeTitle">Films</span>\n\n    </button>\n\n    <button ion-button button-royal class="buttonStarwars little" outline round (click)="pushVehicles()">\n\n      <img class="imgStarwars" src=\'assets/imgs/vehicle.png\'/>\n\n      <span class="swHomeTitle">Vehicles</span>\n\n\n\n    </button>\n\n\n\n\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\pc\Documents\ynov\js\alvin\starwars2\starwars\src\pages\starwars-tab\starWarsIndex-page\starWarsIndex.html"*/
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: 'page-starWarsIndex',template:/*ion-inline-start:"D:\DEV\YNOV\dev mobile\starwars\src\pages\starwars-tab\starWarsIndex-page\starWarsIndex.html"*/'<ion-header>\n\n    <ion-navbar>\n\n        <ion-title>\n\n            {{title}}\n\n        </ion-title>\n\n    </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding class="background">\n\n    <img class="startImg" src=\'assets/imgs/start.png\'/>\n\n    <button ion-button button-royal class="buttonStarwars big margintop"  outline round (click)="pushPlanets()">\n\n      <img class="imgStarwars" src=\'assets/imgs/planet.png\'/>\n\n        <img class="imgStarwars" src=\'assets/imgs/planet2.png\'/>\n\n          <img class="imgStarwars" src=\'assets/imgs/planet3.png\'/>\n\n      <span class="swHomeTitle">Planets</span>\n\n    </button>\n\n    <ion-row>\n\n    <button ion-button button-royal class="buttonStarwars little" outline round  (click)="pushSpecies()">\n\n      <img class="imgStarwars" src=\'assets/imgs/species.png\'/>\n\n      <span class="swHomeTitle">Species</span>\n\n    </button>\n\n    <button ion-button button-royal class="buttonStarwars little" outline round (click)="pushPeoples()">\n\n      <img class="imgStarwars" src=\'assets/imgs/people.png\'/>\n\n      <span class="swHomeTitle">People</span>\n\n    </button>\n\n  </ion-row>\n\n    <button ion-button button-royal class="buttonStarwars big" outline round (click)="pushStarShips()">\n\n      <img class="imgStarwars" src=\'assets/imgs/starship.png\'/>\n\n      <img class="imgStarwars" src=\'assets/imgs/starship3.png\'/>\n\n      <img class="imgStarwars" src=\'assets/imgs/starship4.png\'/>\n\n\n\n      <span class="swHomeTitle">Starships</span>\n\n    </button>\n\n    <button ion-button button-royal class="buttonStarwars little" outline round (click)="pushFilms()">\n\n      <img class="imgStarwars" src=\'assets/imgs/films.png\'/>\n\n      <span class="swHomeTitle">Films</span>\n\n    </button>\n\n    <button ion-button button-royal class="buttonStarwars little" outline round (click)="pushVehicles()">\n\n      <img class="imgStarwars" src=\'assets/imgs/vehicle.png\'/>\n\n      <span class="swHomeTitle">Vehicles</span>\n\n\n\n    </button>\n\n\n\n\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"D:\DEV\YNOV\dev mobile\starwars\src\pages\starwars-tab\starWarsIndex-page\starWarsIndex.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_4__ionic_native_google_analytics__["a" /* GoogleAnalytics */]])
     ], StarWarsIndex);
@@ -810,11 +841,11 @@ var StarWarsIndex = (function (_super) {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return StarWarsObject; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(19);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_services_starWars_services__ = __webpack_require__(85);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_services_starWars_services__ = __webpack_require__(84);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pages_defaultPage__ = __webpack_require__(34);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_google_analytics__ = __webpack_require__(31);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_starwars_tab_starWarsObjectDetail_page_starWarsObjectDetail__ = __webpack_require__(370);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__app_factory_starWarsFactory__ = __webpack_require__(42);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__app_factory_starWarsFactory__ = __webpack_require__(271);
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
         ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
@@ -925,8 +956,8 @@ var StarWarsObject = (function (_super) {
         this.dataService.resetPageInformations();
     };
     StarWarsObject = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-starWarsObject',template:/*ion-inline-start:"C:\Users\pc\Documents\ynov\js\alvin\starwars2\starwars\src\pages\starwars-tab\starWarsObject-page\starWarsObject.html"*/'<ion-header>\n\n    <ion-navbar>\n\n        <ion-title>\n\n            {{title}}\n\n        </ion-title>\n\n    </ion-navbar>\n\n    <ion-toolbar>\n\n      <ion-searchbar *ngIf="!initialization"\n\n        [(ngModel)]="searchInput"\n\n        [showCancelButton]="shouldShowCancel"\n\n        (ionInput)="searchItems($event)"\n\n        (ionCancel)="onSearchCanceled_Cleared($event)"\n\n        (ionClear)="onSearchCanceled_Cleared($event)">\n\n      </ion-searchbar>\n\n    </ion-toolbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding  class="background">\n\n  <div *ngIf="initialization" class="spinner-container">\n\n       <ion-spinner name="bubbles" class="spinner"></ion-spinner>\n\n   </div>\n\n\n\n\n\n\n\n<!--  <ion-list>\n\n  <ion-item *ngFor="let item of starWarsObjectsList | FilterPipe: searchInput">\n\n    <ion-thumbnail item-start>\n\n      <img src="http://www.stickpng.com/assets/thumbs/580b585b2edbce24c47b2d2d.png">\n\n    </ion-thumbnail>\n\n    <p>{{item.url}}{{item.id}}</p>\n\n    <button ion-button clear item-end>View</button>\n\n  </ion-item>\n\n</ion-list>-->\n\n\n\n\n\n     <ion-list class="swList"  style="swObjectsList">\n\n       <ion-item no-lines *ngFor="let item of objectsList " class="itemList" (click)="pushObjectDetail(item, item.name || item.title)" >\n\n     <img item-start class="imgList" src= {{item.pathImage}}>\n\n     <p> {{item.name || item.title}}</p>\n\n   </ion-item>\n\n</ion-list>\n\n\n\n<ion-infinite-scroll (ionInfinite)="retrieveMoreFromAPI($event)" [enabled]="lazyEnabled" >\n\n   <ion-infinite-scroll-content>\n\n   </ion-infinite-scroll-content>\n\n </ion-infinite-scroll>\n\n<!-- <div *ngFor="let item of starWarsObjectsList | FilterPipe: searchInput ">\n\n        <ion-card>\n\n          <img src="http://www.slate.fr/sites/default/files/styles/1090x500/public/starwars.png"/>\n\n          <ion-card-header>\n\n            {{item.name || item.title}}\n\n          </ion-card-header>\n\n          <ion-card-content>\n\n            <span>{{item.url}}{{item.id}}</span>\n\n          </ion-card-content>\n\n        </ion-card>\n\n      <!--  <div *ngFor="let film of item.films">\n\n            <span>{{film}}</span>\n\n        </div>\n\n    </div>-->\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\pc\Documents\ynov\js\alvin\starwars2\starwars\src\pages\starwars-tab\starWarsObject-page\starWarsObject.html"*/
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: 'page-starWarsObject',template:/*ion-inline-start:"D:\DEV\YNOV\dev mobile\starwars\src\pages\starwars-tab\starWarsObject-page\starWarsObject.html"*/'<ion-header>\n\n    <ion-navbar>\n\n        <ion-title>\n\n            {{title}}\n\n        </ion-title>\n\n    </ion-navbar>\n\n    <ion-toolbar>\n\n      <ion-searchbar *ngIf="!initialization"\n\n        [(ngModel)]="searchInput"\n\n        [showCancelButton]="shouldShowCancel"\n\n        (ionInput)="searchItems($event)"\n\n        (ionCancel)="onSearchCanceled_Cleared($event)"\n\n        (ionClear)="onSearchCanceled_Cleared($event)">\n\n      </ion-searchbar>\n\n    </ion-toolbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding  class="background">\n\n  <div *ngIf="initialization" class="spinner-container">\n\n       <ion-spinner name="bubbles" class="spinner"></ion-spinner>\n\n   </div>\n\n\n\n\n\n\n\n<!--  <ion-list>\n\n  <ion-item *ngFor="let item of starWarsObjectsList | FilterPipe: searchInput">\n\n    <ion-thumbnail item-start>\n\n      <img src="http://www.stickpng.com/assets/thumbs/580b585b2edbce24c47b2d2d.png">\n\n    </ion-thumbnail>\n\n    <p>{{item.url}}{{item.id}}</p>\n\n    <button ion-button clear item-end>View</button>\n\n  </ion-item>\n\n</ion-list>-->\n\n\n\n\n\n     <ion-list class="swList"  style="swObjectsList">\n\n       <ion-item no-lines *ngFor="let item of objectsList " class="itemList" (click)="pushObjectDetail(item, item.name || item.title)" >\n\n     <img item-start class="imgList" src= {{item.pathImage}}>\n\n     <p> {{item.name || item.title}}</p>\n\n   </ion-item>\n\n</ion-list>\n\n\n\n<ion-infinite-scroll (ionInfinite)="retrieveMoreFromAPI($event)" [enabled]="lazyEnabled" >\n\n   <ion-infinite-scroll-content>\n\n   </ion-infinite-scroll-content>\n\n </ion-infinite-scroll>\n\n<!-- <div *ngFor="let item of starWarsObjectsList | FilterPipe: searchInput ">\n\n        <ion-card>\n\n          <img src="http://www.slate.fr/sites/default/files/styles/1090x500/public/starwars.png"/>\n\n          <ion-card-header>\n\n            {{item.name || item.title}}\n\n          </ion-card-header>\n\n          <ion-card-content>\n\n            <span>{{item.url}}{{item.id}}</span>\n\n          </ion-card-content>\n\n        </ion-card>\n\n      <!--  <div *ngFor="let film of item.films">\n\n            <span>{{film}}</span>\n\n        </div>\n\n    </div>-->\n\n</ion-content>\n\n'/*ion-inline-end:"D:\DEV\YNOV\dev mobile\starwars\src\pages\starwars-tab\starWarsObject-page\starWarsObject.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__app_services_starWars_services__["a" /* StarWarsService */], __WEBPACK_IMPORTED_MODULE_4__ionic_native_google_analytics__["a" /* GoogleAnalytics */]])
     ], StarWarsObject);
@@ -946,7 +977,7 @@ var StarWarsObject = (function (_super) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__pages_defaultPage__ = __webpack_require__(34);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(19);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_google_analytics__ = __webpack_require__(31);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_services_starWars_services__ = __webpack_require__(85);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_services_starWars_services__ = __webpack_require__(84);
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
         ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
@@ -1015,8 +1046,8 @@ var StarWarsObjectDetail = (function (_super) {
         });
     };
     StarWarsObjectDetail = StarWarsObjectDetail_1 = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-starWarsObjectDetail',template:/*ion-inline-start:"C:\Users\pc\Documents\ynov\js\alvin\starwars2\starwars\src\pages\starwars-tab\starWarsObjectDetail-page\starWarsObjectDetail.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>\n\n      {{title}}\n\n    </ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n\n\n<ion-content class="background" >\n\n\n\n  <!--  <ng-template [ngIf]= "isVehicle" >\n\n  <h2> {{selectedItem.name || selectedItem.title }} </h2>\n\n  <strong>Name:</strong><p>{{selectedItem.name}}</p>\n\n  <strong>Cargo Capacity:</strong><p>{{selectedItem.cargo_capacity}}</p>\n\n  <strong>Length:</strong><p>{{selectedItem.length}}</p>\n\n  <strong>Vehicle Class:</strong><p>{{selectedItem.vehicle_class}}</p>\n\n  <strong>Passengers:</strong><p>{{selectedItem.passengers}}</p>\n\n  <strong>Model:</strong><p>{{selectedItem.model}}</p>\n\n  <strong>Manufacturer:</strong><p>{{selectedItem.manufacturer}}</p>\n\n  <strong>Crew:</strong><p>{{selectedItem.crew}}</p>\n\n</ng-template>\n\n-->\n\n<div class="blockInfo">\n\n    <img class="imgDetail" src="assets/imgs/detail.png">\n\n\n\n  <ng-template [ngIf]= "objectType == \'vehicle\'"  >\n\n    <div class="block">\n\n      <strong class="inline">Cargo Capacity: </strong> <p class="inline">{{selectedItem.cargo_capacity}}</p>\n\n    </div>\n\n    <div class="block">\n\n      <strong class="inline">Length: </strong> <p class="inline">{{selectedItem.length}}</p>\n\n    </div>\n\n    <div class="block">\n\n      <strong class="inline">Vehicle Class: </strong> <p class="inline">{{selectedItem.vehicle_class}}</p>\n\n    </div>\n\n    <div class="block">\n\n      <strong class="inline">Passengers: </strong> <p class="inline">{{selectedItem.passengers}}</p>\n\n    </div>\n\n    <div class="block">\n\n      <strong class="inline">Model: </strong> <p class="inline">{{selectedItem.model}}</p>\n\n    </div>\n\n    <div class="block">\n\n      <strong class="inline">Crew: </strong> <p class="inline">{{selectedItem.crew}}</p>\n\n    </div>\n\n    <div class="block">\n\n      <strong class="inline">Manufacturer: </strong> <p class="inline">{{selectedItem.manufacturer}}</p>\n\n    </div>\n\n    <div class="block">\n\n      <strong class="inline">Cost In Credits: </strong> <p class="inline">{{selectedItem.cost_in_credits}}</p>\n\n    </div>\n\n\n\n  </ng-template>\n\n\n\n  <ng-template [ngIf]= "objectType == \'starship\'" >\n\n    <div class="block">\n\n      <strong class="inline">Model: </strong> <p class="inline">{{selectedItem.model}}</p>\n\n    </div>\n\n    <div class="block">\n\n      <strong class="inline">Manufacturer: </strong> <p class="inline">{{selectedItem.manufacturer}}</p>\n\n    </div>\n\n    <div class="block">\n\n      <strong class="inline">Cost In Credits: </strong> <p class="inline">{{selectedItem.cost_in_credits}}</p>\n\n    </div>\n\n  </ng-template>\n\n\n\n  <ng-template [ngIf]= "objectType == \'planet\'" >\n\n    <div class="block">\n\n      <strong class="inline">Climate: </strong> <p class="inline">{{selectedItem.climate}}</p>\n\n    </div>\n\n    <div class="block">\n\n      <strong class="inline">Created: </strong> <p class="inline">{{selectedItem.created}}</p>\n\n    </div>\n\n    <div class="block">\n\n      <strong class="inline">Diameter: </strong> <p class="inline">{{selectedItem.diameter}}</p>\n\n    </div>\n\n    <div class="block">\n\n      <strong class="inline">Gravity: </strong> <p class="inline">{{selectedItem.gravity}}</p>\n\n    </div>\n\n    <div class="block">\n\n      <strong class="inline">Population: </strong> <p class="inline">{{selectedItem.population}}</p>\n\n    </div>\n\n    <div class="block">\n\n      <strong class="inline">Terrain: </strong> <p class="inline">{{selectedItem.terrain}}</p>\n\n    </div>\n\n    <div class="block">\n\n      <strong class="inline">Orbital Period: </strong> <p class="inline">{{selectedItem.orbital_period}}</p>\n\n    </div>\n\n\n\n  </ng-template>\n\n\n\n  <ng-template [ngIf]= "objectType == \'specie\'" >\n\n    <div class="block">\n\n      <strong class="inline">Eye Colors: </strong> <p class="inline">{{selectedItem.eye_colors}}</p>\n\n    </div>\n\n    <div class="block">\n\n      <strong class="inline">Classification: </strong> <p class="inline">{{selectedItem.classification}}</p>\n\n    </div>\n\n    <div class="block">\n\n      <strong class="inline">Average Lifespan: </strong> <p class="inline">{{selectedItem.average_lifespan}}</p>\n\n    </div>\n\n    <div class="block">\n\n      <strong class="inline">Hair Colors: </strong> <p class="inline">{{selectedItem.hair_colors}}</p>\n\n    </div>\n\n    <div class="block">\n\n      <strong class="inline">Homeworld: </strong> <p class="inline">{{selectedItem.homeworld}}</p>\n\n    </div>\n\n    <div class="block">\n\n      <strong class="inline">Language: </strong> <p class="inline">{{selectedItem.terrain}}</p>\n\n    </div>\n\n    <div class="block">\n\n      <strong class="inline">Skin Colors: </strong> <p class="inline">{{selectedItem.skin_colors}}</p>\n\n    </div>\n\n  </ng-template>\n\n\n\n  <ng-template [ngIf]= "objectType == \'people\'" >\n\n    <div class="block">\n\n      <strong class="inline">Gender: </strong> <p class="inline">{{selectedItem.gender}}</p>\n\n    </div>\n\n    <div class="block">\n\n      <strong class="inline">Birth Year: </strong> <p class="inline">{{selectedItem.birth_year}}</p>\n\n    </div>\n\n    <div class="block">\n\n      <strong class="inline">Eye Color: </strong> <p class="inline">{{selectedItem.eye_color}}</p>\n\n    </div>\n\n    <div class="block">\n\n      <strong class="inline">Hair Colors: </strong> <p class="inline">{{selectedItem.hair_color}}</p>\n\n    </div>\n\n    <div class="block">\n\n      <strong class="inline">Skin Colors: </strong> <p class="inline">{{selectedItem.skin_color}}</p>\n\n    </div>\n\n    <div class="block">\n\n      <strong class="inline">Homeworld: </strong> <p class="inline">{{selectedItem.homeworld}}</p>\n\n    </div>\n\n    <div class="block">\n\n      <strong class="inline">Height: </strong> <p class="inline">{{selectedItem.height}}</p>\n\n    </div>\n\n    <div class="block">\n\n      <strong class="inline">Mass: </strong> <p class="inline">{{selectedItem.mass}}</p>\n\n    </div>\n\n  </ng-template>\n\n\n\n  <ng-template [ngIf]= "objectType == \'film\'" >\n\n    <div class="block">\n\n      <strong class="inline">Director: </strong> <p class="inline">{{selectedItem.director}}</p>\n\n    </div>\n\n    <div class="block">\n\n      <strong class="inline">Producer: </strong> <p class="inline">{{selectedItem.producer}}</p>\n\n    </div>\n\n    <div class="block">\n\n      <strong class="inline">Release Date: </strong> <p class="inline">{{selectedItem.release_date}}</p>\n\n    </div>\n\n    <div class="block">\n\n      <strong class="inline">Opening Crawl: </strong> <p>{{selectedItem.opening_crawl}}</p>\n\n    </div>\n\n\n\n  </ng-template>\n\n</div>\n\n\n\n<ng-template [ngIf]= "selectedItem_FilmsList.length > 0" >\n\n  <h1 class="titleList">Films</h1>\n\n<ion-scroll scrollX="true" class="scroll">\n\n  <ion-row nowrap >\n\n  <div class="itemDetailList" *ngFor="let item of selectedItem_FilmsList" class="detailCard" (click)="goToAssociatedObjectDetail(item, item.name || item.title)">\n\n       <p>{{item.title}}</p>\n\n    </div>\n\n    </ion-row>\n\n</ion-scroll>\n\n</ng-template>\n\n\n\n<ng-template [ngIf]= "selectedItem_PeopleList.length > 0" >\n\n<h1 class="title-center">People</h1>\n\n<ion-scroll scrollX="true" class="scroll" >\n\n<ion-row nowrap >\n\n  <div *ngFor="let item of selectedItem_PeopleList" class="detailCard" (click)="goToAssociatedObjectDetail(item, item.name || item.title)">\n\n      <p>{{item.name}}</p>\n\n  </div>\n\n</ion-row>\n\n</ion-scroll>\n\n</ng-template>\n\n\n\n<ng-template [ngIf]= "selectedItem_StarshipsList.length > 0" >\n\n<h1 class="title-center">Starships</h1>\n\n<ion-scroll scrollX="true" class="scroll" >\n\n<ion-row nowrap >\n\n  <div *ngFor="let item of selectedItem_StarshipsList" class="detailCard" (click)="goToAssociatedObjectDetail(item, item.name || item.title)">\n\n      <p>{{item.name}}</p>\n\n  </div>\n\n</ion-row>\n\n</ion-scroll>\n\n</ng-template>\n\n\n\n<ng-template [ngIf]= "selectedItem_SpeciesList.length > 0" >\n\n<h1 class="title-center">Species</h1>\n\n<ion-scroll scrollX="true" class="scroll" >\n\n<ion-row nowrap >\n\n  <div *ngFor="let item of selectedItem_SpeciesList" class="detailCard" (click)="goToAssociatedObjectDetail(item, item.name || item.title)">\n\n      <p>{{item.name}}</p>\n\n  </div>\n\n</ion-row>\n\n</ion-scroll>\n\n</ng-template>\n\n\n\n<ng-template [ngIf]= "selectedItem_PlanetsList.length > 0" >\n\n<h1 class="title-center">Planets</h1>\n\n<ion-scroll scrollX="true" class="scroll" >\n\n<ion-row nowrap >\n\n  <div *ngFor="let item of selectedItem_PlanetsList" class="detailCard" (click)="goToAssociatedObjectDetail(item, item.name || item.title)">\n\n      <p>{{item.name}}</p>\n\n  </div>\n\n</ion-row>\n\n</ion-scroll>\n\n</ng-template>\n\n\n\n<ng-template [ngIf]= "selectedItem_VehiclesList.length > 0" >\n\n<h1 class="title-center">Vehicles</h1>\n\n<ion-scroll scrollX="true" class="scroll" >\n\n<ion-row nowrap >\n\n  <div *ngFor="let item of selectedItem_VehiclesList" class="detailCard" (click)="goToAssociatedObjectDetail(item, item.name || item.title)">\n\n      <p>{{item.name}}</p>\n\n  </div>\n\n</ion-row>\n\n</ion-scroll>\n\n</ng-template>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\pc\Documents\ynov\js\alvin\starwars2\starwars\src\pages\starwars-tab\starWarsObjectDetail-page\starWarsObjectDetail.html"*/
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: 'page-starWarsObjectDetail',template:/*ion-inline-start:"D:\DEV\YNOV\dev mobile\starwars\src\pages\starwars-tab\starWarsObjectDetail-page\starWarsObjectDetail.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>\n\n      {{title}}\n\n    </ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n\n\n<ion-content class="background" >\n\n\n\n  <!--  <ng-template [ngIf]= "isVehicle" >\n\n  <h2> {{selectedItem.name || selectedItem.title }} </h2>\n\n  <strong>Name:</strong><p>{{selectedItem.name}}</p>\n\n  <strong>Cargo Capacity:</strong><p>{{selectedItem.cargo_capacity}}</p>\n\n  <strong>Length:</strong><p>{{selectedItem.length}}</p>\n\n  <strong>Vehicle Class:</strong><p>{{selectedItem.vehicle_class}}</p>\n\n  <strong>Passengers:</strong><p>{{selectedItem.passengers}}</p>\n\n  <strong>Model:</strong><p>{{selectedItem.model}}</p>\n\n  <strong>Manufacturer:</strong><p>{{selectedItem.manufacturer}}</p>\n\n  <strong>Crew:</strong><p>{{selectedItem.crew}}</p>\n\n</ng-template>\n\n-->\n\n<div class="blockInfo">\n\n    <img class="imgDetail" src="assets/imgs/detail.png">\n\n\n\n  <ng-template [ngIf]= "objectType == \'vehicle\'"  >\n\n    <div class="block">\n\n      <strong class="inline">Cargo Capacity: </strong> <p class="inline">{{selectedItem.cargo_capacity}}</p>\n\n    </div>\n\n    <div class="block">\n\n      <strong class="inline">Length: </strong> <p class="inline">{{selectedItem.length}}</p>\n\n    </div>\n\n    <div class="block">\n\n      <strong class="inline">Vehicle Class: </strong> <p class="inline">{{selectedItem.vehicle_class}}</p>\n\n    </div>\n\n    <div class="block">\n\n      <strong class="inline">Passengers: </strong> <p class="inline">{{selectedItem.passengers}}</p>\n\n    </div>\n\n    <div class="block">\n\n      <strong class="inline">Model: </strong> <p class="inline">{{selectedItem.model}}</p>\n\n    </div>\n\n    <div class="block">\n\n      <strong class="inline">Crew: </strong> <p class="inline">{{selectedItem.crew}}</p>\n\n    </div>\n\n    <div class="block">\n\n      <strong class="inline">Manufacturer: </strong> <p class="inline">{{selectedItem.manufacturer}}</p>\n\n    </div>\n\n    <div class="block">\n\n      <strong class="inline">Cost In Credits: </strong> <p class="inline">{{selectedItem.cost_in_credits}}</p>\n\n    </div>\n\n\n\n  </ng-template>\n\n\n\n  <ng-template [ngIf]= "objectType == \'starship\'" >\n\n    <div class="block">\n\n      <strong class="inline">Model: </strong> <p class="inline">{{selectedItem.model}}</p>\n\n    </div>\n\n    <div class="block">\n\n      <strong class="inline">Manufacturer: </strong> <p class="inline">{{selectedItem.manufacturer}}</p>\n\n    </div>\n\n    <div class="block">\n\n      <strong class="inline">Cost In Credits: </strong> <p class="inline">{{selectedItem.cost_in_credits}}</p>\n\n    </div>\n\n  </ng-template>\n\n\n\n  <ng-template [ngIf]= "objectType == \'planet\'" >\n\n    <div class="block">\n\n      <strong class="inline">Climate: </strong> <p class="inline">{{selectedItem.climate}}</p>\n\n    </div>\n\n    <div class="block">\n\n      <strong class="inline">Created: </strong> <p class="inline">{{selectedItem.created}}</p>\n\n    </div>\n\n    <div class="block">\n\n      <strong class="inline">Diameter: </strong> <p class="inline">{{selectedItem.diameter}}</p>\n\n    </div>\n\n    <div class="block">\n\n      <strong class="inline">Gravity: </strong> <p class="inline">{{selectedItem.gravity}}</p>\n\n    </div>\n\n    <div class="block">\n\n      <strong class="inline">Population: </strong> <p class="inline">{{selectedItem.population}}</p>\n\n    </div>\n\n    <div class="block">\n\n      <strong class="inline">Terrain: </strong> <p class="inline">{{selectedItem.terrain}}</p>\n\n    </div>\n\n    <div class="block">\n\n      <strong class="inline">Orbital Period: </strong> <p class="inline">{{selectedItem.orbital_period}}</p>\n\n    </div>\n\n\n\n  </ng-template>\n\n\n\n  <ng-template [ngIf]= "objectType == \'specie\'" >\n\n    <div class="block">\n\n      <strong class="inline">Eye Colors: </strong> <p class="inline">{{selectedItem.eye_colors}}</p>\n\n    </div>\n\n    <div class="block">\n\n      <strong class="inline">Classification: </strong> <p class="inline">{{selectedItem.classification}}</p>\n\n    </div>\n\n    <div class="block">\n\n      <strong class="inline">Average Lifespan: </strong> <p class="inline">{{selectedItem.average_lifespan}}</p>\n\n    </div>\n\n    <div class="block">\n\n      <strong class="inline">Hair Colors: </strong> <p class="inline">{{selectedItem.hair_colors}}</p>\n\n    </div>\n\n    <div class="block">\n\n      <strong class="inline">Homeworld: </strong> <p class="inline">{{selectedItem.homeworld}}</p>\n\n    </div>\n\n    <div class="block">\n\n      <strong class="inline">Language: </strong> <p class="inline">{{selectedItem.terrain}}</p>\n\n    </div>\n\n    <div class="block">\n\n      <strong class="inline">Skin Colors: </strong> <p class="inline">{{selectedItem.skin_colors}}</p>\n\n    </div>\n\n  </ng-template>\n\n\n\n  <ng-template [ngIf]= "objectType == \'people\'" >\n\n    <div class="block">\n\n      <strong class="inline">Gender: </strong> <p class="inline">{{selectedItem.gender}}</p>\n\n    </div>\n\n    <div class="block">\n\n      <strong class="inline">Birth Year: </strong> <p class="inline">{{selectedItem.birth_year}}</p>\n\n    </div>\n\n    <div class="block">\n\n      <strong class="inline">Eye Color: </strong> <p class="inline">{{selectedItem.eye_color}}</p>\n\n    </div>\n\n    <div class="block">\n\n      <strong class="inline">Hair Colors: </strong> <p class="inline">{{selectedItem.hair_color}}</p>\n\n    </div>\n\n    <div class="block">\n\n      <strong class="inline">Skin Colors: </strong> <p class="inline">{{selectedItem.skin_color}}</p>\n\n    </div>\n\n    <div class="block">\n\n      <strong class="inline">Homeworld: </strong> <p class="inline">{{selectedItem.homeworld}}</p>\n\n    </div>\n\n    <div class="block">\n\n      <strong class="inline">Height: </strong> <p class="inline">{{selectedItem.height}}</p>\n\n    </div>\n\n    <div class="block">\n\n      <strong class="inline">Mass: </strong> <p class="inline">{{selectedItem.mass}}</p>\n\n    </div>\n\n  </ng-template>\n\n\n\n  <ng-template [ngIf]= "objectType == \'film\'" >\n\n    <div class="block">\n\n      <strong class="inline">Director: </strong> <p class="inline">{{selectedItem.director}}</p>\n\n    </div>\n\n    <div class="block">\n\n      <strong class="inline">Producer: </strong> <p class="inline">{{selectedItem.producer}}</p>\n\n    </div>\n\n    <div class="block">\n\n      <strong class="inline">Release Date: </strong> <p class="inline">{{selectedItem.release_date}}</p>\n\n    </div>\n\n    <div class="block">\n\n      <strong class="inline">Opening Crawl: </strong> <p>{{selectedItem.opening_crawl}}</p>\n\n    </div>\n\n\n\n  </ng-template>\n\n</div>\n\n\n\n<ng-template [ngIf]= "selectedItem_FilmsList.length > 0" >\n\n  <h1 class="titleList">Films</h1>\n\n<ion-scroll scrollX="true" class="scroll">\n\n  <ion-row nowrap >\n\n  <div class="itemDetailList" *ngFor="let item of selectedItem_FilmsList" class="detailCard" (click)="goToAssociatedObjectDetail(item, item.name || item.title)">\n\n       <p>{{item.title}}</p>\n\n    </div>\n\n    </ion-row>\n\n</ion-scroll>\n\n</ng-template>\n\n\n\n<ng-template [ngIf]= "selectedItem_PeopleList.length > 0" >\n\n<h1 class="title-center">People</h1>\n\n<ion-scroll scrollX="true" class="scroll" >\n\n<ion-row nowrap >\n\n  <div *ngFor="let item of selectedItem_PeopleList" class="detailCard" (click)="goToAssociatedObjectDetail(item, item.name || item.title)">\n\n      <p>{{item.name}}</p>\n\n  </div>\n\n</ion-row>\n\n</ion-scroll>\n\n</ng-template>\n\n\n\n<ng-template [ngIf]= "selectedItem_StarshipsList.length > 0" >\n\n<h1 class="title-center">Starships</h1>\n\n<ion-scroll scrollX="true" class="scroll" >\n\n<ion-row nowrap >\n\n  <div *ngFor="let item of selectedItem_StarshipsList" class="detailCard" (click)="goToAssociatedObjectDetail(item, item.name || item.title)">\n\n      <p>{{item.name}}</p>\n\n  </div>\n\n</ion-row>\n\n</ion-scroll>\n\n</ng-template>\n\n\n\n<ng-template [ngIf]= "selectedItem_SpeciesList.length > 0" >\n\n<h1 class="title-center">Species</h1>\n\n<ion-scroll scrollX="true" class="scroll" >\n\n<ion-row nowrap >\n\n  <div *ngFor="let item of selectedItem_SpeciesList" class="detailCard" (click)="goToAssociatedObjectDetail(item, item.name || item.title)">\n\n      <p>{{item.name}}</p>\n\n  </div>\n\n</ion-row>\n\n</ion-scroll>\n\n</ng-template>\n\n\n\n<ng-template [ngIf]= "selectedItem_PlanetsList.length > 0" >\n\n<h1 class="title-center">Planets</h1>\n\n<ion-scroll scrollX="true" class="scroll" >\n\n<ion-row nowrap >\n\n  <div *ngFor="let item of selectedItem_PlanetsList" class="detailCard" (click)="goToAssociatedObjectDetail(item, item.name || item.title)">\n\n      <p>{{item.name}}</p>\n\n  </div>\n\n</ion-row>\n\n</ion-scroll>\n\n</ng-template>\n\n\n\n<ng-template [ngIf]= "selectedItem_VehiclesList.length > 0" >\n\n<h1 class="title-center">Vehicles</h1>\n\n<ion-scroll scrollX="true" class="scroll" >\n\n<ion-row nowrap >\n\n  <div *ngFor="let item of selectedItem_VehiclesList" class="detailCard" (click)="goToAssociatedObjectDetail(item, item.name || item.title)">\n\n      <p>{{item.name}}</p>\n\n  </div>\n\n</ion-row>\n\n</ion-scroll>\n\n</ng-template>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"D:\DEV\YNOV\dev mobile\starwars\src\pages\starwars-tab\starWarsObjectDetail-page\starWarsObjectDetail.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["f" /* NavParams */], __WEBPACK_IMPORTED_MODULE_4__app_services_starWars_services__["a" /* StarWarsService */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_google_analytics__["a" /* GoogleAnalytics */]])
     ], StarWarsObjectDetail);
@@ -1035,7 +1066,7 @@ var StarWarsObjectDetail = (function (_super) {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CommunityIndex; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(19);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__pages_community_tab_userLogChat_page_userLogChat__ = __webpack_require__(163);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__pages_community_tab_userLogChat_page_userLogChat__ = __webpack_require__(162);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pages_community_tab_event_page_event__ = __webpack_require__(388);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_community_tab_aboutUs_page_aboutUs__ = __webpack_require__(389);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_defaultPage__ = __webpack_require__(34);
@@ -1086,8 +1117,8 @@ var CommunityIndex = (function (_super) {
     CommunityIndex.prototype.ngOnInit = function () {
     };
     CommunityIndex = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-communityIndex',template:/*ion-inline-start:"C:\Users\pc\Documents\ynov\js\alvin\starwars2\starwars\src\pages\community-tab\communityIndex-page\communityIndex.html"*/'<ion-header>\n\n    <ion-navbar color="dark">\n\n        <ion-title>\n\n            Community\n\n        </ion-title>\n\n    </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding class="background">\n\n\n\n    <button ion-button color="secondary" class=" littleButton"  outline round (click)="pushEvent()">\n\n        <img class="imgComm" src="assets/imgs/agenda.png"/>\n\n        <span>Events</span>\n\n    </button>\n\n    <button ion-button color="danger" class=" littleButton"  outline round (click)="pushChat()">\n\n        <img class="imgComm" src="assets/imgs/chat.png"/>\n\n        <span>Chat</span>\n\n    </button>\n\n    <button ion-button class=" bigButton" outline round (click)="pushAboutUs()">\n\n        <img class="imgComm" src="assets/imgs/about-us.png"/>\n\n        <span>About Us !</span>\n\n    </button>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\pc\Documents\ynov\js\alvin\starwars2\starwars\src\pages\community-tab\communityIndex-page\communityIndex.html"*/
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: 'page-communityIndex',template:/*ion-inline-start:"D:\DEV\YNOV\dev mobile\starwars\src\pages\community-tab\communityIndex-page\communityIndex.html"*/'<ion-header>\n\n    <ion-navbar color="dark">\n\n        <ion-title>\n\n            Community\n\n        </ion-title>\n\n    </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding class="background">\n\n\n\n    <button ion-button color="secondary" class=" littleButton"  outline round (click)="pushEvent()">\n\n        <img class="imgComm" src="assets/imgs/agenda.png"/>\n\n        <span>Events</span>\n\n    </button>\n\n    <button ion-button color="danger" class=" littleButton"  outline round (click)="pushChat()">\n\n        <img class="imgComm" src="assets/imgs/chat.png"/>\n\n        <span>Chat</span>\n\n    </button>\n\n    <button ion-button class=" bigButton" outline round (click)="pushAboutUs()">\n\n        <img class="imgComm" src="assets/imgs/about-us.png"/>\n\n        <span>About Us !</span>\n\n    </button>\n\n</ion-content>\n\n'/*ion-inline-end:"D:\DEV\YNOV\dev mobile\starwars\src\pages\community-tab\communityIndex-page\communityIndex.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_6__ionic_native_google_analytics__["a" /* GoogleAnalytics */]])
     ], CommunityIndex);
@@ -1106,10 +1137,11 @@ var CommunityIndex = (function (_super) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(19);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ng_socket_io__ = __webpack_require__(373);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ng_socket_io___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_ng_socket_io__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_Observable__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_Observable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_Observable__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_defaultPage__ = __webpack_require__(34);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_community_tab_userLogChat_page_userLogChat__ = __webpack_require__(163);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_community_tab_userLogChat_page_userLogChat__ = __webpack_require__(162);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_google_analytics__ = __webpack_require__(31);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__app_models_message__ = __webpack_require__(742);
 var __extends = (this && this.__extends) || (function () {
@@ -1214,10 +1246,10 @@ var ChatPage = (function (_super) {
         this.message = '';
     };
     ChatPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-chat',template:/*ion-inline-start:"C:\Users\pc\Documents\ynov\js\alvin\starwars2\starwars\src\pages\community-tab\chat-page\chat.html"*/'<ion-header>\n\n    <ion-navbar>\n\n        <ion-title>\n\n            Join Chat\n\n        </ion-title>\n\n    </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content class="background">\n\n    <ion-grid>\n\n        <ion-row *ngFor="let message of messages">\n\n\n\n            <ion-col col-9 *ngIf="message.username !== nickname" class="message" [ngClass]="{\'my_message\': message.username === nickname, \'other_message\': message.username !== nickname}">\n\n                <span class="user_name">{{ message.username }}:</span><br>\n\n                <span>{{ message.message }}</span>\n\n                <div class="time">{{message.date | date:\'hh:MM dd.MM\'}}</div>\n\n            </ion-col>\n\n\n\n            <ion-col offset-3 col-9 *ngIf="message.username === nickname" class="message" [ngClass]="{\'my_message\': message.username === nickname, \'other_message\': message.username !== nickname}">\n\n                <span class="user_name">{{ message.username }}:</span><br>\n\n                <span>{{ message.message }}</span>\n\n                <div class="time">{{message.date | date:\'hh:MM dd.MM\'}}</div>\n\n            </ion-col>\n\n\n\n        </ion-row>\n\n    </ion-grid>\n\n\n\n</ion-content>\n\n\n\n<ion-footer>\n\n    <ion-toolbar>\n\n        <ion-row class="message_row">\n\n            <ion-col col-9>\n\n                <ion-item no-lines>\n\n                    <ion-input type="text" placeholder="Message" [(ngModel)]="message"></ion-input>\n\n                </ion-item>\n\n            </ion-col>\n\n            <ion-col col-3>\n\n                <button ion-button clear color="primary" (click)="sendMessage()" [disabled]="message === \'\'">\n\n        Send\n\n      </button>\n\n            </ion-col>\n\n        </ion-row>\n\n    </ion-toolbar>\n\n</ion-footer>'/*ion-inline-end:"C:\Users\pc\Documents\ynov\js\alvin\starwars2\starwars\src\pages\community-tab\chat-page\chat.html"*/,
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: 'page-chat',template:/*ion-inline-start:"D:\DEV\YNOV\dev mobile\starwars\src\pages\community-tab\chat-page\chat.html"*/'<ion-header>\n\n    <ion-navbar>\n\n        <ion-title>\n\n            Join Chat\n\n        </ion-title>\n\n    </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content class="background">\n\n    <ion-grid>\n\n        <ion-row *ngFor="let message of messages">\n\n\n\n            <ion-col col-9 *ngIf="message.username !== nickname" class="message" [ngClass]="{\'my_message\': message.username === nickname, \'other_message\': message.username !== nickname}">\n\n                <span class="user_name">{{ message.username }}:</span><br>\n\n                <span>{{ message.message }}</span>\n\n                <div class="time">{{message.date | date:\'hh:MM dd.MM\'}}</div>\n\n            </ion-col>\n\n\n\n            <ion-col offset-3 col-9 *ngIf="message.username === nickname" class="message" [ngClass]="{\'my_message\': message.username === nickname, \'other_message\': message.username !== nickname}">\n\n                <span class="user_name">{{ message.username }}:</span><br>\n\n                <span>{{ message.message }}</span>\n\n                <div class="time">{{message.date | date:\'hh:MM dd.MM\'}}</div>\n\n            </ion-col>\n\n\n\n        </ion-row>\n\n    </ion-grid>\n\n\n\n</ion-content>\n\n\n\n<ion-footer>\n\n    <ion-toolbar>\n\n        <ion-row class="message_row">\n\n            <ion-col col-9>\n\n                <ion-item no-lines>\n\n                    <ion-input type="text" placeholder="Message" [(ngModel)]="message"></ion-input>\n\n                </ion-item>\n\n            </ion-col>\n\n            <ion-col col-3>\n\n                <button ion-button clear color="primary" (click)="sendMessage()" [disabled]="message === \'\'">\n\n        Send\n\n      </button>\n\n            </ion-col>\n\n        </ion-row>\n\n    </ion-toolbar>\n\n</ion-footer>'/*ion-inline-end:"D:\DEV\YNOV\dev mobile\starwars\src\pages\community-tab\chat-page\chat.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2_ng_socket_io__["a" /* Socket */], __WEBPACK_IMPORTED_MODULE_6__ionic_native_google_analytics__["a" /* GoogleAnalytics */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2_ng_socket_io__["Socket"], __WEBPACK_IMPORTED_MODULE_6__ionic_native_google_analytics__["a" /* GoogleAnalytics */]])
     ], ChatPage);
     return ChatPage;
 }(__WEBPACK_IMPORTED_MODULE_4__pages_defaultPage__["a" /* DefaultPage */]));
@@ -1233,9 +1265,9 @@ var ChatPage = (function (_super) {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EventPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(19);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_services_starWars_services__ = __webpack_require__(85);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_services_starWars_services__ = __webpack_require__(84);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pages_defaultPage__ = __webpack_require__(34);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_models_event__ = __webpack_require__(271);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_models_event__ = __webpack_require__(270);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_google_analytics__ = __webpack_require__(31);
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
@@ -1317,8 +1349,8 @@ var EventPage = (function (_super) {
             };
     };
     EventPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-event',template:/*ion-inline-start:"C:\Users\pc\Documents\ynov\js\alvin\starwars2\starwars\src\pages\community-tab\event-page\event.html"*/'<ion-header>\n\n    <ion-navbar>\n\n        <ion-title>\n\n            Community\n\n        </ion-title>\n\n    </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content>\n\n\n\n    <!--<button ion-button (click)="pushChat()">Chat</button>-->\n\n    <div *ngFor="let item of listEvent">\n\n      <div class="entete">\n\n        <div class="title">{{item.title}}</div>\n\n        <div class="date">{{item.date | date: \'dd/MM/yyyy\'}}</div>\n\n      </div>\n\n      <div class="desc" [ngClass]="{ overflow: !item.visible}">\n\n        {{item.desc}}\n\n        <br/>\n\n        <button *ngIf="!item.visible" class="readmore" (click)="viewMore(item.id)">Read more</button>\n\n        <button *ngIf="item.visible" class="readmore" (click)="viewLess(item.id)">Hide</button>\n\n      </div>\n\n    </div>\n\n\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\pc\Documents\ynov\js\alvin\starwars2\starwars\src\pages\community-tab\event-page\event.html"*/
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: 'page-event',template:/*ion-inline-start:"D:\DEV\YNOV\dev mobile\starwars\src\pages\community-tab\event-page\event.html"*/'<ion-header>\n\n    <ion-navbar>\n\n        <ion-title>\n\n            Community\n\n        </ion-title>\n\n    </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content>\n\n\n\n    <!--<button ion-button (click)="pushChat()">Chat</button>-->\n\n    <div *ngFor="let item of listEvent">\n\n      <div class="entete">\n\n        <div class="title">{{item.title}}</div>\n\n        <div class="date">{{item.date | date: \'dd/MM/yyyy\'}}</div>\n\n      </div>\n\n      <div class="desc" [ngClass]="{ overflow: !item.visible}">\n\n        {{item.desc}}\n\n        <br/>\n\n        <button *ngIf="!item.visible" class="readmore" (click)="viewMore(item.id)">Read more</button>\n\n        <button *ngIf="item.visible" class="readmore" (click)="viewLess(item.id)">Hide</button>\n\n      </div>\n\n    </div>\n\n\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"D:\DEV\YNOV\dev mobile\starwars\src\pages\community-tab\event-page\event.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__app_services_starWars_services__["a" /* StarWarsService */], __WEBPACK_IMPORTED_MODULE_5__ionic_native_google_analytics__["a" /* GoogleAnalytics */]])
     ], EventPage);
@@ -1340,6 +1372,7 @@ var EventPage = (function (_super) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pages_defaultPage__ = __webpack_require__(34);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_google_analytics__ = __webpack_require__(31);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_app_version__ = __webpack_require__(391);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_ionic_angular_platform_platform__ = __webpack_require__(7);
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
         ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
@@ -1400,13 +1433,15 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 
 
 
+
 var AboutUs = (function (_super) {
     __extends(AboutUs, _super);
-    function AboutUs(navCtrl, ga, app) {
+    function AboutUs(navCtrl, ga, app, platform) {
         var _this = _super.call(this, "About Us", ga) || this;
         _this.navCtrl = navCtrl;
         _this.ga = ga;
         _this.app = app;
+        _this.platform = platform;
         return _this;
     }
     AboutUs.prototype.pushContactUs = function () {
@@ -1417,22 +1452,29 @@ var AboutUs = (function (_super) {
             var appVersion;
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.app.getVersionNumber()];
+                    case 0:
+                        if (!this.platform.is('cordova')) return [3 /*break*/, 2];
+                        return [4 /*yield*/, this.app.getVersionNumber()];
                     case 1:
                         appVersion = _a.sent();
                         this.version = appVersion;
-                        return [2 /*return*/];
+                        return [3 /*break*/, 3];
+                    case 2:
+                        this.version = "X.X.X";
+                        _a.label = 3;
+                    case 3: return [2 /*return*/];
                 }
             });
         });
     };
     AboutUs = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-aboutUs',template:/*ion-inline-start:"C:\Users\pc\Documents\ynov\js\alvin\starwars2\starwars\src\pages\community-tab\aboutUs-page\aboutUs.html"*/'<ion-header>\n\n    <ion-navbar>\n\n        <ion-title id="navAboutUs">\n\n            {{title}}\n\n        </ion-title>\n\n    </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content class="background">\n\n    <ion-thumbnail>\n\n        <img id="logo-asso" src="assets/imgs/logo-asso.png">\n\n    </ion-thumbnail>\n\n\n\n    <ion-label id="headerAbout">\n\n        <h1>Star Wars Association</h1>\n\n    </ion-label>\n\n  \n\n    <div class="cardAboutUs">  \n\n        \n\n        <ion-card-content>\n\n        <br>\n\n        Star Wars Association is a fan club about Lucasfilm\'s worldwide Star Wars.<br>\n\n        The Club required a regular subscription fee for membership. Membership gave subscribers special privileges.<br>\n\n        \n\n        Members can meet each other in special evenings to talk about this wonderful saga, play in roleplay games or trade collection items.<br>\n\n        \n\n        But members were also able to have exclusive price to go to big events : Comic Con, Star Wars Day, etc.<br>\n\n        \n\n        Any question about the association ? Don’t hesitate to contact us and it’ll be a pleasure to answer you.\n\n        </ion-card-content>\n\n    </div>\n\n    \n\n    <div id="buttonAboutUs">\n\n        <button ion-button outline round (click)="pushContactUs()">Contact Us !</button>\n\n        \n\n    </div>\n\n    <label id="label-version">V {{ version }}</label>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\pc\Documents\ynov\js\alvin\starwars2\starwars\src\pages\community-tab\aboutUs-page\aboutUs.html"*/
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: 'page-aboutUs',template:/*ion-inline-start:"D:\DEV\YNOV\dev mobile\starwars\src\pages\community-tab\aboutUs-page\aboutUs.html"*/'<ion-header>\n\n    <ion-navbar>\n\n        <ion-title id="navAboutUs">\n\n            {{title}}\n\n        </ion-title>\n\n    </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content class="background">\n\n    <ion-thumbnail>\n\n        <img id="logo-asso" src="assets/imgs/logo-asso.png">\n\n    </ion-thumbnail>\n\n\n\n    <ion-label id="headerAbout">\n\n        <h1>Star Wars Association</h1>\n\n    </ion-label>\n\n  \n\n    <div class="cardAboutUs">  \n\n        \n\n        <ion-card-content>\n\n        <br>\n\n        Star Wars Association is a fan club about Lucasfilm\'s worldwide Star Wars.<br>\n\n        The Club required a regular subscription fee for membership. Membership gave subscribers special privileges.<br>\n\n        \n\n        Members can meet each other in special evenings to talk about this wonderful saga, play in roleplay games or trade collection items.<br>\n\n        \n\n        But members were also able to have exclusive price to go to big events : Comic Con, Star Wars Day, etc.<br>\n\n        \n\n        Any question about the association ? Don’t hesitate to contact us and it’ll be a pleasure to answer you.\n\n        </ion-card-content>\n\n    </div>\n\n    \n\n    <div id="buttonAboutUs">\n\n        <button ion-button outline round (click)="pushContactUs()">Contact Us !</button>\n\n        \n\n    </div>\n\n    <label id="label-version">V {{ version }}</label>\n\n</ion-content>\n\n'/*ion-inline-end:"D:\DEV\YNOV\dev mobile\starwars\src\pages\community-tab\aboutUs-page\aboutUs.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_4__ionic_native_google_analytics__["a" /* GoogleAnalytics */], __WEBPACK_IMPORTED_MODULE_5__ionic_native_app_version__["a" /* AppVersion */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_4__ionic_native_google_analytics__["a" /* GoogleAnalytics */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__ionic_native_google_analytics__["a" /* GoogleAnalytics */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_5__ionic_native_app_version__["a" /* AppVersion */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__ionic_native_app_version__["a" /* AppVersion */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_6_ionic_angular_platform_platform__["a" /* Platform */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6_ionic_angular_platform_platform__["a" /* Platform */]) === "function" && _d || Object])
     ], AboutUs);
     return AboutUs;
+    var _a, _b, _c, _d;
 }(__WEBPACK_IMPORTED_MODULE_3__pages_defaultPage__["a" /* DefaultPage */]));
 
 //# sourceMappingURL=aboutUs.js.map
@@ -1484,8 +1526,8 @@ var ContactUs = (function (_super) {
         this.spinnerLoading = false;
     };
     ContactUs = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-contactUs',template:/*ion-inline-start:"C:\Users\pc\Documents\ynov\js\alvin\starwars2\starwars\src\pages\community-tab\contactUs-page\contactUs.html"*/'<ion-header>\n\n    <ion-navbar>\n\n        <ion-title>\n\n            {{title}}\n\n        </ion-title>\n\n    </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content>\n\n    <div *ngIf="spinnerLoading" class="spinner-container">\n\n        <ion-spinner name="bubbles"></ion-spinner>\n\n    </div>\n\n    <iframe (load)="onLoad()" class="gForm" src="https://docs.google.com/forms/d/1qlGpoUA4WzOY58_eoQ1JX-iRJGcgCM8VnPdrkqUIbuI/viewform?embedded=true" frameborder="0" marginheight="0" marginwidth="0">Chargement en cours...</iframe>\n\n</ion-content>'/*ion-inline-end:"C:\Users\pc\Documents\ynov\js\alvin\starwars2\starwars\src\pages\community-tab\contactUs-page\contactUs.html"*/
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: 'page-contactUs',template:/*ion-inline-start:"D:\DEV\YNOV\dev mobile\starwars\src\pages\community-tab\contactUs-page\contactUs.html"*/'<ion-header>\n\n    <ion-navbar>\n\n        <ion-title>\n\n            {{title}}\n\n        </ion-title>\n\n    </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content>\n\n    <div *ngIf="spinnerLoading" class="spinner-container">\n\n        <ion-spinner name="bubbles"></ion-spinner>\n\n    </div>\n\n    <iframe (load)="onLoad()" class="gForm" src="https://docs.google.com/forms/d/1qlGpoUA4WzOY58_eoQ1JX-iRJGcgCM8VnPdrkqUIbuI/viewform?embedded=true" frameborder="0" marginheight="0" marginwidth="0">Chargement en cours...</iframe>\n\n</ion-content>'/*ion-inline-end:"D:\DEV\YNOV\dev mobile\starwars\src\pages\community-tab\contactUs-page\contactUs.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_google_analytics__["a" /* GoogleAnalytics */]])
     ], ContactUs);
@@ -1515,12 +1557,12 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(45);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(44);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(19);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(264);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_status_bar__ = __webpack_require__(268);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_starWars_services__ = __webpack_require__(85);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(263);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_status_bar__ = __webpack_require__(267);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_starWars_services__ = __webpack_require__(84);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__services_chat_service__ = __webpack_require__(365);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__app_component__ = __webpack_require__(720);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_starwars_tab_starWarsObject_page_starWarsObject__ = __webpack_require__(369);
@@ -1528,14 +1570,15 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_starwars_tab_starWarsIndex_page_starWarsIndex__ = __webpack_require__(368);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_community_tab_communityIndex_page_communityIndex__ = __webpack_require__(371);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_community_tab_chat_page_chat__ = __webpack_require__(372);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_community_tab_userLogChat_page_userLogChat__ = __webpack_require__(163);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_community_tab_userLogChat_page_userLogChat__ = __webpack_require__(162);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_community_tab_event_page_event__ = __webpack_require__(388);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_community_tab_aboutUs_page_aboutUs__ = __webpack_require__(389);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_community_tab_contactUs_page_contactUs__ = __webpack_require__(390);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__ionic_native_google_analytics__ = __webpack_require__(31);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__angular_http__ = __webpack_require__(146);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__angular_http__ = __webpack_require__(145);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_tabs_tabs__ = __webpack_require__(367);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_20_ng_socket_io__ = __webpack_require__(373);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20_ng_socket_io___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_20_ng_socket_io__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__config__ = __webpack_require__(366);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__ionic_native_app_version__ = __webpack_require__(391);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -1572,7 +1615,7 @@ var AppModule = (function () {
     function AppModule() {
     }
     AppModule = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["I" /* NgModule */])({
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["NgModule"])({
             declarations: [
                 __WEBPACK_IMPORTED_MODULE_7__app_component__["a" /* MyApp */],
                 __WEBPACK_IMPORTED_MODULE_10__pages_starwars_tab_starWarsIndex_page_starWarsIndex__["a" /* StarWarsIndex */],
@@ -1590,7 +1633,7 @@ var AppModule = (function () {
             imports: [
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
                 __WEBPACK_IMPORTED_MODULE_18__angular_http__["c" /* HttpModule */],
-                __WEBPACK_IMPORTED_MODULE_20_ng_socket_io__["b" /* SocketIoModule */].forRoot(config),
+                __WEBPACK_IMPORTED_MODULE_20_ng_socket_io__["SocketIoModule"].forRoot(config),
                 __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["d" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_7__app_component__["a" /* MyApp */], {}, {
                     links: []
                 })
@@ -1616,7 +1659,7 @@ var AppModule = (function () {
                 __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */],
                 __WEBPACK_IMPORTED_MODULE_17__ionic_native_google_analytics__["a" /* GoogleAnalytics */],
                 __WEBPACK_IMPORTED_MODULE_22__ionic_native_app_version__["a" /* AppVersion */],
-                { provide: __WEBPACK_IMPORTED_MODULE_1__angular_core__["u" /* ErrorHandler */], useClass: __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["c" /* IonicErrorHandler */] }
+                { provide: __WEBPACK_IMPORTED_MODULE_1__angular_core__["ErrorHandler"], useClass: __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["c" /* IonicErrorHandler */] }
             ]
         })
     ], AppModule);
@@ -1627,48 +1670,15 @@ var AppModule = (function () {
 
 /***/ }),
 
-/***/ 42:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (immutable) */ __webpack_exports__["a"] = jsonArrayToObjectArray;
-/* harmony export (immutable) */ __webpack_exports__["b"] = jsonToObject;
-/* harmony export (immutable) */ __webpack_exports__["c"] = presentAlert;
-/* unused harmony export version */
-function jsonArrayToObjectArray(input, sw) {
-    var objs = [];
-    for (var _i = 0, input_1 = input; _i < input_1.length; _i++) {
-        var entry = input_1[_i];
-        objs.push(jsonToObject(entry, sw));
-    }
-    return objs;
-}
-function jsonToObject(input, sw) {
-    return sw.jsonToObject(input);
-}
-function presentAlert(alertCtrl) {
-    var alert = alertCtrl.create({
-        title: 'Starwars Alert',
-        subTitle: '\n The Dark Side has blocked your request. Please wait Rebel Alliance to continue or try again later !',
-        buttons: ['Dismiss']
-    });
-    alert.present();
-}
-var version = "Version 1.0.0";
-//# sourceMappingURL=starWarsFactory.js.map
-
-/***/ }),
-
-/***/ 48:
+/***/ 47:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return People; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__models_starwars__ = __webpack_require__(50);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__models_vehicle__ = __webpack_require__(147);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__models_specie__ = __webpack_require__(148);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__models_film__ = __webpack_require__(51);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__factory_starWarsFactory__ = __webpack_require__(42);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__models_starwars__ = __webpack_require__(49);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__models_vehicle__ = __webpack_require__(146);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__models_specie__ = __webpack_require__(147);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__models_film__ = __webpack_require__(50);
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
         ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
@@ -1679,7 +1689,6 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-
 
 
 
@@ -1738,7 +1747,7 @@ var People = (function (_super) {
                 _this.associatedFilms.push(result);
                 //console.log('RESULT !!! ' + JSON.stringify(result));
             }, function (error) {
-                Object(__WEBPACK_IMPORTED_MODULE_4__factory_starWarsFactory__["c" /* presentAlert */])(alertCtrl);
+                //presentAlert(alertCtrl);
             });
         });
     };
@@ -1749,7 +1758,7 @@ var People = (function (_super) {
                 .subscribe(function (result) {
                 _this.associatedSpecies.push(result);
             }, function (error) {
-                Object(__WEBPACK_IMPORTED_MODULE_4__factory_starWarsFactory__["c" /* presentAlert */])(alertCtrl);
+                //presentAlert(alertCtrl);
             });
         });
     };
@@ -1760,7 +1769,7 @@ var People = (function (_super) {
                 .subscribe(function (result) {
                 _this.associatedVehicles.push(result);
             }, function (error) {
-                Object(__WEBPACK_IMPORTED_MODULE_4__factory_starWarsFactory__["c" /* presentAlert */])(alertCtrl);
+                //  presentAlert(alertCtrl);
             });
         });
     };
@@ -1771,7 +1780,7 @@ var People = (function (_super) {
 
 /***/ }),
 
-/***/ 50:
+/***/ 49:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1797,18 +1806,17 @@ var Starwars = (function () {
 
 /***/ }),
 
-/***/ 51:
+/***/ 50:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Film; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__models_starwars__ = __webpack_require__(50);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__models_people__ = __webpack_require__(48);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__models_starship__ = __webpack_require__(269);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__models_vehicle__ = __webpack_require__(147);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__models_specie__ = __webpack_require__(148);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__models_planet__ = __webpack_require__(270);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__factory_starWarsFactory__ = __webpack_require__(42);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__models_starwars__ = __webpack_require__(49);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__models_people__ = __webpack_require__(47);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__models_starship__ = __webpack_require__(268);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__models_vehicle__ = __webpack_require__(146);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__models_specie__ = __webpack_require__(147);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__models_planet__ = __webpack_require__(269);
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
         ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
@@ -1819,7 +1827,6 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-
 
 
 
@@ -1881,7 +1888,7 @@ var Film = (function (_super) {
                 .subscribe(function (result) {
                 _this.associatedPeople.push(result);
             }, function (error) {
-                Object(__WEBPACK_IMPORTED_MODULE_6__factory_starWarsFactory__["c" /* presentAlert */])(alertCtrl);
+                //  presentAlert(alertCtrl);
             });
         });
     };
@@ -1892,7 +1899,7 @@ var Film = (function (_super) {
                 .subscribe(function (result) {
                 _this.associatedPlanets.push(result);
             }, function (error) {
-                Object(__WEBPACK_IMPORTED_MODULE_6__factory_starWarsFactory__["c" /* presentAlert */])(alertCtrl);
+                //	presentAlert(alertCtrl);
             });
         });
     };
@@ -1904,7 +1911,7 @@ var Film = (function (_super) {
                 _this.associatedStarships.push(result);
             }),
                 function (error) {
-                    Object(__WEBPACK_IMPORTED_MODULE_6__factory_starWarsFactory__["c" /* presentAlert */])(alertCtrl);
+                    //	presentAlert(alertCtrl);
                 };
         });
     };
@@ -1915,7 +1922,7 @@ var Film = (function (_super) {
                 .subscribe(function (result) {
                 _this.associatedSpecies.push(result);
             }, function (error) {
-                Object(__WEBPACK_IMPORTED_MODULE_6__factory_starWarsFactory__["c" /* presentAlert */])(alertCtrl);
+                //	presentAlert(alertCtrl);
             });
         });
     };
@@ -1926,7 +1933,7 @@ var Film = (function (_super) {
                 .subscribe(function (result) {
                 _this.associatedVehicles.push(result);
             }, function (error) {
-                Object(__WEBPACK_IMPORTED_MODULE_6__factory_starWarsFactory__["c" /* presentAlert */])(alertCtrl);
+                //	presentAlert(alertCtrl);
             });
         });
     };
@@ -2011,8 +2018,8 @@ var ErrorType = (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(19);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(268);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(264);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(267);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(263);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_tabs_tabs__ = __webpack_require__(367);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -2039,7 +2046,7 @@ var MyApp = (function () {
         });
     }
     MyApp = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"C:\Users\pc\Documents\ynov\js\alvin\starwars2\starwars\src\app\app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n\n'/*ion-inline-end:"C:\Users\pc\Documents\ynov\js\alvin\starwars2\starwars\src\app\app.html"*/
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({template:/*ion-inline-start:"D:\DEV\YNOV\dev mobile\starwars\src\app\app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n\n'/*ion-inline-end:"D:\DEV\YNOV\dev mobile\starwars\src\app\app.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
     ], MyApp);
@@ -2076,16 +2083,16 @@ var Message = (function () {
 
 /***/ }),
 
-/***/ 85:
+/***/ 84:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return StarWarsService; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(146);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__models_people__ = __webpack_require__(48);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__models_event__ = __webpack_require__(271);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__factory_starWarsFactory__ = __webpack_require__(42);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(145);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__models_people__ = __webpack_require__(47);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__models_event__ = __webpack_require__(270);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__factory_starWarsFactory__ = __webpack_require__(271);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_Observable__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_Observable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_rxjs_Observable__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs__ = __webpack_require__(272);
@@ -2129,16 +2136,9 @@ var StarWarsService = (function () {
         }
         console.log(errMsg);
         return Observable.throw(errMsg);
-    }*/
-    /*
-        this.alert = this.alertCtrl.create({
-                title: "Starwars Alert",
-                subTitle: 'The Dark Side has blocked your request, try again later in more safe conditions !!!',
-                buttons: ["close"]
-        });
-        //console.log('ALEEEERRRT   ' + this.alert);
-    
-        return this.alert.present();*/
+    }
+
+    return this.alert.present();*/
     //
     //Permet de récupèrer une liste d'objet
     //
@@ -2162,7 +2162,7 @@ var StarWarsService = (function () {
     //Permet de récupèrer un object en fonction de son URL
     //
     StarWarsService.prototype.getObjectByUrl = function (obj, url) {
-        return this.http.get(url + 'toto')
+        return this.http.get(url)
             .map(function (response) {
             console.log('OBJET PLANET ??? ' + response.json());
             return Object(__WEBPACK_IMPORTED_MODULE_4__factory_starWarsFactory__["b" /* jsonToObject */])(response.json(), obj);
@@ -2233,7 +2233,7 @@ var StarWarsService = (function () {
         this.nextPageUrl = this.principalNextPageUrl;
     };
     StarWarsService = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* Injectable */])(),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]])
     ], StarWarsService);
     return StarWarsService;
