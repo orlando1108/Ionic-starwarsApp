@@ -1,63 +1,66 @@
 <ion-header>
-    <ion-navbar>
-        <ion-title>
-            {{title}}
-        </ion-title>
-    </ion-navbar>
-    <ion-toolbar>
-      <ion-searchbar *ngIf="!initialization"
-        [(ngModel)]="searchInput"
-        [showCancelButton]="shouldShowCancel"
-        (ionInput)="searchItems($event)"
-        (ionCancel)="onSearchCanceled_Cleared($event)"
-        (ionClear)="onSearchCanceled_Cleared($event)">
-      </ion-searchbar>
-    </ion-toolbar>
+  <ion-navbar>
+    <ion-title>
+      {{title}}
+    </ion-title>
+  </ion-navbar>
+  <ion-toolbar>
+    <ion-searchbar *ngIf="!initialization"
+    [(ngModel)]="searchInput"
+    [showCancelButton]="shouldShowCancel"
+    (ionInput)="searchItems($event)"
+    (ionCancel)="onSearchCanceled_Cleared($event)"
+    (ionClear)="onSearchCanceled_Cleared($event)">
+  </ion-searchbar>
+</ion-toolbar>
 
 </ion-header>
 
 
 <ion-content padding  class="background">
   <div *ngIf="initialization" class="spinner-container">
-       <ion-spinner name="bubbles" class="spinner"></ion-spinner>
-   </div>
+    <ion-spinner name="bubbles" class="spinner"></ion-spinner>
+  </div>
 
 
 
-<!--  <ion-list>
+  <!--  <ion-list>
   <ion-item *ngFor="let item of starWarsObjectsList | FilterPipe: searchInput">
-    <ion-thumbnail item-start>
-      <img src="http://www.stickpng.com/assets/thumbs/580b585b2edbce24c47b2d2d.png">
-    </ion-thumbnail>
-    <p>{{item.url}}{{item.id}}</p>
-    <button ion-button clear item-end>View</button>
-  </ion-item>
+  <ion-thumbnail item-start>
+  <img src="http://www.stickpng.com/assets/thumbs/580b585b2edbce24c47b2d2d.png">
+</ion-thumbnail>
+<p>{{item.url}}{{item.id}}</p>
+<button ion-button clear item-end>View</button>
+</ion-item>
 </ion-list>-->
 
 
-     <ion-list class="swList"  style="swObjectsList">
-       <ion-item no-lines *ngFor="let item of objectsList " class="itemList" (click)="pushObjectDetail(item, item.name || item.title)" >
-     <img item-start class="imgList" src= {{item.pathImage}}>
-     <p> {{item.name || item.title}}</p>
-   </ion-item>
+<ion-list class="swList"  style="swObjectsList">
+  <ion-item no-lines *ngFor="let item of objectsList " class="itemList" (click)="pushObjectDetail(item, item.name || item.title)" >
+    <ion-avatar item-start>
+         <img class="imgList" src= {{item.pathImage}}>
+       </ion-avatar>
+
+    <p> {{item.name || item.title}}</p>
+  </ion-item>
 </ion-list>
 
 <ion-infinite-scroll (ionInfinite)="retrieveMoreFromAPI($event)" [enabled]="lazyEnabled" >
-   <ion-infinite-scroll-content>
-   </ion-infinite-scroll-content>
- </ion-infinite-scroll>
+  <ion-infinite-scroll-content>
+  </ion-infinite-scroll-content>
+</ion-infinite-scroll>
 <!-- <div *ngFor="let item of starWarsObjectsList | FilterPipe: searchInput ">
-        <ion-card>
-          <img src="http://www.slate.fr/sites/default/files/styles/1090x500/public/starwars.png"/>
-          <ion-card-header>
-            {{item.name || item.title}}
-          </ion-card-header>
-          <ion-card-content>
-            <span>{{item.url}}{{item.id}}</span>
-          </ion-card-content>
-        </ion-card>
-      <!--  <div *ngFor="let film of item.films">
-            <span>{{film}}</span>
-        </div>
-    </div>-->
+<ion-card>
+<img src="http://www.slate.fr/sites/default/files/styles/1090x500/public/starwars.png"/>
+<ion-card-header>
+{{item.name || item.title}}
+</ion-card-header>
+<ion-card-content>
+<span>{{item.url}}{{item.id}}</span>
+</ion-card-content>
+</ion-card>
+<!--  <div *ngFor="let film of item.films">
+<span>{{film}}</span>
+</div>
+</div>-->
 </ion-content>

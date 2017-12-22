@@ -1,40 +1,48 @@
 .inline {
   display: inline-block;
-  font-size: 11px;
+  font-size: 12px;
 }
 .block{
   display: block;
-  padding-left: 20px
+
 }
 .scroll{
-  width:100%;
-  height:100px;
-  margin-left: 20px
+  width:90%;
+  height:150px;
+  margin-left: 5%
 }
 .titleList{
   text-align: center;
   color: "#FFF"
 }
-
-.associated{
-    //background-image: url('../../../assets/imgs/associatedLogo.png');
-}
-
 .detailCard{
-  background-color: rgba(13, 48, 82, 1);
+  background-color:  rgba(5, 36, 51, 1);
   margin-right: 10px;
-  //  width:60%;
   padding-left: 10px;
   padding-right: 10px;
-  height: 50px;
   text-align: center;
-  border-radius: 50px;
+  border-radius: 20px;
+  padding-top: 10px;
+  min-width: 100px;
 }
 
 .imgDetail{
-  width:100%;
-  height:150px
+  width:40%;
+  height:180px;
+
 }
-.blockInfo{
-  background-color: "#300B19"
+.imgRow{
+  text-align: center;
+}
+.imgassociatedList{
+  width:70px;
+  height:70px;
+}
+.divTemplate{
+background-color: rgba(65, 34, 52, 0.9);
+padding-left: 20px;
+border-radius: 20px;
+margin-top: 20px;
+margin-left: 5%;
+width:90%
 }

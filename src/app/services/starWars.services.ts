@@ -81,6 +81,18 @@ export class StarWarsService {
 	//
 	//Permet de récupèrer un object en fonction de son URL
 	//
+ getObjectsByUrlList(obj: Starwars, url): Observable<any> {
+		return this.http.get(url)
+			.map((response) => {
+				console.log('OBJET PLANET ??? '+ response.json());
+				return jsonToObject(response.json(), obj);
+			}).catch(error => Observable.throw('an error has occured !'));
+	}
+
+
+	//
+	//Permet de récupèrer un object en fonction de son URL
+	//
 	getEvents(): Observable<Event[]> {
 		return this.http.post('http://62.210.7.82:443/event/', {}, null)
 			.map((response) => {console.log(response.json()["content"]);
