@@ -25720,6 +25720,8 @@ body {
 
 .labelAboutUs, .cardAboutUs {
   margin: 0 25px 0 25px;
+  text-align: center;
+  margin: auto;
 }
 
 #headerAbout, #cardHeader {
@@ -25727,9 +25729,16 @@ body {
 }
 
 #label-version {
-  position: absolute;
-  right: 10px;
   color: grey;
+  right: 10px;
+  float: right;
+}
+
+@media screen and (min-height: 670px) {
+  #label-version {
+    position: absolute;
+    bottom: 0;
+  }
 }
 
 page-chat .user_name {
