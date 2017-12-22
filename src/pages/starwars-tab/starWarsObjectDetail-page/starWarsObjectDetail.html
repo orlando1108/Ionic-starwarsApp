@@ -21,10 +21,14 @@
   <strong>Crew:</strong><p>{{selectedItem.crew}}</p>
 </ng-template>
 -->
-<div class="blockInfo">
-    <img class="imgDetail" src="assets/imgs/detail.png">
+<div>
+  <div class="imgRow">
+      <img class="imgDetail" src= {{selectedItem.pathImage}}>
+  </div>
 
-  <ng-template [ngIf]= "objectType == 'vehicle'"  >
+
+  <ng-template [ngIf]= "objectType == 'vehicle'" >
+    <div class="divTemplate">
     <div class="block">
       <strong class="inline">Cargo Capacity: </strong> <p class="inline">{{selectedItem.cargo_capacity}}</p>
     </div>
@@ -49,10 +53,11 @@
     <div class="block">
       <strong class="inline">Cost In Credits: </strong> <p class="inline">{{selectedItem.cost_in_credits}}</p>
     </div>
-
+</div>
   </ng-template>
 
-  <ng-template [ngIf]= "objectType == 'starship'" >
+  <ng-template [ngIf]= "objectType == 'starship'"  >
+      <div class="divTemplate">
     <div class="block">
       <strong class="inline">Model: </strong> <p class="inline">{{selectedItem.model}}</p>
     </div>
@@ -62,9 +67,11 @@
     <div class="block">
       <strong class="inline">Cost In Credits: </strong> <p class="inline">{{selectedItem.cost_in_credits}}</p>
     </div>
+  </div>
   </ng-template>
 
   <ng-template [ngIf]= "objectType == 'planet'" >
+      <div class="divTemplate">
     <div class="block">
       <strong class="inline">Climate: </strong> <p class="inline">{{selectedItem.climate}}</p>
     </div>
@@ -86,10 +93,11 @@
     <div class="block">
       <strong class="inline">Orbital Period: </strong> <p class="inline">{{selectedItem.orbital_period}}</p>
     </div>
-
+</div>
   </ng-template>
 
   <ng-template [ngIf]= "objectType == 'specie'" >
+      <div class="divTemplate">
     <div class="block">
       <strong class="inline">Eye Colors: </strong> <p class="inline">{{selectedItem.eye_colors}}</p>
     </div>
@@ -111,9 +119,11 @@
     <div class="block">
       <strong class="inline">Skin Colors: </strong> <p class="inline">{{selectedItem.skin_colors}}</p>
     </div>
+  </div>
   </ng-template>
 
   <ng-template [ngIf]= "objectType == 'people'" >
+      <div class="divTemplate">
     <div class="block">
       <strong class="inline">Gender: </strong> <p class="inline">{{selectedItem.gender}}</p>
     </div>
@@ -138,9 +148,11 @@
     <div class="block">
       <strong class="inline">Mass: </strong> <p class="inline">{{selectedItem.mass}}</p>
     </div>
+  </div>
   </ng-template>
 
   <ng-template [ngIf]= "objectType == 'film'" >
+      <div class="divTemplate">
     <div class="block">
       <strong class="inline">Director: </strong> <p class="inline">{{selectedItem.director}}</p>
     </div>
@@ -153,7 +165,7 @@
     <div class="block">
       <strong class="inline">Opening Crawl: </strong> <p>{{selectedItem.opening_crawl}}</p>
     </div>
-
+</div>
   </ng-template>
 </div>
 
@@ -161,7 +173,8 @@
   <h1 class="titleList">Films</h1>
 <ion-scroll scrollX="true" class="scroll">
   <ion-row nowrap >
-  <div class="itemDetailList" *ngFor="let item of selectedItem_FilmsList" class="detailCard" (click)="goToAssociatedObjectDetail(item, item.name || item.title)">
+  <div *ngFor="let item of selectedItem_FilmsList" class="detailCard" (click)="goToAssociatedObjectDetail(item, item.name || item.title)">
+         <img class="imgassociatedList" src= {{item.pathImage}}>
        <p>{{item.title}}</p>
     </div>
     </ion-row>
@@ -173,6 +186,7 @@
 <ion-scroll scrollX="true" class="scroll" >
 <ion-row nowrap >
   <div *ngFor="let item of selectedItem_PeopleList" class="detailCard" (click)="goToAssociatedObjectDetail(item, item.name || item.title)">
+<img class="imgassociatedList" src= {{item.pathImage}}>
       <p>{{item.name}}</p>
   </div>
 </ion-row>
@@ -184,6 +198,7 @@
 <ion-scroll scrollX="true" class="scroll" >
 <ion-row nowrap >
   <div *ngFor="let item of selectedItem_StarshipsList" class="detailCard" (click)="goToAssociatedObjectDetail(item, item.name || item.title)">
+<img class="imgassociatedList" src= {{item.pathImage}}>
       <p>{{item.name}}</p>
   </div>
 </ion-row>
@@ -195,6 +210,7 @@
 <ion-scroll scrollX="true" class="scroll" >
 <ion-row nowrap >
   <div *ngFor="let item of selectedItem_SpeciesList" class="detailCard" (click)="goToAssociatedObjectDetail(item, item.name || item.title)">
+<img class="imgassociatedList" src= {{item.pathImage}}>
       <p>{{item.name}}</p>
   </div>
 </ion-row>
@@ -206,6 +222,7 @@
 <ion-scroll scrollX="true" class="scroll" >
 <ion-row nowrap >
   <div *ngFor="let item of selectedItem_PlanetsList" class="detailCard" (click)="goToAssociatedObjectDetail(item, item.name || item.title)">
+<img class="imgassociatedList" src= {{item.pathImage}}>
       <p>{{item.name}}</p>
   </div>
 </ion-row>
@@ -217,6 +234,7 @@
 <ion-scroll scrollX="true" class="scroll" >
 <ion-row nowrap >
   <div *ngFor="let item of selectedItem_VehiclesList" class="detailCard" (click)="goToAssociatedObjectDetail(item, item.name || item.title)">
+    <img class="imgassociatedList" src= {{item.pathImage}}>
       <p>{{item.name}}</p>
   </div>
 </ion-row>

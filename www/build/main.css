@@ -1,3 +1,9 @@
+@font-face {
+  font-family: 'starwars';
+  src: url("../fonts/STARWARS.ttf") format("ttf");
+  font-weight: 200;
+}
+
 .ion-ios-add:before {
   content: "\f102";
 }
@@ -25680,8 +25686,12 @@ ion-navbar.toolbar {
 
 @font-face {
   font-family: starwars;
-  src: url(../assets/fonts/STARWARS.ttf) format("ttf");
+  src: url(../fonts/STARWARS.ttf) format("ttf");
   font-weight: 200;
+}
+
+body {
+  font-family: starwars !important;
 }
 
 .toolbar-background {
@@ -25693,8 +25703,7 @@ ion-navbar.toolbar {
 }
 
 .background {
-  background-image: url("/assets/imgs/swbg.png");
-  background-color: black;
+  background-image: url("../assets/imgs/swbg.png");
   color: white;
 }
 
@@ -25725,6 +25734,7 @@ ion-navbar.toolbar {
 
 page-chat .user_name {
   color: white;
+  margin-bottom: 10px !important;
 }
 
 page-chat .message {
@@ -25741,12 +25751,12 @@ page-chat .my_message {
 }
 
 page-chat .other_message {
-  background: #dcdcdc !important;
-  color: #000 !important;
+  background: #32db64 !important;
+  color: white !important;
 }
 
 page-chat .time {
-  color: #afafaf;
+  color: white;
   float: right;
   font-size: small;
 }
@@ -25866,8 +25876,19 @@ page-chat .message_row {
   width: 90%;
 }
 
+.list button {
+  text-align: center;
+  width: 90%;
+  margin: auto;
+}
+
 .list p {
   color: white;
+}
+
+.sino {
+  text-align: center;
+  margin-top: 10%;
 }
 
 .buttonStarwars {
@@ -25927,7 +25948,7 @@ page-chat .message_row {
 }
 
 .itemList {
-  background-color: #0a0909;
+  background-color: #052433;
   margin-bottom: 10px;
   width: 60%;
   height: 70px;
@@ -25951,20 +25972,24 @@ page-chat .message_row {
   fill: white;
 }
 
+::-webkit-scrollbar,
+*::-webkit-scrollbar {
+  display: none;
+}
+
 .inline {
   display: inline-block;
-  font-size: 11px;
+  font-size: 12px;
 }
 
 .block {
   display: block;
-  padding-left: 20px;
 }
 
 .scroll {
-  width: 100%;
-  height: 100px;
-  margin-left: 20px;
+  width: 90%;
+  height: 150px;
+  margin-left: 5%;
 }
 
 .titleList {
@@ -25973,20 +25998,35 @@ page-chat .message_row {
 }
 
 .detailCard {
-  background-color: #0d3052;
+  background-color: #052433;
   margin-right: 10px;
   padding-left: 10px;
   padding-right: 10px;
-  height: 50px;
   text-align: center;
-  border-radius: 50px;
+  border-radius: 20px;
+  padding-top: 10px;
+  min-width: 100px;
 }
 
 .imgDetail {
-  width: 100%;
-  height: 150px;
+  width: 40%;
+  height: 180px;
 }
 
-.blockInfo {
-  background-color: "#300B19";
+.imgRow {
+  text-align: center;
+}
+
+.imgassociatedList {
+  width: 70px;
+  height: 70px;
+}
+
+.divTemplate {
+  background-color: rgba(65, 34, 52, 0.9);
+  padding-left: 20px;
+  border-radius: 20px;
+  margin-top: 20px;
+  margin-left: 5%;
+  width: 90%;
 }

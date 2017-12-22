@@ -5,6 +5,7 @@ import { ContactUs} from '../../../pages/community-tab/contactUs-page/contactUs'
 import { DefaultPage } from '../../../pages/defaultPage';
 import { GoogleAnalytics } from '@ionic-native/google-analytics';
 import { AppVersion } from '@ionic-native/app-version';
+import { Platform } from 'ionic-angular/platform/platform';
 
 @Component({
     selector: 'page-aboutUs',
@@ -14,15 +15,19 @@ export class AboutUs extends DefaultPage {
 
     private version:any;
 
-    constructor(public navCtrl: NavController, public ga: GoogleAnalytics, private app : AppVersion) {
+    constructor(public navCtrl: NavController, public ga: GoogleAnalytics, private app : AppVersion, private platform:Platform) {
         super("About Us", ga)
     }
     pushContactUs(){
         this.navCtrl.push(ContactUs);
     }
     async ngOnInit(){
-        const appVersion = await this.app.getVersionNumber();
-        this.version = appVersion;
+        if (this.platform.is('cordova')) {            
+            const appVersion = await this.app.getVersionNumber();
+            this.version = appVersion;
+          } else {
+            this.version = "X.X.X";
+          }
     }
     
 }

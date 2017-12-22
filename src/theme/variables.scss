@@ -14,7 +14,11 @@ $app-direction: ltr;
 
 @import "ionic.globals";
 
-
+@font-face {
+font-family: 'starwars';
+src: url('../fonts/STARWARS.ttf') format("ttf");
+font-weight: 200
+}
 // Shared Variables
 // --------------------------------------------------
 // To customize the look and feel of this app, you can override

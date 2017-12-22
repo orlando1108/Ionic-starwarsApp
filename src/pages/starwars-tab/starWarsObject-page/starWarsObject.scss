@@ -11,7 +11,7 @@
   text-align: center
 }
 .itemList{
-  background-color: rgba(10, 9, 9, 1);
+  background-color: rgba(5, 36, 51, 1);
   margin-bottom: 10px;
   width:60%;
   height: 70px;
@@ -31,4 +31,9 @@
 }
 .spinner{
   fill:white
+}
+
+::-webkit-scrollbar,
+*::-webkit-scrollbar {
+  display: none;
 }
