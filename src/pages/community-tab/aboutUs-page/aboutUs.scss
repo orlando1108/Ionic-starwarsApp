@@ -8,13 +8,19 @@
     height: 120px; 
 }
 .labelAboutUs, .cardAboutUs{
-    @include mixMargins;  
+    @include mixMargins;
+    @include mixCenter;
 }
 #headerAbout, #cardHeader{
     color: #488aff;
 }
 #label-version{
-    position: absolute;
+    color:grey; 
     right:10px;
-    color:grey;    
+    float: right;
+    //<670 the version is out of the screen
+    @media screen and (min-height: 670px) {   
+        position: absolute;  
+        bottom:0;
+    }
 }
