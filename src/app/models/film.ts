@@ -62,15 +62,15 @@ export class Film extends Starwars {
 }
 
 private getAssociatedPilots(dataService: StarWarsService,alertCtrl: AlertController){
-	this.urlCharacters.map((elem)=>{
-		dataService.getObjectByUrl(new People(), elem)
+
+		dataService.getObjectsByUrlList(new People(), this.urlCharacters)
 				.subscribe((result) => {
-						this.associatedPeople.push(result);
-				},
-        (error) => {
-        //  presentAlert(alertCtrl);
+						      this.associatedPeople = result;
+				          },
+                   (error) => {
+          presentAlert(alertCtrl);
         });
-	})
+
 
 }
 

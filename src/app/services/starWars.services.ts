@@ -79,14 +79,29 @@ export class StarWarsService {
 	}
 
 	//
-	//Permet de récupèrer un object en fonction de son URL
+	//Permet de récupèrer une liste d'objets en fonction d'une liste d'url
 	//
- getObjectsByUrlList(obj: Starwars, url): Observable<any> {
-		return this.http.get(url)
-			.map((response) => {
-				console.log('OBJET PLANET ??? '+ response.json());
-				return jsonToObject(response.json(), obj);
-			}).catch(error => Observable.throw('an error has occured !'));
+ getObjectsByUrlList(obj: Starwars, urlList:string[]): Observable<any> {
+	 //let objectsList: any[];
+
+	 try {
+   throw "monException"; // génère une exception
+}
+catch (e) {
+   // les instructions utilisées pour gérer les
+   // exceptions
+   logErreurs(e); // on transfère l'objet de l'exception à une méthode
+                  // gestionnaire
+}
+		 urlList.map((url)=>{
+			 this.http.get(url)
+				.map((response) => {
+					console.log('OBJET PLANET ??? '+ response.json());
+					return jsonToObject(response.json(), obj);
+				}).catch(error => Observable.throw('an error has occured !'));
+		});
+		return objectsList;
+
 	}
 
 
